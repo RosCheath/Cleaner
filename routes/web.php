@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CreateUserController;
+use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -36,6 +37,7 @@ Route::group(['web','middleware' => 'can:admin-feature'],function(){
     Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'dashboard'])->name('dashboard');
     Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'home_d'])->name('dashboard');
     Route::resource('users', CreateUserController::class);
+    Route::resource('service', ServiceController::class);
     Route::get('/pending', [App\Http\Controllers\DashboardController::class, 'pending'])->name('pending');
     Route::get('/dropdown', [App\Http\Controllers\DashboardController::class, 'dropdown'])->name('dropdown');
     Route::get('/typography', [App\Http\Controllers\DashboardController::class, 'typography'])->name('typography');

@@ -37,6 +37,15 @@ return [
             'image' => 'https://ps.w.org/metronet-profile-picture/assets/icon-128x128.png?rev=2464419',
         ]
     ],
+    'services' => [
+        [
+            'name' => 'Day',
+            'title' => 'tetetesdghfbvshdjfbshdjbjsdbjsdcbdjvbdjbsdhjvbsdhjvbsdh',
+            'image' => 'https://ps.w.org/metronet-profile-picture/assets/icon-128x128.png?rev=2464419',
+            'price' => '10$',
+            'time_line' => '1 day'
+        ]
+    ],
 
 
 ];
