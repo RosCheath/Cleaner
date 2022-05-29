@@ -56,6 +56,7 @@
     <li class="nav-item nav-category">
       <span class="nav-link">Navigation</span>
     </li>
+
     <li class="nav-item menu-items">
       <a class="nav-link" href="{{route('dashboard')}}">
         <span class="menu-icon">
@@ -64,6 +65,7 @@
         <span class="menu-title">Dashboard</span>
       </a>
     </li>
+
     <li class="nav-item menu-items">
       <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
         <span class="menu-icon">
@@ -80,22 +82,38 @@
         </ul>
       </div>
     </li>
-    <li class="nav-item menu-items">
-      <a class="nav-link" href="{{route('users.create')}}">
-        <span class="menu-icon">
-          <i class="mdi mdi-playlist-play"></i>
-        </span>
-        <span class="menu-title">Create User</span>
-      </a>
-    </li>
 
+{{--      <li class="nav-item menu-items">--}}
+{{--          <a class="nav-link" href="{{route('users.index')}}">--}}
+{{--        <span class="menu-icon">--}}
+{{--          <i class="mdi mdi-account"></i>--}}
+{{--        </span>--}}
+{{--              <span class="menu-title">User List</span>--}}
+{{--          </a>--}}
+{{--      </li>--}}
+
+{{--    <li class="nav-item menu-items">--}}
+{{--      <a class="nav-link" href="{{route('users.create')}}">--}}
+{{--        <span class="menu-icon">--}}
+{{--          <i class="mdi mdi-playlist-play"></i>--}}
+{{--        </span>--}}
+{{--        <span class="menu-title">Create User</span>--}}
+{{--      </a>--}}
+{{--    </li>--}}
       <li class="nav-item menu-items">
-          <a class="nav-link" href="{{route('users.index')}}">
+          <a class="nav-link" data-toggle="collapse" href="#ui-user" aria-expanded="false" aria-controls="ui-basic">
         <span class="menu-icon">
-          <i class="mdi mdi-account"></i>
+          <i class="mdi mdi-face"></i>
         </span>
-              <span class="menu-title">User List</span>
+              <span class="menu-title">User</span>
+              <i class="menu-arrow"></i>
           </a>
+          <div class="collapse" id="ui-user">
+              <ul class="nav flex-column sub-menu">
+                  <li class="nav-item"> <a class="nav-link" href="{{route('users.create')}}">Create User</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="{{route('users.index')}}">User List</a></li>
+              </ul>
+          </div>
       </li>
 
     <li class="nav-item menu-items">
@@ -115,6 +133,7 @@
         <span class="menu-title">Cleaner</span>
       </a>
     </li>
+
     <li class="nav-item menu-items">
       <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
         <span class="menu-icon">
@@ -133,6 +152,7 @@
         </ul>
       </div>
     </li>
+
     <li class="nav-item menu-items">
       <a class="nav-link" href="http://www.bootstrapdash.com/demo/corona-free/jquery/documentation/documentation.html">
         <span class="menu-icon">

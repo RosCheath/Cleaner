@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Foundation\Auth\User;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class CreateUserController extends Controller
 {
@@ -32,11 +33,34 @@ class CreateUserController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+        $this->validate(request(), [
+            'name' => ['required', 'string', 'max:255'],
+            'phone' => ['required', 'string', 'max:20'],
+            'date_of_birth' => ['required'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'role' => ['required'],
+            'sex' => ['required'],
+        ]);
+
+        $input = $request->all();
+        $input = [
+            'name' => $request['name'],
+            'phone' => $request['phone'],
+            'date_of_birth' => $request['date_of_birth'],
+            'image'=> $request['image'],
+            'email' => $request['email'],
+            'sex' => $request['sex'],
+            'role' => $request['role'],
+            'password' => Hash::make($request['password']),
+        ];
+        User::create($input);
+        return redirect()->back()
+            ->with('success','User created successfully.');
     }
 
     /**

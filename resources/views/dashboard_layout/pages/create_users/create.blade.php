@@ -7,13 +7,18 @@
         <h3 class="page-title"> Add Users </h3>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Forms</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Form elements</li>
+            <li class="breadcrumb-item"><form method="POST" action="{{ route('users.store') }}">
+                @csrf</li>
+            <li class="breadcrumb-item active" aria-current="page">Form Add</li>
           </ol>
         </nav>
       </div>
+        @if ($message = Session::get('success'))
+            <div class="alert alert-success">
+                <p>{{ $message }}</p>
+            </div>
+        @endif
       <div class="row">
-
         <div class="col-12 grid-margin stretch-card">
           <div class="card">
             <div class="card-body">
@@ -22,212 +27,226 @@
               <form class="forms-sample">
                 <div class="form-group">
                   <label for="exampleInputName1">Name</label>
-                  <input type="text" class="form-control" id="exampleInputName1" placeholder="Name">
+                  <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name" placeholder="Name">
+                    @error('name')
+                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                    @enderror
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail3">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
+                  <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="email" placeholder="Email">
+                    @error('email')
+                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                    @enderror
                 </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword4">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword4" placeholder="Password">
-                </div>
+                  <div class="form-group">
+                      <label for="date_of_birth">date</label>
+                      <input type="date" class="form-control" @error('date_of_birth') is-invalid @enderror name="date_of_birth" id="date_of_birth" placeholder="Date of Birth">
+                      @error('date_of_birth')
+                      <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                      @enderror
+                  </div>
                 <div class="form-group">
                   <label for="exampleSelectGender">Gender</label>
-                  <select class="form-control" id="exampleSelectGender">
+                  <select class="form-control" name="sex" id="sex">
                     <option>Male</option>
                     <option>Female</option>
                   </select>
                 </div>
+                  <input type="hidden" class="image" name="image" value="https://ps.w.org/metronet-profile-picture/assets/icon-128x128.png?rev=2464419">
                 <div class="form-group">
                   <label>File upload</label>
-                  <input type="file" name="image" class="file-upload-default">
+                  <input type="file"  class="file-upload-default">
                   <div class="input-group col-xs-12">
-                    <input type="file" name="image" class="form-control file-upload-info" placeholder="Upload Image">
+                    <input type="file" class="form-control file-upload-info" placeholder="Upload Image">
                     <span class="input-group-append">
                       <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
                     </span>
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputCity1">Address</label>
-                  <input type="text" class="form-control" id="exampleInputCity1" placeholder="Location">
+                  <label for="exampleInputCity1">Phone</label>
+                  <input type="text" class="form-control" @error('phone') is-invalid @enderror name="phone" id="phone" placeholder="Phone Number">
+                    @error('phone')
+                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                    @enderror
                 </div>
-                <div class="form-group">
-                  <label for="exampleTextarea1">Textarea</label>
-                  <textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>
-                </div>
+                  <div class="form-group">
+                      <label for="exampleSelectGender">Role</label>
+                      <select class="form-control" name="role" id="role">
+                          <option value="User" @if(Auth::user()->role == "User") selected @endif>user</option>
+                          <option value="Admin" @if(Auth::user()->role == "Admin") selected @endif>admin</option>
+                          <option value="Cleaner" @if(Auth::user()->role == "Cleaner") selected @endif>Cleaner</option>
+                      </select>
+                  </div>
+                  <div class="form-group">
+                      <label for="password">Password</label>
+                      <input type="password" class="form-control" class="form-control @error('password') is-invalid @enderror" name="password" id="password" required autocomplete="new-password" placeholder="password">
+                      @error('password')
+                      <span class="invalid-feedback" role="alert">
+                          <strong>{{ $message }}</strong>
+                      </span>
+                      @enderror
+                  </div>
+                  <div class="form-group">
+                      <label for="Confirm password">Confirm Password </label>
+                      <input type="password" class="form-control" name="password_confirmation" id="password-confirm" required autocomplete="new-password" placeholder="Confirm Password">
+                  </div>
                 <button type="submit" class="btn btn-primary mr-2">Submit</button>
                 <button class="btn btn-dark">Cancel</button>
               </form>
             </div>
           </div>
         </div>
-        <div class="col-12 grid-margin stretch-card">
-          <div class="card">
-            <div class="card-body">
-              <h4 class="card-title">Inline forms</h4>
-              <p class="card-description"> Use the <code>.form-inline</code> class to display a series of labels, form controls, and buttons on a single horizontal row </p>
-              <form class="form-inline">
-                <label class="sr-only" for="inlineFormInputName2">Name</label>
-                <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Jane Doe">
-                <label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
-                <div class="input-group mb-2 mr-sm-2">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">@</div>
-                  </div>
-                  <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Username">
-                </div>
-                <div class="form-check mx-sm-2">
-                  <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" checked> Remember me </label>
-                </div>
-                <button type="submit" class="btn btn-primary mb-2">Submit</button>
-              </form>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 grid-margin">
-          <div class="card">
-            <div class="card-body">
-              <h4 class="card-title">User Personal info</h4>
-              <form class="form-sample">
-                <p class="card-description"> Personal info </p>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group row">
-                      <label class="col-sm-3 col-form-label">First Name</label>
-                      <div class="col-sm-9">
-                        <input type="text" class="form-control" />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group row">
-                      <label class="col-sm-3 col-form-label">Last Name</label>
-                      <div class="col-sm-9">
-                        <input type="text" class="form-control" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group row">
-                      <label class="col-sm-3 col-form-label">Gender</label>
-                      <div class="col-sm-9">
-                        <select class="form-control">
-                          <option>Male</option>
-                          <option>Female</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group row">
-                      <label class="col-sm-3 col-form-label">Date of Birth</label>
-                      <div class="col-sm-9">
-                        <input class="form-control" placeholder="dd/mm/yyyy" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group row">
-                      <label class="col-sm-3 col-form-label">Category</label>
-                      <div class="col-sm-9">
-                        <select class="form-control">
-                          <option>Category1</option>
-                          <option>Category2</option>
-                          <option>Category3</option>
-                          <option>Category4</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group row">
-                      <label class="col-sm-3 col-form-label">Membership</label>
-                      <div class="col-sm-4">
-                        <div class="form-check">
-                          <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="membershipRadios" id="membershipRadios1" value="" checked> Free </label>
-                        </div>
-                      </div>
-                      <div class="col-sm-5">
-                        <div class="form-check">
-                          <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="membershipRadios" id="membershipRadios2" value="option2"> Professional </label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <p class="card-description"> Address </p>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group row">
-                      <label class="col-sm-3 col-form-label">Address 1</label>
-                      <div class="col-sm-9">
-                        <input type="text" class="form-control" />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group row">
-                      <label class="col-sm-3 col-form-label">State</label>
-                      <div class="col-sm-9">
-                        <input type="text" class="form-control" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group row">
-                      <label class="col-sm-3 col-form-label">Address 2</label>
-                      <div class="col-sm-9">
-                        <input type="text" class="form-control" />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group row">
-                      <label class="col-sm-3 col-form-label">Postcode</label>
-                      <div class="col-sm-9">
-                        <input type="text" class="form-control" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group row">
-                      <label class="col-sm-3 col-form-label">City</label>
-                      <div class="col-sm-9">
-                        <input type="text" class="form-control" />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group row">
-                      <label class="col-sm-3 col-form-label">Country</label>
-                      <div class="col-sm-9">
-                        <select class="form-control">
-                          <option>America</option>
-                          <option>Italy</option>
-                          <option>Russia</option>
-                          <option>Britain</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
+{{--        <div class="col-12 grid-margin">--}}
+{{--          <div class="card">--}}
+{{--            <div class="card-body">--}}
+{{--              <h4 class="card-title">User Personal info</h4>--}}
+{{--              <form class="form-sample">--}}
+{{--                <p class="card-description"> Personal info </p>--}}
+{{--                <div class="row">--}}
+{{--                  <div class="col-md-6">--}}
+{{--                    <div class="form-group row">--}}
+{{--                      <label class="col-sm-3 col-form-label">First Name</label>--}}
+{{--                      <div class="col-sm-9">--}}
+{{--                        <input type="text" class="form-control" />--}}
+{{--                      </div>--}}
+{{--                    </div>--}}
+{{--                  </div>--}}
+{{--                  <div class="col-md-6">--}}
+{{--                    <div class="form-group row">--}}
+{{--                      <label class="col-sm-3 col-form-label">Last Name</label>--}}
+{{--                      <div class="col-sm-9">--}}
+{{--                        <input type="text" class="form-control" />--}}
+{{--                      </div>--}}
+{{--                    </div>--}}
+{{--                  </div>--}}
+{{--                </div>--}}
+{{--                <div class="row">--}}
+{{--                  <div class="col-md-6">--}}
+{{--                    <div class="form-group row">--}}
+{{--                      <label class="col-sm-3 col-form-label">Gender</label>--}}
+{{--                      <div class="col-sm-9">--}}
+{{--                        <select class="form-control">--}}
+{{--                          <option>Male</option>--}}
+{{--                          <option>Female</option>--}}
+{{--                        </select>--}}
+{{--                      </div>--}}
+{{--                    </div>--}}
+{{--                  </div>--}}
+{{--                  <div class="col-md-6">--}}
+{{--                    <div class="form-group row">--}}
+{{--                      <label class="col-sm-3 col-form-label">Date of Birth</label>--}}
+{{--                      <div class="col-sm-9">--}}
+{{--                        <input class="form-control" placeholder="dd/mm/yyyy" />--}}
+{{--                      </div>--}}
+{{--                    </div>--}}
+{{--                  </div>--}}
+{{--                </div>--}}
+{{--                <div class="row">--}}
+{{--                  <div class="col-md-6">--}}
+{{--                    <div class="form-group row">--}}
+{{--                      <label class="col-sm-3 col-form-label">Category</label>--}}
+{{--                      <div class="col-sm-9">--}}
+{{--                        <select class="form-control">--}}
+{{--                          <option>Category1</option>--}}
+{{--                          <option>Category2</option>--}}
+{{--                          <option>Category3</option>--}}
+{{--                          <option>Category4</option>--}}
+{{--                        </select>--}}
+{{--                      </div>--}}
+{{--                    </div>--}}
+{{--                  </div>--}}
+{{--                  <div class="col-md-6">--}}
+{{--                    <div class="form-group row">--}}
+{{--                      <label class="col-sm-3 col-form-label">Membership</label>--}}
+{{--                      <div class="col-sm-4">--}}
+{{--                        <div class="form-check">--}}
+{{--                          <label class="form-check-label">--}}
+{{--                            <input type="radio" class="form-check-input" name="membershipRadios" id="membershipRadios1" value="" checked> Free </label>--}}
+{{--                        </div>--}}
+{{--                      </div>--}}
+{{--                      <div class="col-sm-5">--}}
+{{--                        <div class="form-check">--}}
+{{--                          <label class="form-check-label">--}}
+{{--                            <input type="radio" class="form-check-input" name="membershipRadios" id="membershipRadios2" value="option2"> Professional </label>--}}
+{{--                        </div>--}}
+{{--                      </div>--}}
+{{--                    </div>--}}
+{{--                  </div>--}}
+{{--                </div>--}}
+{{--                <p class="card-description"> Address </p>--}}
+{{--                <div class="row">--}}
+{{--                  <div class="col-md-6">--}}
+{{--                    <div class="form-group row">--}}
+{{--                      <label class="col-sm-3 col-form-label">Address 1</label>--}}
+{{--                      <div class="col-sm-9">--}}
+{{--                        <input type="text" class="form-control" />--}}
+{{--                      </div>--}}
+{{--                    </div>--}}
+{{--                  </div>--}}
+{{--                  <div class="col-md-6">--}}
+{{--                    <div class="form-group row">--}}
+{{--                      <label class="col-sm-3 col-form-label">State</label>--}}
+{{--                      <div class="col-sm-9">--}}
+{{--                        <input type="text" class="form-control" />--}}
+{{--                      </div>--}}
+{{--                    </div>--}}
+{{--                  </div>--}}
+{{--                </div>--}}
+{{--                <div class="row">--}}
+{{--                  <div class="col-md-6">--}}
+{{--                    <div class="form-group row">--}}
+{{--                      <label class="col-sm-3 col-form-label">Address 2</label>--}}
+{{--                      <div class="col-sm-9">--}}
+{{--                        <input type="text" class="form-control" />--}}
+{{--                      </div>--}}
+{{--                    </div>--}}
+{{--                  </div>--}}
+{{--                  <div class="col-md-6">--}}
+{{--                    <div class="form-group row">--}}
+{{--                      <label class="col-sm-3 col-form-label">Postcode</label>--}}
+{{--                      <div class="col-sm-9">--}}
+{{--                        <input type="text" class="form-control" />--}}
+{{--                      </div>--}}
+{{--                    </div>--}}
+{{--                  </div>--}}
+{{--                </div>--}}
+{{--                <div class="row">--}}
+{{--                  <div class="col-md-6">--}}
+{{--                    <div class="form-group row">--}}
+{{--                      <label class="col-sm-3 col-form-label">City</label>--}}
+{{--                      <div class="col-sm-9">--}}
+{{--                        <input type="text" class="form-control" />--}}
+{{--                      </div>--}}
+{{--                    </div>--}}
+{{--                  </div>--}}
+{{--                  <div class="col-md-6">--}}
+{{--                    <div class="form-group row">--}}
+{{--                      <label class="col-sm-3 col-form-label">Country</label>--}}
+{{--                      <div class="col-sm-9">--}}
+{{--                        <select class="form-control">--}}
+{{--                          <option>America</option>--}}
+{{--                          <option>Italy</option>--}}
+{{--                          <option>Russia</option>--}}
+{{--                          <option>Britain</option>--}}
+{{--                        </select>--}}
+{{--                      </div>--}}
+{{--                    </div>--}}
+{{--                  </div>--}}
+{{--                </div>--}}
+{{--              </form>--}}
+{{--            </div>--}}
+{{--          </div>--}}
+{{--        </div>--}}
 
       </div>
     </div>
