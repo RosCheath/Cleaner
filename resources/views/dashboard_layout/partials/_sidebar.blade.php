@@ -83,41 +83,18 @@
       </div>
     </li>
 
-{{--      <li class="nav-item menu-items">--}}
-{{--          <a class="nav-link" href="{{route('users.index')}}">--}}
-{{--        <span class="menu-icon">--}}
-{{--          <i class="mdi mdi-account"></i>--}}
-{{--        </span>--}}
-{{--              <span class="menu-title">User List</span>--}}
-{{--          </a>--}}
-{{--      </li>--}}
-
-{{--    <li class="nav-item menu-items">--}}
-{{--      <a class="nav-link" href="{{route('users.create')}}">--}}
-{{--        <span class="menu-icon">--}}
-{{--          <i class="mdi mdi-playlist-play"></i>--}}
-{{--        </span>--}}
-{{--        <span class="menu-title">Create User</span>--}}
-{{--      </a>--}}
-{{--    </li>--}}
       <li class="nav-item menu-items">
-          <a class="nav-link" data-toggle="collapse" href="#ui-user" aria-expanded="false" aria-controls="ui-basic">
+          <a class="nav-link" href="{{route('users.index')}}">
         <span class="menu-icon">
-          <i class="mdi mdi-face"></i>
+          <i class="mdi mdi-account"></i>
         </span>
-              <span class="menu-title">User</span>
-              <i class="menu-arrow"></i>
+              <span class="menu-title">User List</span>
           </a>
-          <div class="collapse" id="ui-user">
-              <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="{{route('users.create')}}">Create User</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="{{route('users.index')}}">User List</a></li>
-              </ul>
-          </div>
       </li>
 
+
     <li class="nav-item menu-items">
-      <a class="nav-link" href="{{route('chart')}}">
+      <a class="nav-link" href="{{route('service.index')}}">
         <span class="menu-icon">
           <i class="mdi mdi-chart-bar"></i>
         </span>

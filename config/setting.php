@@ -41,9 +41,23 @@ return [
         [
             'name' => 'Day',
             'title' => 'tetetesdghfbvshdjfbshdjbjsdbjsdcbdjvbdjbsdhjvbsdhjvbsdh',
-            'image' => 'https://ps.w.org/metronet-profile-picture/assets/icon-128x128.png?rev=2464419',
+            'image' => 'https://cdn-icons-png.flaticon.com/512/2490/2490365.png',
             'price' => '10$',
             'time_line' => '1 day'
+        ],
+        [
+            'name' => 'Month',
+            'title' => 'tetetesdghfbvshdjfbshdjbjsdbjsdcbdjvbdjbsdhjvbsdhjvbsdh',
+            'image' => 'https://cdn-icons-png.flaticon.com/512/2490/2490365.png',
+            'price' => '100$',
+            'time_line' => '1 Month'
+        ],
+        [
+            'name' => 'Year',
+            'title' => 'tetetesdghfbvshdjfbshdjbjsdbjsdcbdjvbdjbsdhjvbsdhjvbsdh',
+            'image' => 'https://cdn-icons-png.flaticon.com/512/2490/2490365.png',
+            'price' => '1000$',
+            'time_line' => '1 Year'
         ]
     ],
 
