@@ -103,7 +103,7 @@
     </li>
 
     <li class="nav-item menu-items">
-      <a class="nav-link" href="icon">
+      <a class="nav-link" href="{{route('cleaner.index')}}">
         <span class="menu-icon">
           <i class="mdi mdi-contacts"></i>
         </span>

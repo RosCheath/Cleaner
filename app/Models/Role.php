@@ -10,3 +10,4 @@ class Role extends Model
     use HasFactory;
     public $fillable = ['name'];
 }
+

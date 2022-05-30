@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('image')->default('https://ps.w.org/metronet-profile-picture/assets/icon-128x128.png?rev=2464419');
             $table->string('role')->default('User');
             $table->string('email')->unique();
+            $table->string('id_card')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
