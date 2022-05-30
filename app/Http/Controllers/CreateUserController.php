@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Input;
 
 class CreateUserController extends Controller
 {
@@ -47,7 +48,7 @@ class CreateUserController extends Controller
             'sex' => ['required'],
         ]);
 
-        $input = $request->all();
+//        $input = $request->all();
         $input = [
             'name' => $request['name'],
             'phone' => $request['phone'],
@@ -69,7 +70,7 @@ class CreateUserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $user)
     {
         //
     }
@@ -78,11 +79,11 @@ class CreateUserController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function edit($id)
+    public function edit(User $user )
     {
-        //
+        return view('dashboard_layout.pages.create_users.edit',compact('user'));
     }
 
     /**
@@ -90,11 +91,31 @@ class CreateUserController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        //
+        $this->validate(request(), [
+            'name' => 'required',
+            'phone' => 'required',
+            'date_of_birth' => 'required',
+            'email' => 'required',
+//            'id_card' => ['required'],
+            'role' => 'required',
+            'sex' => 'required',
+        ]);
+        $input = $request->all();
+//        dd($input);
+//        if ($image = $request->file('image')) {
+//            $imagePath = 'imageEmployee/';
+//            $employeeImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+//            $image->move($imagePath, $employeeImage);
+//            $input['image'] = "$employeeImage";
+//        }
+//        dd($input);
+        $user->update($input);
+        return redirect()->route('users.index')
+            ->with('success','User updated successfully');
     }
 
     /**
@@ -108,6 +129,6 @@ class CreateUserController extends Controller
     {
         $user->delete();
         return redirect()->back()
-            ->with('success','Product deleted successfully');
+            ->with('success','User deleted successfully');
     }
 }

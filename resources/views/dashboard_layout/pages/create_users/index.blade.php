@@ -62,7 +62,7 @@
                                                 </button>
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuIconButton6">
                                                     <h6 class="dropdown-header">Settings</h6>
-                                                    <a class="dropdown-item" href="#">Edit</a>
+                                                    <a class="dropdown-item" href="{{route('users.edit',$users->id)}}">Edit</a>
                                                     <a class="dropdown-item" href="#">See Profile</a>
                                                     <form action="{{ route('users.destroy',$users->id) }}" method="POST">
                                                         @csrf

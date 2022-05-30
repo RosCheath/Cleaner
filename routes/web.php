@@ -40,6 +40,7 @@ Route::group(['web','middleware' => 'can:admin-feature'],function(){
     Route::resource('users', CreateUserController::class);
     Route::resource('service', ServiceController::class);
     Route::resource('cleaner', CleanerController::class);
+    Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'profile'])->name('profile');
     Route::get('/pending', [App\Http\Controllers\DashboardController::class, 'pending'])->name('pending');
     Route::get('/dropdown', [App\Http\Controllers\DashboardController::class, 'dropdown'])->name('dropdown');
     Route::get('/typography', [App\Http\Controllers\DashboardController::class, 'typography'])->name('typography');

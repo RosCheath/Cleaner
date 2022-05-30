@@ -51,7 +51,7 @@ class CleanerController extends Controller
             'sex' => ['required'],
         ]);
 
-        $input = $request->all();
+//        $input = $request->all();
         $input = [
             'name' => $request['name'],
             'phone' => $request['phone'],
@@ -84,11 +84,12 @@ class CleanerController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function edit(User $user)
+    public function edit(User $cleaner)
     {
-        //
+
+        return view('dashboard_layout.pages.cleaner.edit',compact('cleaner'));
     }
 
     /**
@@ -96,21 +97,36 @@ class CleanerController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, User $cleaner)
     {
-        //
+        $this->validate(request(), [
+            'name' => 'required',
+            'phone' => 'required',
+            'date_of_birth' => 'required',
+            'email' => 'required',
+//            'id_card' => ['required'],
+            'role' => 'required',
+            'sex' => 'required',
+        ]);
+        $input = $request->all();
+            $cleaner->update($input);
+
+        return redirect()->back()
+            ->with('success','Cleaner updated successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy(User $user)
+    public function destroy(User $cleaner)
     {
-        //
+        $cleaner->delete();
+        return redirect()->back()
+            ->with('success','Cleaner deleted successfully');
     }
 }
