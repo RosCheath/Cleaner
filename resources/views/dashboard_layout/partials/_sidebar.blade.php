@@ -39,17 +39,6 @@
               <p class="preview-subject ellipsis mb-1 text-small">Change Password</p>
             </div>
           </a>
-{{--          <div class="dropdown-divider"></div>--}}
-{{--          <a href="#" class="dropdown-item preview-item">--}}
-{{--            <div class="preview-thumbnail">--}}
-{{--              <div class="preview-icon bg-dark rounded-circle">--}}
-{{--                <i class="mdi mdi-calendar-today text-success"></i>--}}
-{{--              </div>--}}
-{{--            </div>--}}
-{{--            <div class="preview-item-content">--}}
-{{--              <p class="preview-subject ellipsis mb-1 text-small">To-do list</p>--}}
-{{--            </div>--}}
-          </a>
         </div>
       </div>
     </li>
@@ -82,7 +71,7 @@
         </ul>
       </div>
     </li>
-
+@can('admin_auth')
       <li class="nav-item menu-items">
           <a class="nav-link" href="{{route('users.index')}}">
         <span class="menu-icon">
@@ -91,8 +80,6 @@
               <span class="menu-title">User List</span>
           </a>
       </li>
-
-
     <li class="nav-item menu-items">
       <a class="nav-link" href="{{route('service.index')}}">
         <span class="menu-icon">
@@ -101,7 +88,6 @@
         <span class="menu-title">Service</span>
       </a>
     </li>
-
     <li class="nav-item menu-items">
       <a class="nav-link" href="{{route('cleaner.index')}}">
         <span class="menu-icon">
@@ -110,7 +96,7 @@
         <span class="menu-title">Cleaner</span>
       </a>
     </li>
-
+      @endcan
     <li class="nav-item menu-items">
       <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
         <span class="menu-icon">
