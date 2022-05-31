@@ -159,34 +159,34 @@
         <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="profileDropdown">
           <h6 class="p-3 mb-0">Profile</h6>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item preview-item">
+          <a href="{{route('v_profile')}}" class="dropdown-item preview-item">
             <div class="preview-thumbnail">
               <div class="preview-icon bg-dark rounded-circle">
-                <i class="mdi mdi-settings text-success"></i>
+                <i class="mdi mdi-account text-success"></i>
               </div>
             </div>
             <div class="preview-item-content">
-              <p class="preview-subject mb-1">Settings</p>
+              <p class="preview-subject mb-1">Profile</p>
             </div>
           </a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item preview-item">
-            <div class="preview-thumbnail">
-              <div class="preview-icon bg-dark rounded-circle">
-                <i class="mdi mdi-logout text-danger"></i>
-              </div>
-            </div>
-            <div class="preview-item-content">
-              <p href="{{ route('logout') }}" class="preview-subject mb-1"
-                 onclick="event.preventDefault();
-                 document.getElementById('logout-form').submit();">
-                  Log out
-              </p>
+
+
+            <div class="dropdown-divider"></div>
+            <a href="{{ route('logout') }}"
+               onclick="event.preventDefault();
+                 document.getElementById('logout-form').submit();" class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                    <div class="preview-icon bg-dark rounded-circle">
+                        <i class="mdi mdi-logout text-danger"></i>
+                    </div>
+                </div>
+                <div class="preview-item-content">
+                    <p class="preview-subject mb-1">Log Out</p>
+                </div>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                     @csrf
                 </form>
-            </div>
-          </a>
+            </a>
           <div class="dropdown-divider"></div>
           <p class="p-3 mb-0 text-center">Advanced settings</p>
         </div>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CreateUserController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\CleanerController;
 use Illuminate\Support\Facades\Auth;
@@ -30,17 +31,24 @@ Route::group(['web'],function(){
     Route::get('/blog', [App\Http\Controllers\HomeController::class, 'blog'])->name('blog');
     Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
     Route::get('/gallery', [App\Http\Controllers\HomeController::class, 'gallery'])->name('gallery');
+
+    Route::get('view/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('v_profile');
+
+
 });
 
+Route::group(['web','middleware' => 'can:user-feature'],function(){
 
-
+    Route::put('update/profile/', [App\Http\Controllers\ProfileController::class, 'update'])->name('update_profile');
+    Route::get('edit/profile', [App\Http\Controllers\ProfileController::class, 'edit'])->name('edit_profile');
+});
 Route::group(['web','middleware' => 'can:admin-feature'],function(){
     Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'dashboard'])->name('dashboard');
     Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'home_d'])->name('dashboard');
     Route::resource('users', CreateUserController::class);
     Route::resource('service', ServiceController::class);
     Route::resource('cleaner', CleanerController::class);
-    Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'profile'])->name('profile');
+
     Route::get('/pending', [App\Http\Controllers\DashboardController::class, 'pending'])->name('pending');
     Route::get('/dropdown', [App\Http\Controllers\DashboardController::class, 'dropdown'])->name('dropdown');
     Route::get('/typography', [App\Http\Controllers\DashboardController::class, 'typography'])->name('typography');

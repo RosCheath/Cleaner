@@ -8,7 +8,6 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
-
                             <form method="POST" action="{{ route('cleaner.update',$cleaner->id)}}" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')

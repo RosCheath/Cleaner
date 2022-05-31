@@ -111,6 +111,7 @@ class CleanerController extends Controller
             'sex' => 'required',
         ]);
         $input = $request->all();
+        dd($input);
             $cleaner->update($input);
 
         return redirect()->back()
