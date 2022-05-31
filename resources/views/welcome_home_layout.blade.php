@@ -48,8 +48,8 @@
 	        	<li class="nav-item {{ (request()->is('about')) ? 'active' : '' }}">
                     <a href="about" class="nav-link">About</a>
                 </li>
-	        	<li class="nav-item {{ (request()->is('blog')) ? 'active' : '' }}">
-                    <a href="blog" class="nav-link">Blog</a>
+	        	<li class="nav-item {{ (request()->is('booking*')) ? 'active' : '' }}">
+                    <a href="{{route('booking.index')}}" class="nav-link">Booking</a>
                 </li>
 	          <li class="nav-item {{ (request()->is('contact')) ? 'active' : '' }}">
                   <a href="contact" class="nav-link">Contact</a>

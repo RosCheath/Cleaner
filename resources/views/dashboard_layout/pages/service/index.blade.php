@@ -23,7 +23,12 @@
                                 <h5 class="card-title">{{$service -> name}}</h5>
                                 <p class="card-text">{{$service -> title}}</p>
                                 <p class="card-text">Price : {{$service -> price}} $</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                <a href="{{route('service.edit',$service->id)}}" class="btn btn-primary">Edit Service</a>
+                                <form action="{{ route('service.destroy',$service->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
                             </div>
                         </div>
                     </div>

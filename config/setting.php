@@ -40,22 +40,22 @@ return [
     'services' => [
         [
             'name' => 'Day',
-            'title' => 'tetetesdghfbvshdjfbshdjbjsdbjsdcbdjvbdjbsdhjvbsdhjvbsdh',
-            'image' => 'https://cdn-icons-png.flaticon.com/512/2490/2490365.png',
+            'title' => 'A small river named Duden flows by their place and supplies.',
+            'image' => 'flaticon-male-hair-of-head-and-face-shapes',
             'price' => '10$',
             'time_line' => '1 day'
         ],
         [
             'name' => 'Month',
-            'title' => 'tetetesdghfbvshdjfbshdjbjsdbjsdcbdjvbdjbsdhjvbsdhjvbsdh',
-            'image' => 'https://cdn-icons-png.flaticon.com/512/2490/2490365.png',
+            'title' => 'A small river named Duden flows by their place and supplies.',
+            'image' => 'flaticon-male-hair-of-head-and-face-shapes',
             'price' => '100$',
             'time_line' => '1 Month'
         ],
         [
             'name' => 'Year',
-            'title' => 'tetetesdghfbvshdjfbshdjbjsdbjsdcbdjvbdjbsdhjvbsdhjvbsdh',
-            'image' => 'https://cdn-icons-png.flaticon.com/512/2490/2490365.png',
+            'title' => 'A small river named Duden flows by their place and supplies.',
+            'image' => 'flaticon-male-hair-of-head-and-face-shapes',
             'price' => '1000$',
             'time_line' => '1 Year'
         ]

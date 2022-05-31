@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\CreateUserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
@@ -32,6 +33,7 @@ Route::group(['web'],function(){
     Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
     Route::get('/gallery', [App\Http\Controllers\HomeController::class, 'gallery'])->name('gallery');
     Route::get('view/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('v_profile');
+    Route::resource('booking', BookingController::class);
 
 
 });

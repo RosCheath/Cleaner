@@ -57,11 +57,11 @@ class ServiceController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\service  $service
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function edit(service $service)
     {
-        //
+        return view('dashboard_layout.pages.service.edit',compact('service'));
     }
 
     /**
@@ -69,21 +69,27 @@ class ServiceController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\service  $service
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, service $service)
     {
-        //
+        $input = $request->all();
+//        dd($input);
+        $service->update($input);
+        return redirect()->back()
+            ->with('success','Service update successfully.');
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\service  $service
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(service $service)
     {
-        //
+        $service->delete();
+        return redirect()->back()
+            ->with('success','Cleaner deleted successfully');
     }
 }

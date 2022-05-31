@@ -12,7 +12,7 @@
         </div>
       </div>
     </section>
-    
+
     <section class="services-section ftco-section">
       <div class="container">
       	<div class="row justify-content-center pb-3">
@@ -23,42 +23,17 @@
           </div>
         </div>
         <div class="row no-gutters d-flex">
-          <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
+            @foreach($service as $service)
+          <div class="col-md-6 col-lg-4 d-flex align-self-stretch ftco-animate">
             <div class="media block-6 services d-block text-center">
-              <div class="icon"><span class="flaticon-male-hair-of-head-and-face-shapes"></span></div>
+              <div class="icon"><span class="{{$service->image}}"></span></div>
               <div class="media-body">
-                <h3 class="heading mb-3">Haircut &amp; Styling</h3>
-                <p>A small river named Duden flows by their place and supplies.</p>
+                <h3 class="heading mb-3">{{$service->name}}</h3>
+                <p>{{$service->title}}</p>
               </div>
-            </div>    
+            </div>
           </div>
-          <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services d-block text-center">
-              <div class="icon"><span class="flaticon-beard"></span></div>
-              <div class="media-body">
-                <h3 class="heading mb-3">Beard</h3>
-                <p>A small river named Duden flows by their place and supplies.</p>
-              </div>
-            </div>      
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services d-block text-center">
-              <div class="icon"><span class="flaticon-beauty-products"></span></div>
-              <div class="media-body">
-                <h3 class="heading mb-3">Makeup</h3>
-                <p>A small river named Duden flows by their place and supplies.</p>
-              </div>
-            </div>      
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services d-block text-center">
-              <div class="icon"><span class="flaticon-healthy-lifestyle-logo"></span></div>
-              <div class="media-body">
-                <h3 class="heading mb-3">Body Treatment</h3>
-                <p>A small river named Duden flows by their place and supplies.</p>
-              </div>
-            </div>      
-          </div>
+            @endforeach
         </div>
       </div>
     </section>
@@ -90,7 +65,7 @@
 	              <div class="col-sm-6">
 	                <div class="form-group">
 	                  <input type="text" class="form-control appointment_date" placeholder="Date">
-	                </div>    
+	                </div>
 	              </div>
 	              <div class="col-sm-6">
 	                <div class="form-group">
@@ -129,7 +104,7 @@
     		</div>
     	</div>
     </section>
-		
+
 		<section class="ftco-section ftco-pricing">
 			<div class="container">
 				<div class="row justify-content-center pb-3">
