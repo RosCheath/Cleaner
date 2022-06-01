@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\CreateUserController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\CleanerController;
@@ -54,7 +55,9 @@ Route::group(['web','middleware' => 'can:admin_auth'],function(){
 Route::group(['web','middleware' => 'can:admin-feature'],function(){
     Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'dashboard'])->name('dashboard');
     Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'home_d'])->name('dashboard');
-
+    Route::resource('pending', DashboardController::class);
+//      Route::resource('booking', \App\Http\Controllers\BookingController::class);
+//    Route::match(['put', 'patch'], '/approved/update/{pending}',[App\Http\Controllers\DashboardController::class, 'update'])->name('approved_pending');
     Route::get('/pending', [App\Http\Controllers\DashboardController::class, 'pending'])->name('pending');
     Route::get('/approved', [App\Http\Controllers\DashboardController::class, 'approved'])->name('approved');
     Route::get('/Booking/Service', [App\Http\Controllers\DashboardController::class, 'Booking_Service'])->name('booking_service');

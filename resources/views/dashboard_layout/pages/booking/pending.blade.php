@@ -64,8 +64,8 @@
                                   <a>{{$pending->status_type}}</a>
                               </button>
                               <div class="dropdown-menu" aria-labelledby="dropdownMenuIconButton6">
-                                  <a class="dropdown-item" href=#">Approved</a>
-                                  <a class="dropdown-item" href="#">See Profile</a>
+
+                                  <a class="dropdown-item" href="{{route('pending.edit',$pending->id)}}">Edit</a>
                               </div>
                           </div>
                       </td>

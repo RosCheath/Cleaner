@@ -110,6 +110,7 @@ class CleanerController extends Controller
         ]);
         $input = $request->all();
             $cleaner->update($input);
+            dd($cleaner);
 
         return redirect()->back()
             ->with('success','Cleaner updated successfully');

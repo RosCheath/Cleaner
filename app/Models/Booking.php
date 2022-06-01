@@ -9,7 +9,7 @@ class Booking extends Model
 {
     use HasFactory;
     public $fillable = [
-        'service_id','user_id','location','telegram','status_type','date','time'
+        'service_id','user_id','location','telegram','status_type','date','time','cleaner_id'
     ];
     public function service(){
         return $this->belongsTo(Service::class);
@@ -19,5 +19,8 @@ class Booking extends Model
     }
     public function statuses(){
         return $this->belongsTo(Status::class);
+    }
+    public function cleaner(){
+        return $this->belongsTo(User::class);
     }
 }

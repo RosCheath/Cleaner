@@ -47,7 +47,44 @@ class BookingController extends Controller
             ->with('success','Cleaner created successfully.');
     }
 
+
+    public function edit(Booking $booking){
+        return view('booking.edit',compact('booking'));
+    }
+
+    public function update(Request $request, Booking $booking){
+//        $this->validate(request(), [
+//            'cleaner_id' => 'required',
+//        ]);
+
+        $input = $request->all();
+//        dd($input);
+//        $booking->update($request->all());
+//        dd($booking);
+//        $booking ['cleaner_id'] =Auth::id();
+//        $booking->location = $request['location'];
+//        $booking->service_id = $request['service_id'];
+//        $booking->user_id = $request['user_id'];
+//        $booking->telegram = $request['telegram'];
+//        $booking->status_type = $request['status_type'];
+//        $booking->date = $request['date'];
+//        $booking->time = $request['time'];
+        dd($booking);
+        $booking->save($input);
+//        dd($booking);
+        return redirect()->route('pending')
+            ->with('success','Cleaner updated successfully');
+    }
+
+
+
+
+
+
+
     public function invoice(Booking $booking){
         return view('booking.invoice',compact('booking'));
     }
+
+
 }

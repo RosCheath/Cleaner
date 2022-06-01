@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('service_id');
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('cleaner_id')->nullable();
             $table->string('location');
             $table->string('telegram');
             $table->string('date');

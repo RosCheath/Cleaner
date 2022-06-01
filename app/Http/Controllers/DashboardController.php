@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Booking;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
@@ -29,6 +30,35 @@ class DashboardController extends Controller
     {
         $pending = Booking::with('statuses')->where('status_type', 'Pending')->get();
         return view('dashboard_layout.pages.booking.pending',compact('pending'));
+    }
+
+    public function edit(Booking $pending){
+        return view('dashboard_layout.pages.booking.edit_test',compact('pending'));
+    }
+
+    public function update(Request $request, Booking $pending){
+//        $this->validate(request(), [
+//            'cleaner_id' => 'required',
+//        ]);
+
+        $input = $request->all();
+        $input ['cleaner_id'] =Auth::id();
+//        dd($input);
+//        $booking->update($request->all());
+//        dd($booking);
+//        $booking ['cleaner_id'] =Auth::id();
+//        $booking->location = $request['location'];
+//        $booking->service_id = $request['service_id'];
+//        $booking->user_id = $request['user_id'];
+//        $booking->telegram = $request['telegram'];
+//        $booking->status_type = $request['status_type'];
+//        $booking->date = $request['date'];
+//        $booking->time = $request['time'];
+//        dd($pending);
+        $pending->update($input);
+//        dd($booking);
+        return redirect()->route('pending')
+            ->with('success','Cleaner updated successfully');
     }
 
     public function approved()
