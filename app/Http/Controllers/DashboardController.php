@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Booking;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -26,17 +27,20 @@ class DashboardController extends Controller
 
     public function pending()
     {
-        return view('dashboard_layout.pages.booking.pending');
+        $pending = Booking::with('statuses')->where('status_type', 'Pending')->get();
+        return view('dashboard_layout.pages.booking.pending',compact('pending'));
     }
 
     public function approved()
     {
-        return view('dashboard_layout.pages.booking.approved');
+        $approved = Booking::with('statuses')->where('status_type', 'Approved')->get();
+        return view('dashboard_layout.pages.booking.approved',compact('approved'));
     }
 
-    public function done()
+    public function Booking_Service()
     {
-        return view('dashboard_layout.pages.booking.done');
+        $booking_service = Booking::with('statuses')->where('status_type', 'Rejected')->orWhere('status_type','Done')->get();
+        return view('dashboard_layout.pages.booking.Booking_Service',compact('booking_service'));
     }
 
 

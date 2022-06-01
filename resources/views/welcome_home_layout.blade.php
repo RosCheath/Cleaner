@@ -50,7 +50,9 @@
                 </li>
 	        	<li class="nav-item {{ (request()->is('booking*')) ? 'active' : '' }}">
                     <a href="{{route('booking.index')}}" class="nav-link notification">Booking
+                        @if($bookingCount>0)
                         <span class="badge">{{$bookingCount}}</span>
+                        @endif
                     </a>
                 </li>
 	          <li class="nav-item {{ (request()->is('contact')) ? 'active' : '' }}">

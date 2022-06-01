@@ -12,9 +12,12 @@ class Booking extends Model
         'service_id','user_id','location','telegram','status_type','date','time'
     ];
     public function service(){
-        return $this->belongsTo(service::class);
+        return $this->belongsTo(Service::class);
     }
     public function user(){
-        return $this->belongsTo(user::class);
+        return $this->belongsTo(User::class);
+    }
+    public function statuses(){
+        return $this->belongsTo(Status::class);
     }
 }

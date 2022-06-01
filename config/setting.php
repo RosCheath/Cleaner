@@ -42,21 +42,21 @@ return [
             'name' => 'Day',
             'title' => 'A small river named Duden flows by their place and supplies.',
             'image' => 'flaticon-male-hair-of-head-and-face-shapes',
-            'price' => '10$',
+            'price' => '10',
             'time_line' => '1 day'
         ],
         [
             'name' => 'Month',
             'title' => 'A small river named Duden flows by their place and supplies.',
             'image' => 'flaticon-male-hair-of-head-and-face-shapes',
-            'price' => '100$',
+            'price' => '100',
             'time_line' => '1 Month'
         ],
         [
             'name' => 'Year',
             'title' => 'A small river named Duden flows by their place and supplies.',
             'image' => 'flaticon-male-hair-of-head-and-face-shapes',
-            'price' => '1000$',
+            'price' => '1000',
             'time_line' => '1 Year'
         ]
     ],

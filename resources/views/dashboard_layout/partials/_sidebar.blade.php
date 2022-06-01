@@ -67,7 +67,7 @@
         <ul class="nav flex-column sub-menu">
           <li class="nav-item"> <a class="nav-link" href="{{route('pending')}}">Pending</a></li>
           <li class="nav-item"> <a class="nav-link" href="{{route('approved')}}">Approved</a></li>
-          <li class="nav-item"> <a class="nav-link" href="{{route('done')}}">Book service</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{route('booking_service')}}">Booking service</a></li>
         </ul>
       </div>
     </li>

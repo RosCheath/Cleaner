@@ -1,4 +1,4 @@
-    @extends('dashboard')
+@extends('dashboard')
 @section('content_dashboard')
     <!-- partial -->
     <div class="main-panel">
@@ -38,7 +38,7 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($approved as $approved)
+                                    @foreach($booking_service as $booking_service)
                                         <tr>
                                             <td>
                                                 <div class="form-check form-check-muted m-0">
@@ -49,7 +49,7 @@
                                             </td>
                                             <td>
                                                 <img src="{{asset('assets/dashboard/images/faces/face1.jpg')}}" alt="image" />
-                                                <span class="pl-2">{{$approved->service->name}}</span>
+                                                <span class="pl-2">{{$booking_service->service->name}}</span>
                                             </td>
                                             <td> 02312 </td>
                                             <td> $14,500 </td>
@@ -57,7 +57,11 @@
                                             <td> PhnomPenh... </td>
                                             <td> 04 Dec 2019 </td>
                                             <td>
-                                                <div class="badge badge-outline-success">{{$approved->status_type}}</div>
+                                                @if($booking_service->status_type == 'Done')
+                                                <div class="badge badge-outline-success">{{$booking_service->status_type}}</div>
+                                                @else
+                                                    <div class="badge badge-outline-danger">{{$booking_service->status_type}}</div>
+                                                @endif
                                             </td>
                                         </tr>
                                     @endforeach

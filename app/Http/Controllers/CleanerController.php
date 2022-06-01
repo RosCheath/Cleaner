@@ -17,7 +17,6 @@ class CleanerController extends Controller
     public function index()
     {
         $cleaner = User::with('roles')->where('role', 'Cleaner')->get();
-//        $cleaner = User::get();
             return view('dashboard_layout.pages.cleaner.index',compact('cleaner'));
 
     }

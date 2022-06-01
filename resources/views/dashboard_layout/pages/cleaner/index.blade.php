@@ -37,8 +37,8 @@
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    @foreach($cleaner as $cleaner)
                                     <tr>
-                                            @foreach($cleaner as $cleaner)
                                         <td>
                                             <div class="form-check form-check-muted m-0">
                                                 <label class="form-check-label">
@@ -60,7 +60,6 @@
                                                     <i class="mdi mdi-security"></i>
                                                 </button>
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuIconButton6">
-                                                    <h6 class="dropdown-header">Settings</h6>
                                                     <a class="dropdown-item" href="{{route('cleaner.edit',$cleaner->id)}}">Edit</a>
                                                     <a class="dropdown-item" href="#">See Profile</a>
                                                     <form action="{{ route('cleaner.destroy',$cleaner->id) }}" method="POST">
@@ -68,8 +67,6 @@
                                                         @method('DELETE')
                                                         <button type="submit" class="dropdown-item">Delete User</button>
                                                     </form>
-                                                    <div class="dropdown-divider"></div>
-                                                    <a class="dropdown-item" href="#">Separated link</a>
                                                 </div>
                                             </div>
                                         </td>

@@ -57,7 +57,7 @@ Route::group(['web','middleware' => 'can:admin-feature'],function(){
 
     Route::get('/pending', [App\Http\Controllers\DashboardController::class, 'pending'])->name('pending');
     Route::get('/approved', [App\Http\Controllers\DashboardController::class, 'approved'])->name('approved');
-    Route::get('/done', [App\Http\Controllers\DashboardController::class, 'done'])->name('done');
+    Route::get('/Booking/Service', [App\Http\Controllers\DashboardController::class, 'Booking_Service'])->name('booking_service');
     Route::get('/chart', [App\Http\Controllers\DashboardController::class, 'chart'])->name('chart');
     Route::get('/icon', [App\Http\Controllers\DashboardController::class, 'icon'])->name('icon');
 
