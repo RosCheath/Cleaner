@@ -5,13 +5,25 @@ namespace App\Http\Controllers;
 use App\Models\Booking;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class BookingController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+     public function __construct()
+     {
+         $this->middleware('auth');
+     }
+
     public function index()
     {
-        $booking = Booking::get();
-        return view('booking.booking_index',compact('booking'));
+        $bookingCount= DB::table('bookings')->count();
+        $booking_1 = Booking::get();
+        return view('booking.booking_index',compact('booking_1','bookingCount'));
 
     }
 //    public function create(){
@@ -33,5 +45,9 @@ class BookingController extends Controller
         $booking->save();
         return redirect()->back()
             ->with('success','Cleaner created successfully.');
+    }
+
+    public function invoice(Booking $booking){
+        return view('booking.invoice',compact('booking'));
     }
 }

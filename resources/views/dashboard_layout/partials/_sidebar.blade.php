@@ -1,6 +1,6 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
   <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-    <a class="sidebar-brand brand-logo" href="#"><img src="{{asset('assets/dashboard/images/logo.svg')}}" alt="logo" /></a>
+    <a class="sidebar-brand brand-logo" href="{{route('home')}}"><img src="{{asset('assets/dashboard/images/logo.svg')}}" alt="logo" /></a>
     <a class="sidebar-brand brand-logo-mini" href="#"><img src="{{asset('assets/dashboard/images/logo-mini.svg')}}" alt="logo" /></a>
   </div>
   <ul class="nav">
@@ -65,9 +65,9 @@
       </a>
       <div class="collapse" id="ui-basic">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="pending">Pending</a></li>
-          <li class="nav-item"> <a class="nav-link" href="dropdown">Approved</a></li>
-          <li class="nav-item"> <a class="nav-link" href="typography">Book service</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{route('pending')}}">Pending</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{route('approved')}}">Approved</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{route('done')}}">Book service</a></li>
         </ul>
       </div>
     </li>

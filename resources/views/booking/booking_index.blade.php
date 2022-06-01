@@ -20,7 +20,7 @@
     </div>
     <div class="cart">
         <ul class="cartWrap">
-            @foreach($booking as $booking)
+            @foreach($booking_1 as $booking)
             <li class="items even">
                 <div class="infoWrap">
                     <div class="cartSection">
@@ -33,13 +33,12 @@
 
                         <p class="stockStatus">{{$booking->status_type}}</p>
                     </div>
-
                     <div class="prodTotal cartSection">
-                        <p>{{$booking->service->price}} $
-                        </p>
+                        <p>{{$booking->service->price}} $</p>
                     </div>
                     <div class="cartSection removeWrap">
-                        <a href="#" class="remove">x</a>
+                        <a href="{{route('invoice',$booking->id)}}" class="remove">Invoice</a>
+
                     </div>
                 </div>
             </li>

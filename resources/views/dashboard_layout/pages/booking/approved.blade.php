@@ -1,4 +1,4 @@
-@extends('dashboard')
+    @extends('dashboard')
 @section('content_dashboard')
   <!-- partial -->
   <div class="main-panel">
@@ -546,5 +546,5 @@
     <!-- partial -->
   </div>
   <!-- main-panel ends -->
-    
+
 @endsection

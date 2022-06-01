@@ -57,7 +57,7 @@
                     <span class="subheading">Services &amp; Pricing</span>
                     <h2 class="mb-4">Services Menu &amp; Prices</h2>
                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-                    
+
                 </div>
             </div>
             <div class="container mt-5 mb-5">
@@ -106,18 +106,18 @@
                                                                 <div class="mb-2 col-2"> <span class="fa fa-dropbox social"></span> </div>
                                                             </div>
                                                             <div class="row px-3 mt-4">
-                                                                <div class="form-group mt-1 mb-1"> <input type="text" id="email" class="form-control" required> 
+                                                                <div class="form-group mt-1 mb-1"> <input type="text" id="email" class="form-control" required>
                                                                 <label class="ml-3 form-control-placeholder" for="email">Telegram</label> </div>
                                                                 <div class="next-button text-center mt-1 ml-2"> <span class="fa fa-arrow-right"></span> </div>
                                                             </div>
                                                             <div class="row px-3 mt-1 mb-5">
-                                                                <div class="custom-control custom-checkbox"> <input checked id="customCheck1" type="checkbox" class="custom-control-input"> 
+                                                                <div class="custom-control custom-checkbox"> <input checked id="customCheck1" type="checkbox" class="custom-control-input">
                                                                 <label for="customCheck1" class="custom-control-label">I want to receive promo Telegram</label> </div>
                                                             </div>
                                                         </div>
                                                         <div class="card2 ml-2">
                                                             <div class="row px-3 mt-3">
-                                                                <div class="form-group mt-1 mb-1"> <input type="password" id="pwd" class="form-control" required> 
+                                                                <div class="form-group mt-1 mb-1"> <input type="password" id="pwd" class="form-control" required>
                                                                 <label class="ml-3 form-control-placeholder" for="pwd">Set time for clean</label> </div>
                                                                 <div class="next-button text-center mt-1 ml-2"> <span class="fa fa-arrow-right"></span> </div>
                                                             </div>
@@ -183,10 +183,10 @@
                             <div class="mt-4"> <button class="btn btn-danger">Buy Services</button> </div>
                         </div>
                     </div>
-                </div>             
+                </div>
             </div>
-        
-<!--     
+
+<!--
             <div class="card card0 border-0">
                 <div class="row">
                     <div class="col-12">
@@ -278,15 +278,15 @@
                     </div>
                 </div>
             </div> -->
-        
-           
+
+
             <!-- <div class="row no-gutters d-flex">
                 <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
                     <div class="media block-6 services d-block text-center">
                         <div class="icon"><span class="flaticon-male-hair-of-head-and-face-shapes"></span></div>
                         <div class="media-body">
                             <h3 class="heading mb-3">House Keeper </h3>
-                            <p>house keeper will clean yuor house and do your house-work. We charge every hours that we worked.</p>                    
+                            <p>house keeper will clean yuor house and do your house-work. We charge every hours that we worked.</p>
                             <div class="pricing-entry pb-5 text-center">
                                 <div>
                                     <h3 class="mb-4">Hair Style</h3>
@@ -300,12 +300,12 @@
                                     <li>Hair Spa</li>
                                 </ul>
                                 <p class="button text-center"><a href="#" class="btn btn-primary px-4 py-3">Get Offer</a></p>
-                            </div>                       
-                            
+                            </div>
+
                         </div>
-                        
+
                     </div>
-                    
+
                 </div>
                 <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
                     <div class="media block-6 services d-block text-center">

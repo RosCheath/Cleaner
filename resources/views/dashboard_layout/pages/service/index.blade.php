@@ -13,7 +13,7 @@
                 </nav>
             </div>
             <div class="row">
-                @foreach($services as $service)
+                @foreach($service as $service)
 
                 <div class="col-lg-6 grid-margin stretch-card">
                     <div class="card p-3">

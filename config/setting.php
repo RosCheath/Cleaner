@@ -61,7 +61,7 @@ return [
         ]
     ],
     'status' => [
-      'Pending','Approved','Done'
+      'Pending','Approved','Done','Rejected'
     ],
 
 

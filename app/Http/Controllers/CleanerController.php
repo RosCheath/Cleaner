@@ -88,7 +88,6 @@ class CleanerController extends Controller
      */
     public function edit(User $cleaner)
     {
-
         return view('dashboard_layout.pages.cleaner.edit',compact('cleaner'));
     }
 

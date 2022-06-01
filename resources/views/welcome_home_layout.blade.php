@@ -49,7 +49,9 @@
                     <a href="about" class="nav-link">About</a>
                 </li>
 	        	<li class="nav-item {{ (request()->is('booking*')) ? 'active' : '' }}">
-                    <a href="{{route('booking.index')}}" class="nav-link">Booking</a>
+                    <a href="{{route('booking.index')}}" class="nav-link notification">Booking
+                        <span class="badge">{{$bookingCount}}</span>
+                    </a>
                 </li>
 	          <li class="nav-item {{ (request()->is('contact')) ? 'active' : '' }}">
                   <a href="contact" class="nav-link">Contact</a>
@@ -188,3 +190,20 @@
 
   </body>
 </html>
+<style>
+    .notification {
+        color: white;
+        text-decoration: none;
+        position: relative;
+        display: inline-block;
+        border-radius: 2px;
+    }
+
+
+    .notification .badge {
+        position: absolute;
+        border-radius: 50%;
+        background: red;
+        color: white;
+    }
+</style>

@@ -29,14 +29,14 @@ class DashboardController extends Controller
         return view('dashboard_layout.pages.booking.pending');
     }
 
-    public function dropdown()
+    public function approved()
     {
-        return view('dashboard_layout.pages.booking.dropdowns');
+        return view('dashboard_layout.pages.booking.approved');
     }
 
-    public function typography()
+    public function done()
     {
-        return view('dashboard_layout.pages.booking.typography');
+        return view('dashboard_layout.pages.booking.done');
     }
 
 
