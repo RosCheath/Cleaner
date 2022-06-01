@@ -64,8 +64,20 @@
                                   <a>{{$pending->status_type}}</a>
                               </button>
                               <div class="dropdown-menu" aria-labelledby="dropdownMenuIconButton6">
-
-                                  <a class="dropdown-item" href="{{route('pending.edit',$pending->id)}}">Edit</a>
+                                  <form method="POST" action="{{ route('pending.update',$pending->id)}}" enctype="multipart/form-data">
+                                      @csrf
+                                      @method('PUT')
+                                      <input type="hidden" class="form-control " name="status_type" value="Approved" id="name" placeholder="Name">
+                                      <input type="hidden" class="form-control" name="location" id="location" value="{{$pending->location}}" placeholder="Location">
+                                      <input type="hidden" class="form-control" name="telegram" id="telegram" value="{{$pending->telegram}}" placeholder="Telegram Phone">
+                                      <input type="hidden" class="form-control" value="{{$pending->date}}" name="date" placeholder="Date">
+                                      <input type="hidden" name="user_id" value="{{$pending->user_id}}">
+                                      <input type="hidden" name="service_id" value="{{$pending->service_id}}">
+                                      <input type="hidden" name="status_type" value="Approved">
+                                      <input type="hidden" class="form-control" value="{{$pending->time}}" name="time" placeholder="Time">
+                                      <input type="hidden" class="form-control" value="{{$pending->service->id}}" name="time" placeholder="Time">
+                                      <button type="submit" class="dropdown-item">Approved</button>
+                                  </form>
                               </div>
                           </div>
                       </td>
