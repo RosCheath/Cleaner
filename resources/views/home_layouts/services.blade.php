@@ -50,54 +50,44 @@
         <h3 class="vr">Call Us: 012-3456-7890</h3>
     		<div class="row justify-content-center">
     			<div class="col-md-10 ftco-animate">
-    				<form action="#" class="appointment-form">
+    				<form class="appointment-form" method="post" action="{{ route('booking.store')}}">
+                        @csrf
 	            <div class="row">
 	              <div class="col-sm-6">
 	                <div class="form-group">
-			              <input type="text" class="form-control" id="appointment_name" placeholder="Name">
+			              <input type="text" class="form-control" name="location" id="location" placeholder="Location">
 			            </div>
 	              </div>
 	              <div class="col-sm-6">
 	                <div class="form-group">
-			              <input type="text" class="form-control" id="appointment_email" placeholder="Email">
+			              <input type="text" class="form-control" name="telegram" id="telegram" placeholder="Telegram Phone">
 			            </div>
 	              </div>
 	              <div class="col-sm-6">
 	                <div class="form-group">
-	                  <input type="text" class="form-control appointment_date" placeholder="Date">
+	                  <input type="date" class="form-control" name="date" placeholder="Date">
 	                </div>
 	              </div>
 	              <div class="col-sm-6">
 	                <div class="form-group">
-	                  <input type="text" class="form-control appointment_time" placeholder="Time">
+	                  <input type="time" class="form-control" name="time" placeholder="Time">
 	                </div>
 	              </div>
-	              <div class="col-sm-6">
+	              <div class="col-sm-12">
 	                <div class="form-group">
 			              <div class="select-wrap">
                       <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                      <select name="" id="" class="form-control">
-                      	<option value="">Professional Makeup</option>
-                        <option value="">Manicure Pedicure</option>
-                        <option value="">Body Treatment</option>
-                        <option value="">Haircut &amp; Coloring</option>
+                      <select name="service_id" id="service_id" class="form-control">
+                          @foreach($service_booling as $service_booling)
+                      	<option value="{{$service_booling->id}}">{{$service_booling->name}}</option>
+                          @endforeach
                       </select>
                     </div>
 			            </div>
 	              </div>
-	              <div class="col-sm-6">
-	                <div class="form-group">
-	                  <input type="text" class="form-control" id="phone" placeholder="Phone">
-	                </div>
-	              </div>
-	              <div class="col-md-12">
-	              	<div class="form-group">
-		                <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
-		              </div>
-	              </div>
 		          </div>
 		          <div class="form-group">
-	              <input type="submit" value="Make an Appointment" class="btn btn-primary">
+	              <input type="submit" value="Booking Now" class="btn btn-primary">
 	            </div>
 	          </form>
     			</div>

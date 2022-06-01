@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\service;
+use App\Models\Role;
+use App\Models\Service;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -30,7 +31,10 @@ class HomeController extends Controller
     public function services()
     {
         $service = Service::get();
-        return view('home_layouts.services',compact('service'));
+        $service_booling = Service::get();
+        return view('home_layouts.services',compact('service'),[
+            'service_booling' => $service_booling,
+        ]);
     }
 
     public function contact()

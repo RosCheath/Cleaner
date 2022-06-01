@@ -15,6 +15,15 @@ return new class extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('service_id');
+            $table->unsignedBigInteger('user_id');
+            $table->string('location');
+            $table->string('telegram');
+            $table->string('date');
+            $table->string('time');
+            $table->string('status_type')->default('Pending');
+            $table->foreign('user_id')->references('id')
+                ->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

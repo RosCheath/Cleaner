@@ -60,6 +60,9 @@ return [
             'time_line' => '1 Year'
         ]
     ],
+    'status' => [
+      'Pending','Approved','Done'
+    ],
 
 
 ];

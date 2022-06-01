@@ -14,8 +14,8 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $services = Service::get();
-        return view('dashboard_layout.pages.service.index',compact('services'));
+        $service = Service::get();
+        return view('dashboard_layout.pages.service.index',compact('service'));
     }
 
     /**
@@ -25,7 +25,8 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        return view('dashboard_layout.pages.service.create');
+        $service = Service::get();
+        return view('dashboard_layout.pages.service.create',compact('service'));
     }
 
     /**
@@ -74,7 +75,6 @@ class ServiceController extends Controller
     public function update(Request $request, service $service)
     {
         $input = $request->all();
-//        dd($input);
         $service->update($input);
         return redirect()->back()
             ->with('success','Service update successfully.');

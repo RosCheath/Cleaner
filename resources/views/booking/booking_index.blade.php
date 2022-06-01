@@ -19,110 +19,31 @@
         <a href="#" class="continue">Continue Shopping</a>
     </div>
     <div class="cart">
-        <!--    <ul class="tableHead">
-              <li class="prodHeader">Product</li>
-              <li>Quantity</li>
-              <li>Total</li>
-               <li>Remove</li>
-            </ul>-->
         <ul class="cartWrap">
-            <li class="items odd">
-
-                <div class="infoWrap">
-                    <div class="cartSection">
-                        <img src="flaticon-male-hair-of-head-and-face-shapes" alt="" class="itemImg" />
-                        <p class="itemNumber">#QUE-007544-002</p>
-                        <h3>Item Name 1</h3>
-
-                        <p> <input type="text"  class="qty" placeholder="3"/> x $5.00</p>
-
-                        <p class="stockStatus"> In Stock</p>
-                    </div>
-
-
-                    <div class="prodTotal cartSection">
-                        <p>$15.00</p>
-                    </div>
-                    <div class="cartSection removeWrap">
-                        <a href="#" class="remove">x</a>
-                    </div>
-                </div>
-            </li>
-            <li class="items even">
-
-                <div class="infoWrap">
-                    <div class="cartSection">
-
-                        <img src="http://lorempixel.com/output/technics-q-c-300-300-4.jpg" alt="" class="itemImg" />
-                        <p class="itemNumber">#QUE-007544-002</p>
-                        <h3>Item Name 1</h3>
-
-                        <p> <input type="text"  class="qty" placeholder="3"/> x $5.00</p>
-
-                        <p class="stockStatus"> In Stock</p>
-                    </div>
-
-
-                    <div class="prodTotal cartSection">
-                        <p>$15.00</p>
-                    </div>
-                    <div class="cartSection removeWrap">
-                        <a href="#" class="remove">x</a>
-                    </div>
-                </div>
-            </li>
-
-            <li class="items odd">
-                <div class="infoWrap">
-                    <div class="cartSection">
-
-                        <img src="http://lorempixel.com/output/technics-q-c-300-300-4.jpg" alt="" class="itemImg" />
-                        <p class="itemNumber">#QUE-007544-002</p>
-                        <h3>Item Name 1</h3>
-
-                        <p> <input type="text"  class="qty" placeholder="3"/> x $5.00</p>
-
-                        <p class="stockStatus out"> Out of Stock</p>
-                    </div>
-
-
-                    <div class="prodTotal cartSection">
-                        <p>$15.00</p>
-                    </div>
-                    <div class="cartSection removeWrap">
-                        <a href="#" class="remove">x</a>
-                    </div>
-                </div>
-            </li>
+            @foreach($booking as $booking)
             <li class="items even">
                 <div class="infoWrap">
-                    <div class="cartSection info">
+                    <div class="cartSection">
 
-                        <img src="http://lorempixel.com/output/technics-q-c-300-300-4.jpg" alt="" class="itemImg" />
+{{--                        <img src="{{$booking->service->image}}" alt="" class="itemImg" />--}}
                         <p class="itemNumber">#QUE-007544-002</p>
-                        <h3>Item Name 1</h3>
+                        <h3>{{$booking->service->name}}</h3>
 
-                        <p> <input type="text"  class="qty" placeholder="3"/> x $5.00</p>
+                        <p> <a placeholder="3"/> {{$booking->date}} </p>
 
-                        <p class="stockStatus"> In Stock</p>
-
+                        <p class="stockStatus">{{$booking->status_type}}</p>
                     </div>
-
 
                     <div class="prodTotal cartSection">
-                        <p>$15.00</p>
+                        <p>{{$booking->service->price}} $
+                        </p>
                     </div>
-
                     <div class="cartSection removeWrap">
                         <a href="#" class="remove">x</a>
                     </div>
                 </div>
-                <div class="special"><div class="specialContent">Free gift with purchase!, gift wrap, etc!!</div></div>
             </li>
-
-
-            <!--<li class="items even">Item 2</li>-->
-
+                @endforeach
         </ul>
     </div>
 
