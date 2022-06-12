@@ -39,6 +39,7 @@
                                     </thead>
                                     <tbody>
                                     @foreach($booking_service as $booking_service)
+                                        @can('view',$booking_service)
                                         <tr>
                                             <td>
                                                 <div class="form-check form-check-muted m-0">
@@ -64,6 +65,7 @@
                                                 @endif
                                             </td>
                                         </tr>
+                                        @endcan
                                     @endforeach
                                     </tbody>
                                 </table>

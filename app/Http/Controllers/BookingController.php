@@ -21,7 +21,7 @@ class BookingController extends Controller
 
     public function index()
     {
-        $bookingCount= DB::table('bookings')->count();
+        $bookingCount = Booking::with('users')->where('user_id', Auth::id())->count();
         $booking_1 = Booking::get();
         return view('booking.booking_index',compact('booking_1','bookingCount'));
 

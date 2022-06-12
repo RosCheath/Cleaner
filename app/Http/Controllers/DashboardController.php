@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Booking;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
@@ -16,7 +18,21 @@ class DashboardController extends Controller
 
     public function home_d()
     {
-        return view('dashboard_layout.pages.home_dashboard');
+        $userCount = User::with('role')->where('role', 'User')->count();
+        $CleanerCount = User::with('role')->where('role', 'Cleaner')->count();
+        $allBooking = DB::table('bookings')->count();
+        $pending = Booking::where('status_type', 'Pending')->count();
+        $approved = Booking::where('status_type', 'Approved')->count();
+        $done = Booking::where('status_type', 'Done')->count();
+        $rejected = Booking::where('status_type', 'Rejected')->count();
+        return view('dashboard_layout.pages.home_dashboard',compact(('userCount'),
+        'CleanerCount',
+        'allBooking',
+        'pending',
+        'approved',
+        'done',
+        'rejected',
+        ));
     }
 // funtion for user list
 //    public function users_list()

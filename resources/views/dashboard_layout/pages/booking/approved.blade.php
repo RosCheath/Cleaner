@@ -39,6 +39,7 @@
                                     </thead>
                                     <tbody>
                                     @foreach($approved as $approved)
+                                        @can('admin_view',$approved)
                                         <tr>
                                             <td>
                                                 <div class="form-check form-check-muted m-0">
@@ -60,6 +61,7 @@
                                                 <div class="badge badge-outline-success">{{$approved->status_type}}</div>
                                             </td>
                                         </tr>
+                                        @endcan
                                     @endforeach
                                     </tbody>
                                 </table>

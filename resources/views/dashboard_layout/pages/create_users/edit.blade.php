@@ -8,7 +8,6 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
-
                             <form method="POST" action="{{ route('users.update',$user->id)}}" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
@@ -44,22 +43,14 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleSelectGender">Gender</label>
-                                    <select class="form-control" name="sex" id="sex" value="{{ Auth::user()->sex }}">
-                                        <option value="Male" @if(Auth::user()->sex == "Male") selected @endif>Male</option>
-                                        <option value="Female" @if(Auth::user()->sex == "Female") selected @endif>Female</option>
+                                    <select class="form-control" name="sex" id="sex" value="{{ $user->sex }}">
+                                        <option value="Female" @if($user->sex == "Female") selected @endif>Female</option>
+                                        <option value="Male" @if($user->sex == "Male") selected @endif>Male</option>
                                     </select>
                                 </div>
-                                <input type="hidden" class="image" name="image" value="https://ps.w.org/metronet-profile-picture/assets/icon-128x128.png?rev=2464419">
-                                <div class="form-group">
-                                    <label>File upload</label>
-                                    <input type="file"  class="file-upload-default">
-                                    <div class="input-group col-xs-12">
-                                        <input type="file" class="form-control file-upload-info" placeholder="Upload Image">
-                                        <span class="input-group-append">
-                      <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
-                    </span>
-                                    </div>
-                                </div>
+
+                                <input type="file" class="image" name="image" value="{{$user->image}}">
+                                <input  class="form-control"  value="{{$user->image}}" >
                                 <div class="form-group">
                                     <label for="exampleInputCity1">Phone</label>
                                     <input type="text" class="form-control" name="phone" value="{{$user->phone}}" id="phone" placeholder="Phone Number">
@@ -68,7 +59,6 @@
                                     <label for="exampleSelectGender">Role</label>
                                     <select class="form-control" name="role" id="role" value="{{Auth::user()->role}}">
                                         <option value="User" @if(Auth::user()->role == "User") selected @endif>user</option>
-                                        <option value="Admin" @if(Auth::user()->role == "Admin") selected @endif>admin</option>
                                         <option value="Cleaner" @if(Auth::user()->role == "Cleaner") selected @endif>Cleaner</option>
                                     </select>
                                 </div>

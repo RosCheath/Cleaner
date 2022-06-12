@@ -7,7 +7,8 @@
         <h3 class="page-title"> Add Users </h3>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><form method="POST" action="{{ route('users.store') }}">
+            <li class="breadcrumb-item">
+                <form method="POST" action="{{ route('users.store') }}" enctype="multipart/form-data">
                 @csrf</li>
             <li class="breadcrumb-item active" aria-current="page">Form Add</li>
           </ol>
@@ -83,7 +84,6 @@
                       <label for="exampleSelectGender">Role</label>
                       <select class="form-control" name="role" id="role">
                           <option value="User" @if(Auth::user()->role == "User") selected @endif>user</option>
-                          <option value="Admin" @if(Auth::user()->role == "Admin") selected @endif>admin</option>
                           <option value="Cleaner" @if(Auth::user()->role == "Cleaner") selected @endif>Cleaner</option>
                       </select>
                   </div>

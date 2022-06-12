@@ -16,8 +16,12 @@ class CreateUserController extends Controller
      */
     public function index()
     {
-        $user = User::latest()->paginate(10);
-        return view('dashboard_layout.pages.create_users.index',compact('user'));
+//        $user = User::latest()->paginate(10);
+        $user = User::with('roles')->where('role', 'User')->latest()->paginate(10);
+        $Cleaner = User::with('roles')->where('role', 'Cleaner')->latest()->paginate(10);
+        return view('dashboard_layout.pages.create_users.index',compact('user'),[
+            'Cleaner' => $Cleaner,
+        ]);
     }
 
     /**
@@ -38,27 +42,21 @@ class CreateUserController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate(request(), [
-            'name' => ['required', 'string', 'max:255'],
-            'phone' => ['required', 'string', 'max:20'],
-            'date_of_birth' => ['required'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'role' => ['required'],
-            'sex' => ['required'],
-        ]);
+//        $this->validate(request(), [
+//            'name' => ['required', 'string', 'max:255'],
+//            'phone' => ['required', 'string', 'max:20'],
+//            'date_of_birth' => ['required'],
+//            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+//            'password' => ['required', 'string', 'min:8', 'confirmed'],
+//            'role' => ['required'],
+//            'sex' => ['required'],
+//        ]);
 
-//        $input = $request->all();
-        $input = [
-            'name' => $request['name'],
-            'phone' => $request['phone'],
-            'date_of_birth' => $request['date_of_birth'],
-            'image'=> $request['image'],
-            'email' => $request['email'],
-            'sex' => $request['sex'],
-            'role' => $request['role'],
-            'password' => Hash::make($request['password']),
-        ];
+        $input = $request->all();
+        $image = $request->file('image')->getClientOriginalName();
+        $request->file('image')->storeAs('public/ProfileImage',$image);
+        $input['image'] = "$image";
+        dd($input);
         User::create($input);
         return redirect()->back()
             ->with('success','User created successfully.');
@@ -100,19 +98,15 @@ class CreateUserController extends Controller
             'phone' => 'required',
             'date_of_birth' => 'required',
             'email' => 'required',
-//            'id_card' => ['required'],
             'role' => 'required',
             'sex' => 'required',
         ]);
         $input = $request->all();
-//        dd($input);
-//        if ($image = $request->file('image')) {
-//            $imagePath = 'imageEmployee/';
-//            $employeeImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-//            $image->move($imagePath, $employeeImage);
-//            $input['image'] = "$employeeImage";
-//        }
-//        dd($input);
+            if($request->hasFile('image')){
+                $image = $request->file('image')->getClientOriginalName();
+                $request->file('image')->storeAs('public/ProfileImage',$image);
+                $input['image'] = "$image";
+            }
         $user->update($input);
         return redirect()->route('users.index')
             ->with('success','User updated successfully');

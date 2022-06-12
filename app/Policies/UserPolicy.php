@@ -2,6 +2,7 @@
 
 namespace App\Policies;
 
+use App\Models\Booking;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
@@ -16,9 +17,14 @@ class UserPolicy
      * @param  \App\Models\User  $model
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, User $model)
+    public function view(User $user, Booking $booking)
     {
-        return $user->role === 'Admin' || $user->role === 'Cleaner';
+        return $user->role === 'Admin' || $user->id === $booking->user_id;
+    }
+
+    public function view_cleaner(User $user, Booking $booking)
+    {
+        return $user->role === 'Admin' || $user->id === $booking->cleaner_id;
     }
 
 }

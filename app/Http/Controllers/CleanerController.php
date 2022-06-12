@@ -50,18 +50,10 @@ class CleanerController extends Controller
             'sex' => ['required'],
         ]);
 
-//        $input = $request->all();
-        $input = [
-            'name' => $request['name'],
-            'phone' => $request['phone'],
-            'date_of_birth' => $request['date_of_birth'],
-            'image'=> $request['image'],
-            'email' => $request['email'],
-            'id_card' => $request['id_card'],
-            'sex' => $request['sex'],
-            'role' => $request['role'],
-            'password' => Hash::make($request['password']),
-        ];
+        $input = $request->all();
+        $image = $request->file('image')->getClientOriginalName();
+        $request->file('image')->storeAs('public/ProfileImage',$image);
+        $input['image'] = "$image";
         User::create($input);
         return redirect()->back()
             ->with('success','Cleaner created successfully.');
@@ -104,14 +96,17 @@ class CleanerController extends Controller
             'phone' => 'required',
             'date_of_birth' => 'required',
             'email' => 'required',
-//            'id_card' => ['required'],
             'role' => 'required',
             'sex' => 'required',
         ]);
-        $input = $request->all();
-            $cleaner->update($input);
-            dd($cleaner);
 
+        $input = $request->all();
+            if($request->hasFile('image')){
+                $image = $request->file('image')->getClientOriginalName();
+                $request->file('image')->storeAs('public/ProfileImage',$image);
+                $input['image'] = "$image";
+            }
+        $cleaner->update($input);
         return redirect()->back()
             ->with('success','Cleaner updated successfully');
     }

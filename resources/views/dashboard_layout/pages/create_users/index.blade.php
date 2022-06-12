@@ -8,7 +8,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#">Tables</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Basic tables</li>
+                        <li class="breadcrumb-item active" aria-current="page">List tables</li>
                     </ol>
                 </nav>
             </div>
@@ -16,23 +16,23 @@
                 <div class="col-12 grid-margin">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Book Status</h4>
+                            <h4 class="card-title">Table User</h4>
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead>
                                     <tr>
-                                        <th>
-                                            <div class="form-check form-check-muted m-0">
-                                                <label class="form-check-label">
-                                                    <input type="checkbox" class="form-check-input">
-                                                </label>
-                                            </div>
-                                        </th>
+{{--                                        <th>--}}
+{{--                                            <div class="form-check form-check-muted m-0">--}}
+{{--                                                <label class="form-check-label">--}}
+{{--                                                    <input type="checkbox" class="form-check-input">--}}
+{{--                                                </label>--}}
+{{--                                            </div>--}}
+{{--                                        </th>--}}
                                         <th> Name </th>
                                         <th> Email </th>
                                         <th> Phone Number </th>
                                         <th> Sex </th>
-                                        <th> Join Date </th>
+                                        <th> Date </th>
                                         <th> Edit </th>
                                     </tr>
                                     </thead>
@@ -40,15 +40,19 @@
                                     <tr>
                                         @if(!empty($user) && $user->count())
                                             @foreach($user as $key => $users)
+{{--                                        <td>--}}
+{{--                                            <div class="form-check form-check-muted m-0">--}}
+{{--                                                <label class="form-check-label">--}}
+{{--                                                    <input type="checkbox" class="form-check-input">--}}
+{{--                                                </label>--}}
+{{--                                            </div>--}}
+{{--                                        </td>--}}
                                         <td>
-                                            <div class="form-check form-check-muted m-0">
-                                                <label class="form-check-label">
-                                                    <input type="checkbox" class="form-check-input">
-                                                </label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <img src="{{Auth::user()->image}}" alt="image" />
+                                            @if($users->image === 'https://ps.w.org/metronet-profile-picture/assets/icon-128x128.png?rev=2464419')
+                                                <img src="{{$users->image}}" alt="image" />
+                                            @else
+                                                <img src="{{ url('storage/ProfileImage/'.$users->image)}}" />
+                                            @endif
                                             <span class="pl-2">{{$users->name}}</span>
                                         </td>
                                         <td> {{$users->email}} </td>
@@ -74,6 +78,86 @@
                                                 </div>
                                             </div>
                                         </td>
+                                    </tr>
+                                    @endforeach
+                                    @else
+                                        <tr>
+                                            <td colspan="10">There are no data.</td>
+                                        </tr>
+                                    @endif
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-12 grid-margin">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Table Cleaner</h4>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+{{--                                        <th>--}}
+{{--                                            <div class="form-check form-check-muted m-0">--}}
+{{--                                                <label class="form-check-label">--}}
+{{--                                                    <input type="checkbox" class="form-check-input">--}}
+{{--                                                </label>--}}
+{{--                                            </div>--}}
+{{--                                        </th>--}}
+                                        <th> Name </th>
+                                        <th> Email </th>
+                                        <th> Phone Number </th>
+                                        <th> Sex </th>
+                                        <th> Date </th>
+                                        <th> Edit </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        @if(!empty($Cleaner) && $Cleaner->count())
+                                            @foreach($Cleaner as $key => $cleaner)
+{{--                                                <td>--}}
+{{--                                                    <div class="form-check form-check-muted m-0">--}}
+{{--                                                        <label class="form-check-label">--}}
+{{--                                                            <input type="checkbox" class="form-check-input">--}}
+{{--                                                        </label>--}}
+{{--                                                    </div>--}}
+{{--                                                </td>--}}
+                                                <td>
+                                                    @if($cleaner->image === 'https://ps.w.org/metronet-profile-picture/assets/icon-128x128.png?rev=2464419')
+                                                        <img src="{{$cleaner->image}}" alt="image" />
+                                                    @else
+                                                        <img src="{{ url('storage/ProfileImage/'.$cleaner->image)}}" />
+                                                    @endif
+                                                    <span class="pl-2">{{$cleaner->name}}</span>
+                                                </td>
+                                                <td> {{$cleaner->email}} </td>
+                                                <td> {{$cleaner->phone}} </td>
+                                                <td> {{$cleaner->sex}} </td>
+                                                <td> {{$cleaner->date_of_birth}} </td>
+                                                <td>
+                                                    <div class="dropdown">
+                                                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuIconButton6" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            <i class="mdi mdi-security"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuIconButton6">
+                                                            <h6 class="dropdown-header">Settings</h6>
+                                                            <a class="dropdown-item" href="{{route('users.edit',$cleaner->id)}}">Edit</a>
+                                                            <a class="dropdown-item" href="#">See Profile</a>
+                                                            <form action="{{ route('users.destroy',$cleaner->id) }}" method="POST">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <button type="submit" class="dropdown-item">Delete User</button>
+                                                            </form>
+                                                            <div class="dropdown-divider"></div>
+                                                            <a class="dropdown-item" href="#">Separated link</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
                                     </tr>
                                     @endforeach
                                     @else

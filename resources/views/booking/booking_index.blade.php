@@ -21,6 +21,7 @@
     <div class="cart">
         <ul class="cartWrap">
             @foreach($booking_1 as $booking)
+                @can('view', $booking)
             <li class="items even">
                 <div class="infoWrap">
                     <div class="cartSection">
@@ -42,6 +43,7 @@
                     </div>
                 </div>
             </li>
+                @endcan
                 @endforeach
         </ul>
     </div>

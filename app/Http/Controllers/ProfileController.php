@@ -26,8 +26,15 @@ class ProfileController extends Controller
 //            'id_card' => ['required'],
             'role' => 'required',
             'sex' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
         ]);
+//        if($image = $request->file('image')->getClientOriginalName()){
+//            $request->file('image')->storeAs('public/ProfileImage',$image);
+//        }
         $input = $request->all();
+        $image = $request->file('image')->getClientOriginalName();
+        $request->file('image')->storeAs('public/ProfileImage',$image);
+        $input['image'] = "$image";
 //        dd($input);
         Auth()->user()->update($input);
 

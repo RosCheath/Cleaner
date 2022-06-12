@@ -4,7 +4,7 @@
     <div class="main-panel">
         <div class="content-wrapper">
             <div class="page-header">
-                <h3 class="page-title"><a class="btn btn-primary" href="{{route('cleaner.create')}}"> Create User </a></h3>
+                <h3 class="page-title"><a class="btn btn-primary" href="{{route('cleaner.create')}}"> Create Cleaner </a></h3>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#">Tables</a></li>
@@ -47,7 +47,11 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <img src="{{Auth::user()->image}}" alt="image" />
+                                            @if($cleaner->image === 'https://ps.w.org/metronet-profile-picture/assets/icon-128x128.png?rev=2464419')
+                                                <img src="{{$cleaner->image}}" alt="image" />
+                                            @else
+                                                <img src="{{ url('storage/ProfileImage/'.$cleaner->image)}}" />
+                                            @endif
                                             <span class="pl-2">{{$cleaner->name}}</span>
                                         </td>
                                         <td> {{$cleaner->email}} </td>
