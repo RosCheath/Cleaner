@@ -1,13 +1,13 @@
-@import "compass/css3";
+/*@import "compass/css3";*/
 @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,400italic|Montserrat:400,700);
-@import "compass/reset";
+/*@import "compass/reset";*/
 * {
     box-sizing: border-box;
 }
 body {
     color: #333;
-    -webkit-font-smoothing: antialiased;
-    font-family: 'Droid Serif', serif;
+    /*-webkit-font-smoothing: antialiased;*/
+    /*font-family: 'Droid Serif', serif;*/
 }
 img {
     max-width: 100%;
@@ -123,7 +123,7 @@ img {
 }
 .cart .items .cartSection {
     display: table-cell;
-    vertical-align: middle;
+    vertical-align: bottom;
 }
 .cart .items .cartSection .itemNumber {
     font-size: 0.75em;
@@ -156,6 +156,17 @@ img {
 .cart .items .cartSection p.stockStatus.out {
     color: #f69679;
 }
+
+.cart .items .cartSection p.stockStatus1 {
+    color: #d40827;
+    font-weight: bold;
+    padding: 0.5em 0 0 1em;
+    text-transform: uppercase;
+}
+.cart .items .cartSection p.stockStatus1.out {
+    color: #f69679;
+}
+
 .cart .items .cartSection .itemImg {
     width: 4em;
     float: left;
@@ -166,6 +177,9 @@ img {
 .cart .items .cartSection.qtyWrap p, .cart .items .cartSection.prodTotal p {
     font-weight: bold;
     font-size: 1.25em;
+}
+.prodTotal1{
+    display: table-cell;
 }
 .cart .items .cartSection input.qty {
     width: 2em;
@@ -199,13 +213,13 @@ img {
 a.remove {
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
-    color: #fff;
+    color: #1e36d0;
     font-weight: bold;
     background: #e0e0e0;
-    padding: 0.5em;
+    padding: 1em;
     font-size: 0.75em;
     display: inline-block;
-    border-radius: 100%;
+    /*border-radius: 100%;*/
     line-height: 0.85;
     -webkit-transition: all 0.25s linear;
     -moz-transition: all 0.25s linear;

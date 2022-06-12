@@ -32,12 +32,10 @@
 
                         <p> <a placeholder="3"/> {{$booking->date}} </p>
 
-                        <p class="stockStatus">{{$booking->status_type}}</p>
+                        <p class="stockStatus1">{{$booking->status_type}}</p>
                     </div>
-                    <div class="prodTotal cartSection">
                         <p>{{$booking->service->price}} $</p>
-                    </div>
-                    <div class="cartSection removeWrap">
+                    <div class="removeWrap">
                         <a href="{{route('invoice',$booking->id)}}" class="remove">Invoice</a>
 
                     </div>
@@ -48,20 +46,40 @@
         </ul>
     </div>
 
-    <div class="promoCode"><label for="promo">Have A Promo Code?</label><input type="text" name="promo" placholder="Enter Code" />
-        <a href="#" class="btn"></a></div>
 
-    <div class="subtotal cf">
-        <ul>
-            <li class="totalRow"><span class="label">Subtotal</span><span class="value">$35.00</span></li>
+{{--    <div class="subtotal cf">--}}
+{{--            <li class="totalRow"><span class="label">Total</span><span class="value">$35.00</span></li>--}}
+{{--    </div>--}}
+{{--    <br>--}}
+    <div class="cart">
+        <ul class="cartWrap">
+            @foreach($booking_2 as $booking)
+                @can('view', $booking)
+                    <li class="items even">
+                        <div class="infoWrap">
+                            <div class="cartSection">
 
-            <li class="totalRow"><span class="label">Shipping</span><span class="value">$5.00</span></li>
+                                {{--                        <img src="{{$booking->service->image}}" alt="" class="itemImg" />--}}
+                                <p class="itemNumber">#QUE-007544-002</p>
+                                <h3>{{$booking->service->name}}</h3>
 
-            <li class="totalRow"><span class="label">Tax</span><span class="value">$4.00</span></li>
-            <li class="totalRow final"><span class="label">Total</span><span class="value">$44.00</span></li>
-            <li class="totalRow"><a href="#" class="btn continue">Checkout</a></li>
+                                <p> <a placeholder="3"/> {{$booking->date}} </p>
+
+                                <p class="stockStatus">{{$booking->status_type}}</p>
+                            </div>
+
+                            <div class="removeWrap">
+                                <p>{{$booking->service->price}} $</p>
+                                <a href="{{route('invoice',$booking->id)}}" class="remove">Invoice</a>
+
+                            </div>
+                        </div>
+                    </li>
+                @endcan
+            @endforeach
         </ul>
     </div>
+
 </div>
 
 <script>

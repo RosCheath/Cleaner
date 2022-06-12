@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Booking;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -19,7 +20,8 @@ class CreateUserController extends Controller
 //        $user = User::latest()->paginate(10);
         $user = User::with('roles')->where('role', 'User')->latest()->paginate(10);
         $Cleaner = User::with('roles')->where('role', 'Cleaner')->latest()->paginate(10);
-        return view('dashboard_layout.pages.create_users.index',compact('user'),[
+        $noti = Booking::where('status_type','=','Pending')->latest()->paginate(3);
+        return view('dashboard_layout.pages.create_users.index',compact('user','noti'),[
             'Cleaner' => $Cleaner,
         ]);
     }
@@ -31,7 +33,8 @@ class CreateUserController extends Controller
      */
     public function create()
     {
-        return view('dashboard_layout.pages.create_users.create');
+        $noti = Booking::where('status_type','=','Pending')->latest()->paginate(3);
+        return view('dashboard_layout.pages.create_users.create',compact('noti'));
     }
 
     /**
@@ -81,7 +84,8 @@ class CreateUserController extends Controller
      */
     public function edit(User $user )
     {
-        return view('dashboard_layout.pages.create_users.edit',compact('user'));
+        $noti = Booking::where('status_type','=','Pending')->latest()->paginate(3);
+        return view('dashboard_layout.pages.create_users.edit',compact('user','noti'));
     }
 
     /**

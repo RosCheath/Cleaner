@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Booking;
 use App\Models\service;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,8 @@ class ServiceController extends Controller
     public function index()
     {
         $service = Service::get();
-        return view('dashboard_layout.pages.service.index',compact('service'));
+        $noti = Booking::where('status_type','=','Pending')->latest()->paginate(3);
+        return view('dashboard_layout.pages.service.index',compact('service','noti'));
     }
 
     /**
@@ -26,7 +28,8 @@ class ServiceController extends Controller
     public function create()
     {
         $service = Service::get();
-        return view('dashboard_layout.pages.service.create',compact('service'));
+        $noti = Booking::where('status_type','=','Pending')->latest()->paginate(3);
+        return view('dashboard_layout.pages.service.create',compact('service','noti'));
     }
 
     /**
@@ -62,7 +65,8 @@ class ServiceController extends Controller
      */
     public function edit(service $service)
     {
-        return view('dashboard_layout.pages.service.edit',compact('service'));
+        $noti = Booking::where('status_type','=','Pending')->latest()->paginate(3);
+        return view('dashboard_layout.pages.service.edit',compact('service','noti'));
     }
 
     /**

@@ -25,6 +25,7 @@ class DashboardController extends Controller
         $approved = Booking::where('status_type', 'Approved')->count();
         $done = Booking::where('status_type', 'Done')->count();
         $rejected = Booking::where('status_type', 'Rejected')->count();
+        $noti = Booking::where('status_type','=','Pending')->latest()->paginate(3);
         return view('dashboard_layout.pages.home_dashboard',compact(('userCount'),
         'CleanerCount',
         'allBooking',
@@ -32,6 +33,7 @@ class DashboardController extends Controller
         'approved',
         'done',
         'rejected',
+        'noti',
         ));
     }
 // funtion for user list
@@ -45,11 +47,13 @@ class DashboardController extends Controller
     public function pending()
     {
         $pending = Booking::with('statuses')->where('status_type', 'Pending')->get();
-        return view('dashboard_layout.pages.booking.pending',compact('pending'));
+        $noti = Booking::where('status_type','=','Pending')->latest()->paginate(3);
+        return view('dashboard_layout.pages.booking.pending',compact('pending','noti'));
     }
 
     public function edit(Booking $pending){
-        return view('dashboard_layout.pages.booking.edit_test',compact('pending'));
+        $noti = Booking::where('status_type','=','Pending')->latest()->paginate(3);
+        return view('dashboard_layout.pages.booking.edit_test',compact('pending','noti'));
     }
 
     public function update(Request $request, Booking $pending){
@@ -80,13 +84,15 @@ class DashboardController extends Controller
     public function approved()
     {
         $approved = Booking::with('statuses')->where('status_type', 'Approved')->get();
-        return view('dashboard_layout.pages.booking.approved',compact('approved'));
+        $noti = Booking::where('status_type','=','Pending')->latest()->paginate(3);
+        return view('dashboard_layout.pages.booking.approved',compact('approved','noti'));
     }
 
     public function Booking_Service()
     {
+        $noti = Booking::where('status_type','=','Pending')->latest()->paginate(3);
         $booking_service = Booking::with('statuses')->where('status_type', 'Rejected')->orWhere('status_type','Done')->get();
-        return view('dashboard_layout.pages.booking.Booking_Service',compact('booking_service'));
+        return view('dashboard_layout.pages.booking.Booking_Service',compact('booking_service','noti'));
     }
 
 
@@ -98,34 +104,41 @@ class DashboardController extends Controller
 
     public function chart()
     {
-        return view('dashboard_layout.pages.chartjs');
+        $noti = Booking::where('status_type','=','Pending')->latest()->paginate(3);
+        return view('dashboard_layout.pages.chartjs',compact('noti'));
     }
     public function icon()
     {
-        return view('dashboard_layout.pages.icon');
+        $noti = Booking::where('status_type','=','Pending')->latest()->paginate(3);
+        return view('dashboard_layout.pages.icon',compact('noti'));
     }
 
     public function blank()
     {
-        return view('dashboard_layout.pages.samples.blank-page');
+        $noti = Booking::where('status_type','=','Pending')->latest()->paginate(3);
+        return view('dashboard_layout.pages.samples.blank-page',compact('noti'));
     }
 
     public function p404()
     {
-        return view('dashboard_layout.pages.samples.error-404');
+        $noti = Booking::where('status_type','=','Pending')->latest()->paginate(3);
+        return view('dashboard_layout.pages.samples.error-404',compact('noti'));
     }
 
     public function p500()
     {
-        return view('dashboard_layout.pages.samples.error-500');
+        $noti = Booking::where('status_type','=','Pending')->latest()->paginate(3);
+        return view('dashboard_layout.pages.samples.error-500',compact('noti'));
     }
 
     public function login()
     {
-        return view('dashboard_layout.pages.samples.login');
+        $noti = Booking::where('status_type','=','Pending')->latest()->paginate(3);
+        return view('dashboard_layout.pages.samples.login',compact('noti'));
     }
     public function register()
     {
-        return view('dashboard_layout.pages.samples.register');
+        $noti = Booking::where('status_type','=','Pending')->latest()->paginate(3);
+        return view('dashboard_layout.pages.samples.register',compact('noti'));
     }
 }

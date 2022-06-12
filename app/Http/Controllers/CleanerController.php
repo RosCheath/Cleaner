@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Booking;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,7 +18,8 @@ class CleanerController extends Controller
     public function index()
     {
         $cleaner = User::with('roles')->where('role', 'Cleaner')->get();
-            return view('dashboard_layout.pages.cleaner.index',compact('cleaner'));
+        $noti = Booking::where('status_type','=','Pending')->latest()->paginate(3);
+            return view('dashboard_layout.pages.cleaner.index',compact('cleaner','noti'));
 
     }
 
@@ -28,7 +30,8 @@ class CleanerController extends Controller
      */
     public function create()
     {
-        return view('dashboard_layout.pages.cleaner.create');
+        $noti = Booking::where('status_type','=','Pending')->latest()->paginate(3);
+        return view('dashboard_layout.pages.cleaner.create',compact('noti'));
     }
 
     /**
@@ -79,7 +82,8 @@ class CleanerController extends Controller
      */
     public function edit(User $cleaner)
     {
-        return view('dashboard_layout.pages.cleaner.edit',compact('cleaner'));
+        $noti = Booking::where('status_type','=','Pending')->latest()->paginate(3);
+        return view('dashboard_layout.pages.cleaner.edit',compact('cleaner','noti'));
     }
 
     /**

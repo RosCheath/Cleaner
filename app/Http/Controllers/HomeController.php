@@ -27,13 +27,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $bookingCount = Booking::with('users')->where('user_id', Auth::id())->count();
+        $bookingCount = Booking::where('user_id','=',Auth::id())->where('status_type','=','Pending')->count();
         return view('home_layouts.home',compact('bookingCount'));
     }
 
     public function services()
     {
-        $bookingCount = Booking::with('users')->where('user_id', Auth::id())->count();
+        $bookingCount = Booking::where('user_id','=',Auth::id())->where('status_type','=','Pending')->count();
         $service = Service::get();
         $service_booling = Service::get();
         return view('home_layouts.services',compact('service','bookingCount'),[
@@ -43,17 +43,17 @@ class HomeController extends Controller
 
     public function contact()
     {
-        $bookingCount = Booking::with('users')->where('user_id', Auth::id())->count();
+        $bookingCount = Booking::where('user_id','=',Auth::id())->where('status_type','=','Pending')->count();
         return view('home_layouts.contact',compact('bookingCount'));
     }
     public function about()
     {
-        $bookingCount = Booking::with('users')->where('user_id', Auth::id())->count();
+        $bookingCount = Booking::where('user_id','=',Auth::id())->where('status_type','=','Pending')->count();
         return view('home_layouts.about',compact('bookingCount'));
     }
     public function gallery()
     {
-        $bookingCount = Booking::with('users')->where('user_id', Auth::id())->count();
+        $bookingCount = Booking::where('user_id','=',Auth::id())->where('status_type','=','Pending')->count();
         return view('home_layouts.gallery',compact('bookingCount'));
     }
 }
