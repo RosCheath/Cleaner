@@ -48,13 +48,6 @@
                 <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Save Profile</button></div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="p-3 py-5">
-                <div class="d-flex justify-content-between align-items-center experience"><span>Change Password</span><span class="border px-3 p-1 add-experience"><i class="fa fa-plus"></i>&nbsp;Save</span></div><br>
-                <div class="col-md-12"><label class="labels">Old Password</label><input type="text" class="form-control" placeholder="Old Password" value=""></div> <br>
-                <div class="col-md-12"><label class="labels">New Password</label><input type="text" class="form-control" placeholder="New Password" value=""></div>
-            </div>
-        </div>
     </div>
     </form>
 </div>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\CreateUserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
@@ -35,6 +36,7 @@ Route::group(['web'],function(){
     Route::get('view/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('v_profile');
     Route::resource('booking', BookingController::class);
     Route::get('invoice/{booking}', [App\Http\Controllers\BookingController::class, 'invoice'])->name('invoice');
+
 
 
 });
