@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
@@ -26,18 +27,17 @@ class ProfileController extends Controller
 //            'id_card' => ['required'],
             'role' => 'required',
             'sex' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
+//            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
         ]);
-//        if($image = $request->file('image')->getClientOriginalName()){
-//            $request->file('image')->storeAs('public/ProfileImage',$image);
-//        }
-        $input = $request->all();
-        $image = $request->file('image')->getClientOriginalName();
-        $request->file('image')->storeAs('public/ProfileImage',$image);
-        $input['image'] = "$image";
-//        dd($input);
-        Auth()->user()->update($input);
 
+        $input = $request->all();
+        if($request->hasFile('image')){
+            $image = $request->file('image')->getClientOriginalName();
+            $request->file('image')->storeAs('public/ProfileImage',$image);
+            $input['image'] = "$image";
+        }
+//        dd($input);
+        Auth::User()->update($input);
         return redirect()->back()
             ->with('success','Profile updated successfully');
     }

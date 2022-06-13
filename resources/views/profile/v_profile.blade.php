@@ -47,22 +47,17 @@
         </div>
         <div class="col-md-4">
             <div class="p-3 py-5">
-                <form method="POST" action="'password.update'">
-                    @csrf
                     <div class="d-flex justify-content-between align-items-center experience"><span>Change Password</span>
                         <button type="submit" class="border px-3 p-1 add-experience"><i class="fa fa-plus"></i>&nbsp;Save</button>
                     </div>
                     <br>
-{{--                    <input type="hidden" name="token" value="{{ $token }}">--}}
-                    <input type="hidden" name="email" value="{{ Auth::user()->email }}">
-{{--                    <div class="col-md-12"><label class="labels">Old Password</label>--}}
-{{--                        <input type="password" name="current_password" class="form-control" placeholder="Old Password" autocomplete="current-password" value="{{$token}}"></div> <br>--}}
+                    <div class="col-md-12"><label class="labels">Old Password</label>
+                        <input type="password" name="current_password" class="form-control" placeholder="Old Password" autocomplete="current-password" value=""></div> <br>
                     <div class="col-md-12"><label class="labels">New Password</label>
                         <input type="password" class="form-control" placeholder="New Password" name="password" autocomplete="current-password" value=""></div> <br>
 
                     <div class="col-md-12"><label class="labels">Confirm Password</label>
                         <input type="password" class="form-control" placeholder="New Password" name="password_confirmation" autocomplete="current-password" value=""></div>
-                </form>
             </div>
         </div>
     </div>
