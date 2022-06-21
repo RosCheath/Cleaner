@@ -41,6 +41,9 @@ class ServiceController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
+        $image = $request->file('image')->getClientOriginalName();
+        $request->file('image')->storeAs('public/ServiceImage',$image);
+        $input['image'] = "$image";
         service::create($input);
         return redirect()->back()
             ->with('success','Service created successfully.');

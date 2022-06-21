@@ -59,7 +59,7 @@ class CreateUserController extends Controller
         $image = $request->file('image')->getClientOriginalName();
         $request->file('image')->storeAs('public/ProfileImage',$image);
         $input['image'] = "$image";
-        dd($input);
+//        dd($input);
         User::create($input);
         return redirect()->back()
             ->with('success','User created successfully.');

@@ -7,7 +7,7 @@
                 <h3 class="page-title"> Create Service </h3>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><form method="POST" action="{{ route('service.update',$service->id) }}">
+                        <li class="breadcrumb-item"><form method="POST" action="{{ route('service.update',$service->id) }}" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                         </li>

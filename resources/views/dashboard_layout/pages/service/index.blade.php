@@ -7,40 +7,34 @@
                 <h3 class="page-title"><a class="btn btn-primary" href="{{route('service.create')}}"> Add Services </a></h3>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Charts</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Chart-js</li>
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Service</li>
                     </ol>
                 </nav>
             </div>
-            <div class="row">
+            <body>
+            <div class="row row-cols-1 row-cols-md-3">
                 @foreach($service as $service)
-
-                <div class="col-lg-6 grid-margin stretch-card">
-                    <div class="card p-3">
-                        <div class="card" style="width: 32rem;">
-                            <img class="card-img-top" src="https://cdn-icons-png.flaticon.com/512/2490/2490365.png" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">{{$service -> name}}</h5>
-                                <p class="card-text">{{$service -> title}}</p>
-                                <p class="card-text">Price : {{$service -> price}} $</p>
-                                <a href="{{route('service.edit',$service->id)}}" class="btn btn-primary">Edit Service</a>
-                                <form action="{{ route('service.destroy',$service->id) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Delete</button>
-                                </form>
-                            </div>
+                <div class="col mb-4">
+                    <div class="card h-100">
+                        <img src="{{ url('storage/ServiceImage/'.$service->image)}}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h2 class="card-title">{{$service->name}}</h2>
+                            <h5 class="card-title">${{$service->price}}</h5>
+                            <p class="card-text">{{$service->title}}</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">Last updated 3 mins ago</small>
                         </div>
                     </div>
                 </div>
                 @endforeach
             </div>
-        </div>
         <!-- content-wrapper ends -->
         <!-- partial:../../partials/_footer -->
-        @include('dashboard_layout.partials._footer')
+{{--        @include('dashboard_layout.partials._footer')--}}
         <!-- partial -->
-    </div>
+
     <!-- main-panel ends -->
 
 @endsection
