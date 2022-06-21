@@ -17,17 +17,15 @@
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">Table User</h4>
+                            <div class="input-group">
+                                <div class="form-outline" >
+                                    <input type="search" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Search for names.." />
+                                </div>
+                            </div>
                             <div class="table-responsive">
-                                <table class="table">
+                                <table class="table" id="myTable">
                                     <thead>
                                     <tr>
-{{--                                        <th>--}}
-{{--                                            <div class="form-check form-check-muted m-0">--}}
-{{--                                                <label class="form-check-label">--}}
-{{--                                                    <input type="checkbox" class="form-check-input">--}}
-{{--                                                </label>--}}
-{{--                                            </div>--}}
-{{--                                        </th>--}}
                                         <th> Name </th>
                                         <th> Email </th>
                                         <th> Phone Number </th>
@@ -40,13 +38,6 @@
                                     <tr>
                                         @if(!empty($user) && $user->count())
                                             @foreach($user as $key => $users)
-{{--                                        <td>--}}
-{{--                                            <div class="form-check form-check-muted m-0">--}}
-{{--                                                <label class="form-check-label">--}}
-{{--                                                    <input type="checkbox" class="form-check-input">--}}
-{{--                                                </label>--}}
-{{--                                            </div>--}}
-{{--                                        </td>--}}
                                         <td>
                                             @if($users->image === 'https://ps.w.org/metronet-profile-picture/assets/icon-128x128.png?rev=2464419')
                                                 <img src="{{$users->image}}" alt="image" />
@@ -97,17 +88,15 @@
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">Table Cleaner</h4>
+                            <div class="input-group">
+                                <div class="form-outline" >
+                                    <input type="search" id="myInput1" onkeyup="myFunction1()" class="form-control" placeholder="Search for names.." />
+                                </div>
+                            </div>
                             <div class="table-responsive">
-                                <table class="table">
+                                <table class="table" id="myTable1">
                                     <thead>
                                     <tr>
-{{--                                        <th>--}}
-{{--                                            <div class="form-check form-check-muted m-0">--}}
-{{--                                                <label class="form-check-label">--}}
-{{--                                                    <input type="checkbox" class="form-check-input">--}}
-{{--                                                </label>--}}
-{{--                                            </div>--}}
-{{--                                        </th>--}}
                                         <th> Name </th>
                                         <th> Email </th>
                                         <th> Phone Number </th>
@@ -298,4 +287,42 @@
     </div>
     <!-- main-panel ends -->
 @endsection
+<script>
+    function myFunction() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
 
+    function myFunction1() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInput1");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable1");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+</script>

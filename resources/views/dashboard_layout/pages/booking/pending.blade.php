@@ -18,8 +18,13 @@
           <div class="card">
             <div class="card-body">
               <h4 class="card-title">Book Status</h4>
+                <div class="input-group">
+                    <div class="form-outline" >
+                        <input type="search" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Search for names.." />
+                    </div>
+                </div>
               <div class="table-responsive">
-                <table class="table">
+                <table class="table" id="myTable1">
                   <thead>
                     <tr>
                       <th>
@@ -99,3 +104,23 @@
   <!-- main-panel ends -->
 
 @endsection
+<script>
+    function myFunction() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+</script>
