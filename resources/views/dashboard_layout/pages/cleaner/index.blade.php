@@ -32,7 +32,7 @@
                                         <th> Email </th>
                                         <th> Phone Number </th>
                                         <th> Sex </th>
-                                        <th> Join Date </th>
+                                        <th> Age </th>
                                         <th> Edit </th>
                                     </tr>
                                     </thead>
@@ -57,7 +57,8 @@
                                         <td> {{$cleaner->email}} </td>
                                         <td> {{$cleaner->phone}} </td>
                                         <td> {{$cleaner->sex}} </td>
-                                        <td> {{$cleaner->date_of_birth}} </td>
+                                        <td> {{\Carbon\Carbon::parse($cleaner->date_of_birth)->diff(\Carbon\Carbon::now())->format('%Y years')}}</td> {{-- '%y years, %m months and %d days' --}}
+
                                         <td>
                                             <div class="dropdown">
                                                 <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuIconButton6" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

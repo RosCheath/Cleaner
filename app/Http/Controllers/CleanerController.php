@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Booking;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -22,7 +23,6 @@ class CleanerController extends Controller
             return view('dashboard_layout.pages.cleaner.index',compact('cleaner','noti'));
 
     }
-
     /**
      * Show the form for creating a new resource.
      *
