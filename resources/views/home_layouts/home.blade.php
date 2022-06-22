@@ -117,21 +117,14 @@
                                                         </div>
                                                         <div class="card2 ml-2">
                                                             <div class="row px-3 mt-3">
-                                                                <div class="form-group mt-1 mb-1"> <input type="password" id="pwd" class="form-control" required>
+                                                                <div class="form-group mt-1 mb-1"> <input type="time" id="pwd" class="form-control" required>
                                                                 <label class="ml-3 form-control-placeholder" for="pwd">Set time for clean</label> </div>
                                                                 <div class="next-button text-center mt-1 ml-2"> <span class="fa fa-arrow-right"></span> </div>
                                                             </div>
                                                             <div class="row mt-3 mb-5">
                                                                 <div class="col-12">
                                                                     <p class="mb-1">Lacation must contain</p>
-                                                                    <div class="row">
-                                                                        <div class="col-6"><span class="fa fa-circle text-danger"></span> lower case</div>
-                                                                        <div class="col-6"><span class="fa fa-circle text-danger"></span> numbers</div>
-                                                                    </div>
-                                                                    <div class="row">
-                                                                        <div class="col-6"><span class="fa fa-circle text-danger"></span> upper case</div>
-                                                                        <div class="col-6"><span class="fa fa-circle text-danger"></span> 8-16 characters</div>
-                                                                    </div>
+                                                                   
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -152,7 +145,7 @@
                                                         <div class="card2 ml-2">
                                                             <div class="row px-3 mt-2 mb-4 text-center">
                                                                 <h2 class="col-12 text-danger"><strong>Success !</strong></h2>
-                                                                <div class="col-12 text-center"><img class="tick" src='https://i.imgur.com/WDI0da4.gif'></div>
+                                                                <div class="col-12 text-center"><img class="tick" src='assets/home/images/wine-glass.png'></div>
                                                                 <h6 class="col-12 mt-2"><i>...Enjoy The servces...</i></h6>
                                                             </div>
                                                         </div>
@@ -160,8 +153,8 @@
                                                 </div>
                                             </div>
                                             <div class="col-12">
-                                                <div class="row px-3">
-                                                    <h2 class="text-muted get-bonus mt-4 mb-5">Now You  <span class="text-danger">Get</span> Our Servce</h2> <img class="pic ml-auto mr-3" src="https://i.imgur.com/NFodZjZ.png">
+                                                <div class="row px-6">
+                                                    <h2 class="text-muted get-bonus mt-4 mb-5">Now You  <span class="text-danger">Get</span> Our Servce</h2> <img class="pic ml-auto mr-6" src="assets/home/images/delivery-bike.png">
                                                 </div>
                                             </div>
                                         </div>
