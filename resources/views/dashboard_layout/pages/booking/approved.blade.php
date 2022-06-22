@@ -26,16 +26,9 @@
                                 <table class="table" id="myTable1">
                                     <thead>
                                     <tr>
-                                        <th>
-                                            <div class="form-check form-check-muted m-0">
-                                                <label class="form-check-label">
-                                                    <input type="checkbox" class="form-check-input">
-                                                </label>
-                                            </div>
-                                        </th>
                                         <th> Client Name </th>
-                                        <th> Book No </th>
-                                        <th> Product Cost </th>
+                                        <th> Email </th>
+                                        <th> Telegram </th>
                                         <th> Service </th>
                                         <th> Locations </th>
                                         <th> Book Date </th>
@@ -44,24 +37,17 @@
                                     </thead>
                                     <tbody>
                                     @foreach($approved as $approved)
-                                        @can('admin_view',$approved)
+                                        @can('cleaner_view',$approved)
                                         <tr>
                                             <td>
-                                                <div class="form-check form-check-muted m-0">
-                                                    <label class="form-check-label">
-                                                        <input type="checkbox" class="form-check-input">
-                                                    </label>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <img src="{{asset('assets/dashboard/images/faces/face1.jpg')}}" alt="image" />
+                                                <img src="{{$approved->user->image}}" alt="image" />
                                                 <span class="pl-2">{{$approved->service->name}}</span>
                                             </td>
-                                            <td> 02312 </td>
-                                            <td> $14,500 </td>
-                                            <td> HouseKeeping </td>
-                                            <td> PhnomPenh... </td>
-                                            <td> 04 Dec 2019 </td>
+                                            <td> {{$approved->user->email}} </td>
+                                            <td> {{$approved->telegram}} </td>
+                                            <td> {{$approved->service->name}} </td>
+                                            <td> {{$approved->location}}</td>
+                                            <td> {{$approved->date}} </td>
                                             <td>
                                                 <div class="badge badge-outline-success">{{$approved->status_type}}</div>
                                             </td>

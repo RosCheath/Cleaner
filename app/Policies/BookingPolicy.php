@@ -25,9 +25,12 @@ class BookingPolicy
 
     public function admin_view(User $user, Booking $booking)
     {
-        return $user->role === 'Admin' || $user->id ===$booking->user_id;
+        return $user->role === 'Admin' || $user->id === $booking->user_id;
     }
-
+    public function cleaner_view(User $user, Booking $booking)
+    {
+        return $user->role === 'Admin' || $user->id === $booking->cleaner_id;
+    }
     /**
      * Determine whether the user can create models.
      *

@@ -27,7 +27,7 @@
               @foreach($service as $service)
                   <div class="col mb-4">
                       <div class="card h-100">
-                          <img src="{{ url('storage/ServiceImage/'.$service->image)}}" class="card-img-top" alt="...">
+                          <img src="{{$service->image}}" class="card-img-top" alt="...">
                           <div class="card-body">
                               <h2 class="card-title">{{$service->name}}</h2>
                               <h5 class="card-title">${{$service->price}}</h5>

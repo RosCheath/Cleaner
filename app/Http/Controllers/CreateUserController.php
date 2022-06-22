@@ -46,17 +46,18 @@ class CreateUserController extends Controller
      */
     public function store(Request $request)
     {
-//        $this->validate(request(), [
-//            'name' => ['required', 'string', 'max:255'],
-//            'phone' => ['required', 'string', 'max:20'],
-//            'date_of_birth' => ['required'],
-//            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-//            'password' => ['required', 'string', 'min:8', 'confirmed'],
-//            'role' => ['required'],
-//            'sex' => ['required'],
-//        ]);
+        $this->validate(request(), [
+            'name' => ['required', 'string', 'max:255'],
+            'phone' => ['required', 'string', 'max:20'],
+            'date_of_birth' => ['required'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'role' => ['required'],
+            'sex' => ['required'],
+        ]);
 
         $input = $request->all();
+        $input['password'] = Hash::make($request['password']);
         if($request->hasFile('image')){
             $path = Storage::disk('s3')->put('User/image', $request->image);
             $path = Storage::disk('s3')->url($path);
