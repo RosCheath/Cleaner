@@ -75,4 +75,27 @@ return [
     ],
 
 
+    'Image_Head' => [
+        [
+            'name' => 'Home Screen',
+            'image' => 'https://emilypost.com/client_media/images/domestic-employee.jpg'
+        ],
+        [
+            'name' => 'Service Screen',
+            'image' => 'https://www.wallstwatchdog.com/wp-content/uploads/2017/04/Waitress-bringing-coffees-to-a-male-couple-at-a-restaurant.jpg'
+        ],
+        [
+            'name' => 'About Screen',
+            'image' => 'https://cached.imagescaler.hbpl.co.uk/resize/scaleWidth/880/cached.offlinehbpl.hbpl.co.uk/news/OTM/friends_with_boss.jpg'
+        ],
+        [
+            'name' => 'Booking Screen',
+            'image' => 'https://s1.kaercher-media.com/media/image/file/812/d3/hotel-und-gastgewerbe.webp'
+        ],
+        [
+            'name' => 'Contact Screen',
+            'image' => 'https://w6ig3zr1jm-flywheel.netdna-ssl.com/wp-content/uploads/2020/04/bigstock-Cleaning-Lady-Vacuuming-The-Ca-321786826-scaled.jpg'
+        ]
+    ],
+
 ];

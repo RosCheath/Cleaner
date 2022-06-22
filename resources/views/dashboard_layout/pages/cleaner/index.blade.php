@@ -38,16 +38,16 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($cleaner as $cleaner)
+                                    @foreach($cleaner as $cleaners)
                                     <tr>
                                         <td>
-                                                <img src="{{ $cleaner->image}}" />
-                                            <span class="pl-2">{{$cleaner->name}}</span>
+                                                <img src="{{ $cleaners->image}}" />
+                                            <span class="pl-2">{{$cleaners->name}}</span>
                                         </td>
-                                        <td> {{$cleaner->email}} </td>
-                                        <td> {{$cleaner->phone}} </td>
-                                        <td> {{$cleaner->sex}} </td>
-                                        <td> {{\Carbon\Carbon::parse($cleaner->date_of_birth)->diff(\Carbon\Carbon::now())->format('%Y years')}}</td> {{-- '%y years, %m months and %d days' --}}
+                                        <td> {{$cleaners->email}} </td>
+                                        <td> {{$cleaners->phone}} </td>
+                                        <td> {{$cleaners->sex}} </td>
+                                        <td> {{\Carbon\Carbon::parse($cleaners->date_of_birth)->diff(\Carbon\Carbon::now())->format('%Y years')}}</td> {{-- '%y years, %m months and %d days' --}}
 
                                         <td>
                                             <div class="dropdown">
@@ -55,9 +55,9 @@
                                                     <i class="mdi mdi-security"></i>
                                                 </button>
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuIconButton6">
-                                                    <a class="dropdown-item" href="{{route('cleaner.edit',$cleaner->id)}}">Edit</a>
+                                                    <a class="dropdown-item" href="{{route('cleaner.edit',$cleaners->id)}}">Edit</a>
                                                     <a class="dropdown-item" href="#">See Profile</a>
-                                                    <form action="{{ route('cleaner.destroy',$cleaner->id) }}" method="POST">
+                                                    <form action="{{ route('cleaner.destroy',$cleaners->id) }}" method="POST">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit" class="dropdown-item">Delete User</button>

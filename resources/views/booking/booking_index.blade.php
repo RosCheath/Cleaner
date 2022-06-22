@@ -1,6 +1,7 @@
 @extends('welcome_home_layout')
 @section('content')
-    <section class="hero-wrap hero-wrap-2" style="background-image: url('assets/home/images/bg-1.jpg');" data-stellar-background-ratio="0.5">
+    @foreach($bookingimage as $bookingimage)
+    <section class="hero-wrap hero-wrap-2" style="background-image: url({{$bookingimage->image}});" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
             <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
@@ -11,6 +12,7 @@
             </div>
         </div>
     </section>
+    @endforeach
 <link rel="stylesheet" href="booking.css">
 <div class="wrap cf">
     <h1 class="projTitle">Responsive Table<span>-Less</span> Shopping Cart</h1>

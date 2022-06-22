@@ -71,6 +71,9 @@
         </ul>
       </div>
     </li>
+
+
+
 @can('admin_auth')
       <li class="nav-item menu-items">
           <a class="nav-link" href="{{route('users.index')}}">
@@ -96,7 +99,18 @@
         <span class="menu-title">Cleaner</span>
       </a>
     </li>
+
+          <li class="nav-item menu-items">
+              <a class="nav-link" href="{{route('image-head.index')}}">
+        <span class="menu-icon">
+          <i class="mdi mdi-account"></i>
+        </span>
+                  <span class="menu-title">Home Head Image</span>
+              </a>
+          </li>
       @endcan
+
+
     <li class="nav-item menu-items">
       <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
         <span class="menu-icon">

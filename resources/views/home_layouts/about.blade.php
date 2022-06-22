@@ -1,7 +1,7 @@
 @extends('welcome_home_layout')
 @section('content')
-
-    <section class="hero-wrap hero-wrap-2" style="background-image: url('assets/home/images/bg-1.jpg');" data-stellar-background-ratio="0.5">
+@foreach($aboutimage as $aboutimage)
+    <section class="hero-wrap hero-wrap-2" style="background-image: url({{$aboutimage->image}});" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
             <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
@@ -12,7 +12,7 @@
             </div>
         </div>
     </section>
-
+@endforeach
     <section class="ftco-section ftco-no-pb ftco-no-pt">
         <div class="container">
             <div class="row">
