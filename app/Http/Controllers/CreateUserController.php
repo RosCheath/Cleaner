@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Storage;
 
 class CreateUserController extends Controller
 {
@@ -56,10 +57,11 @@ class CreateUserController extends Controller
 //        ]);
 
         $input = $request->all();
-        $image = $request->file('image')->getClientOriginalName();
-        $request->file('image')->storeAs('public/ProfileImage',$image);
-        $input['image'] = "$image";
-//        dd($input);
+        if($request->hasFile('image')){
+            $path = Storage::disk('s3')->put('User/image', $request->image);
+            $path = Storage::disk('s3')->url($path);
+            $input['image'] = $path;
+        }
         User::create($input);
         return redirect()->back()
             ->with('success','User created successfully.');
@@ -106,11 +108,11 @@ class CreateUserController extends Controller
             'sex' => 'required',
         ]);
         $input = $request->all();
-            if($request->hasFile('image')){
-                $image = $request->file('image')->getClientOriginalName();
-                $request->file('image')->storeAs('public/ProfileImage',$image);
-                $input['image'] = "$image";
-            }
+        if($request->hasFile('image')){
+            $path = Storage::disk('s3')->put('User/image', $request->image);
+            $path = Storage::disk('s3')->url($path);
+            $input['image'] = $path;
+        }
         $user->update($input);
         return redirect()->route('users.index')
             ->with('success','User updated successfully');

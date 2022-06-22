@@ -29,13 +29,6 @@
                                 <table class="table" id="myTable">
                                     <thead>
                                     <tr>
-                                        <th>
-                                            <div class="form-check form-check-muted m-0">
-                                                <label class="form-check-label">
-                                                    <input type="checkbox" class="form-check-input">
-                                                </label>
-                                            </div>
-                                        </th>
                                         <th> Name </th>
                                         <th> Email </th>
                                         <th> Phone Number </th>
@@ -48,11 +41,7 @@
                                     @foreach($cleaner as $cleaner)
                                     <tr>
                                         <td>
-                                            @if($cleaner->image === 'https://ps.w.org/metronet-profile-picture/assets/icon-128x128.png?rev=2464419')
-                                                <img src="{{$cleaner->image}}" alt="image" />
-                                            @else
-                                                <img src="{{ url('storage/ProfileImage/'.$cleaner->image)}}" />
-                                            @endif
+                                                <img src="{{ $cleaner->image}}" />
                                             <span class="pl-2">{{$cleaner->name}}</span>
                                         </td>
                                         <td> {{$cleaner->email}} </td>

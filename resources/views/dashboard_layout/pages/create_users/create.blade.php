@@ -60,17 +60,8 @@
                     <option>Female</option>
                   </select>
                 </div>
-                  <input type="hidden" class="image" name="image" value="https://ps.w.org/metronet-profile-picture/assets/icon-128x128.png?rev=2464419">
-                <div class="form-group">
-                  <label>File upload</label>
-                  <input type="file"  class="file-upload-default">
-                  <div class="input-group col-xs-12">
-                    <input type="file" class="form-control file-upload-info" placeholder="Upload Image">
-                    <span class="input-group-append">
-                      <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
-                    </span>
-                  </div>
-                </div>
+                  <input type="file" class="image" name="image">
+
                 <div class="form-group">
                   <label for="exampleInputCity1">Phone</label>
                   <input type="text" class="form-control" @error('phone') is-invalid @enderror name="phone" id="phone" placeholder="Phone Number">

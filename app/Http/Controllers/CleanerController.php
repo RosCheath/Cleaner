@@ -8,6 +8,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class CleanerController extends Controller
 {
@@ -54,9 +55,11 @@ class CleanerController extends Controller
         ]);
 
         $input = $request->all();
-        $image = $request->file('image')->getClientOriginalName();
-        $request->file('image')->storeAs('public/ProfileImage',$image);
-        $input['image'] = "$image";
+        if($request->hasFile('image')){
+            $path = Storage::disk('s3')->put('Cleaner/image', $request->image);
+            $path = Storage::disk('s3')->url($path);
+            $input['image'] = $path;
+        }
         User::create($input);
         return redirect()->back()
             ->with('success','Cleaner created successfully.');
@@ -105,11 +108,11 @@ class CleanerController extends Controller
         ]);
 
         $input = $request->all();
-            if($request->hasFile('image')){
-                $image = $request->file('image')->getClientOriginalName();
-                $request->file('image')->storeAs('public/ProfileImage',$image);
-                $input['image'] = "$image";
-            }
+        if($request->hasFile('image')){
+            $path = Storage::disk('s3')->put('Cleaner/image', $request->image);
+            $path = Storage::disk('s3')->url($path);
+            $input['image'] = $path;
+        }
         $cleaner->update($input);
         return redirect()->back()
             ->with('success','Cleaner updated successfully');

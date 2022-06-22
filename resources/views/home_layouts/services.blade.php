@@ -22,19 +22,24 @@
             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
           </div>
         </div>
-        <div class="row no-gutters d-flex">
-            @foreach($service as $service)
-          <div class="col-md-6 col-lg-4 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services d-block text-center">
-              <div class="icon"><span class="{{$service->image}}"></span></div>
-              <div class="media-body">
-                <h3 class="heading mb-3">{{$service->name}}</h3>
-                <p>{{$service->title}}</p>
-              </div>
-            </div>
+
+          <div class="row row-cols-1 row-cols-md-3">
+              @foreach($service as $service)
+                  <div class="col mb-4">
+                      <div class="card h-100">
+                          <img src="{{ url('storage/ServiceImage/'.$service->image)}}" class="card-img-top" alt="...">
+                          <div class="card-body">
+                              <h2 class="card-title">{{$service->name}}</h2>
+                              <h5 class="card-title">${{$service->price}}</h5>
+                              <p class="card-text">{{$service->title}}</p>
+                          </div>
+                          <div class="card-footer text-center">
+                              <a href="service_id" class="btn btn-primary">Booking Now</a>
+                          </div>
+                      </div>
+                  </div>
+              @endforeach
           </div>
-            @endforeach
-        </div>
       </div>
     </section>
 

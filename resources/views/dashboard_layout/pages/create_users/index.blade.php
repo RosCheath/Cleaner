@@ -39,11 +39,7 @@
                                         @if(!empty($user) && $user->count())
                                             @foreach($user as $key => $users)
                                         <td>
-                                            @if($users->image === 'https://ps.w.org/metronet-profile-picture/assets/icon-128x128.png?rev=2464419')
                                                 <img src="{{$users->image}}" alt="image" />
-                                            @else
-                                                <img src="{{ url('storage/ProfileImage/'.$users->image)}}" />
-                                            @endif
                                             <span class="pl-2">{{$users->name}}</span>
                                         </td>
                                         <td> {{$users->email}} </td>
@@ -109,19 +105,8 @@
                                     <tr>
                                         @if(!empty($Cleaner) && $Cleaner->count())
                                             @foreach($Cleaner as $key => $cleaner)
-{{--                                                <td>--}}
-{{--                                                    <div class="form-check form-check-muted m-0">--}}
-{{--                                                        <label class="form-check-label">--}}
-{{--                                                            <input type="checkbox" class="form-check-input">--}}
-{{--                                                        </label>--}}
-{{--                                                    </div>--}}
-{{--                                                </td>--}}
                                                 <td>
-                                                    @if($cleaner->image === 'https://ps.w.org/metronet-profile-picture/assets/icon-128x128.png?rev=2464419')
                                                         <img src="{{$cleaner->image}}" alt="image" />
-                                                    @else
-                                                        <img src="{{ url('storage/ProfileImage/'.$cleaner->image)}}" />
-                                                    @endif
                                                     <span class="pl-2">{{$cleaner->name}}</span>
                                                 </td>
                                                 <td> {{$cleaner->email}} </td>

@@ -49,7 +49,6 @@
                                     </select>
                                 </div>
                                 <input type="file" class="image" name="image" value="{{$cleaner->image}}">
-                                <input  class="form-control"  value="{{$cleaner->image}}" >
                                 <div class="form-group">
                                     <label for="exampleInputCity1">Phone</label>
                                     <input type="text" class="form-control" name="phone" value="{{$cleaner->phone}}" id="phone" placeholder="Phone Number">

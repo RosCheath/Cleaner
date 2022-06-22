@@ -17,14 +17,23 @@
                 @foreach($service as $service)
                 <div class="col mb-4">
                     <div class="card h-100">
-                        <img src="{{ url('storage/ServiceImage/'.$service->image)}}" class="card-img-top" alt="...">
+                        <img src="{{ $service->image}}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h2 class="card-title">{{$service->name}}</h2>
                             <h5 class="card-title">${{$service->price}}</h5>
                             <p class="card-text">{{$service->title}}</p>
                         </div>
                         <div class="card-footer">
-                            <small class="text-muted">Last updated 3 mins ago</small>
+                            <a href="{{route('service.edit',$service->id)}}" class="btn btn-primary">Edit</a>
+                            <button type="button" class="btn btn-success">Show</button>
+                            <form action="{{ route('service.destroy',$service->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger btn float-right"
+                                        onclick="return confirm('Are you sure you want to Delete?');"
+                                        id="btnDelete">
+                                    Delete</button>
+                            </form>
                         </div>
                     </div>
                 </div>
