@@ -7,8 +7,8 @@ return [
 
     'users' => [
         [
-            'name' => 'Ros socheath',
-            'email' => 'rossocheat1@gmail.com',
+            'name' => 'Admin',
+            'email' => 'admin@gmail.com',
             'password' => '11112222',
             'phone' => '0966855502',
             'sex' => 'Male',
