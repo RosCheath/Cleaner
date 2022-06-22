@@ -41,21 +41,21 @@ return [
         [
             'name' => 'Day',
             'title' => 'A small river named Duden flows by their place and supplies.',
-            'image' => 'flaticon-male-hair-of-head-and-face-shapes',
+            'image' => 'https://content.tinytap.it/9C451F0A-7A2F-46A4-9374-256170F99113/unzipped%2Fphoto1%2Fphoto1phone.jpg',
             'price' => '10',
             'time_line' => '1 day'
         ],
         [
             'name' => 'Month',
             'title' => 'A small river named Duden flows by their place and supplies.',
-            'image' => 'flaticon-male-hair-of-head-and-face-shapes',
+            'image' => 'https://planomoms.com/wp-content/uploads/2021/03/House-Cleaning-service.jpg',
             'price' => '100',
             'time_line' => '1 Month'
         ],
         [
             'name' => 'Year',
             'title' => 'A small river named Duden flows by their place and supplies.',
-            'image' => 'flaticon-male-hair-of-head-and-face-shapes',
+            'image' => 'https://s.marketwatch.com/public/resources/images/MW-BM466_pfhous_MG_20131003164731.jpg',
             'price' => '1000',
             'time_line' => '1 Year'
         ]
