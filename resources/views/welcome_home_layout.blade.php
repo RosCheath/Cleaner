@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <title>{{ config('app.name', 'Home Page') }}</title>
-      <link rel="shortcut icon" href="Logo-fav.png"/>
+      <link rel="shortcut icon" href="vacuum-w.png"/>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -29,7 +29,7 @@
   <body>
 	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="#"><img src="Logo-fav.png" width="50" height="50">  {{ config('app.name', 'LOGO') }}</a>
+	      <a class="navbar-brand" href="#"><img src="vacuum-w.png" width="36" height="36">  {{ config('app.name', 'LOGO') }}</a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
