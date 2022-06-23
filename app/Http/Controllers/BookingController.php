@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\BookingMail;
 use App\Models\Booking;
 use App\Models\ImageHeads;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class BookingController extends Controller
 {
@@ -44,8 +46,15 @@ class BookingController extends Controller
         $booking -> telegram = $request -> telegram;
         $booking -> date = $request -> date;
         $booking -> time = $request -> time;
-//        dd($booking);
         $booking->save();
+        //send email
+        $mailData = [
+            'title' => $booking->title,
+            'user' => $booking->user,
+        ];
+
+        Mail::to('admin@gamil.com')->queue(new BookingMail($mailData));
+        Mail::to($booking->user->email)->queue(new BookingMail($mailData));
         return redirect()->back()
             ->with('success','Cleaner created successfully.');
     }

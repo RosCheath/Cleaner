@@ -42,3 +42,8 @@ edit-> input this code
     AWS_DEFAULT_REGION=Your_Rigen_S3
     AWS_BUCKET=Your_name_pucket
     AWS_USE_PATH_STYLE_ENDPOINT=false
+
+7, mail notification with database queue
+alway run 
+
+    php artisan queue:work
