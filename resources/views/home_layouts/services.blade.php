@@ -1,7 +1,7 @@
 @extends('welcome_home_layout')
 @section('content')
-
-    <section class="hero-wrap hero-wrap-2" style="background-image: url('assets/home/images/bg-1.jpg');" data-stellar-background-ratio="0.5">
+@foreach($serviceimage as $serviceimage)
+    <section class="hero-wrap hero-wrap-2" style="background-image: url({{$serviceimage->image}});" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
@@ -12,7 +12,7 @@
         </div>
       </div>
     </section>
-
+@endforeach
     <section class="services-section ftco-section">
       <div class="container">
       	<div class="row justify-content-center pb-3">
@@ -22,19 +22,24 @@
             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
           </div>
         </div>
-        <div class="row no-gutters d-flex">
-            @foreach($service as $service)
-          <div class="col-md-6 col-lg-4 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services d-block text-center">
-              <div class="icon"><span class="{{$service->image}}"></span></div>
-              <div class="media-body">
-                <h3 class="heading mb-3">{{$service->name}}</h3>
-                <p>{{$service->title}}</p>
-              </div>
-            </div>
+
+          <div class="row row-cols-1 row-cols-md-3">
+              @foreach($service as $service)
+                  <div class="col mb-4">
+                      <div class="card h-100">
+                          <img src="{{$service->image}}" class="card-img-top" alt="...">
+                          <div class="card-body">
+                              <h2 class="card-title">{{$service->name}}</h2>
+                              <h5 class="card-title">${{$service->price}}</h5>
+                              <p class="card-text">{{$service->title}}</p>
+                          </div>
+                          <div class="card-footer text-center">
+                              <a href="service_id" class="btn btn-primary">Booking Now</a>
+                          </div>
+                      </div>
+                  </div>
+              @endforeach
           </div>
-            @endforeach
-        </div>
       </div>
     </section>
 
@@ -99,76 +104,29 @@
 			<div class="container">
 				<div class="row justify-content-center pb-3">
           <div class="col-md-10 heading-section text-center ftco-animate">
-          	<span class="subheading">Pricing</span>
-            <h2 class="mb-4">Our Prices</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+          	<span class="subheading">Become</span>
+            <h2 class="mb-4">Become Cleaner</h2>
+            <p>is easy way to gey money</p>
           </div>
         </div>
         <div class="row">
+            @foreach($becom_cleaner as $becom_cleaner)
         	<div class="col-md-3 ftco-animate">
         		<div class="pricing-entry pb-5 text-center">
         			<div>
-	        			<h3 class="mb-4">Hair Style</h3>
-	        			<p><span class="price">$50.00</span> <span class="per">/ session</span></p>
+	        			<h3 class="mb-4">{{$becom_cleaner->name}}</h3>
+	        			<p><span class="price">${{$becom_cleaner->price}}</span> <span class="per">/ session</span></p>
 	        		</div>
         			<ul>
-        				<li>Hair Dryer</li>
-								<li>Hair Coloring</li>
-								<li>Hair Cut</li>
-								<li>Hair Dresser</li>
-								<li>Hair Spa</li>
+        				        <li>{{$becom_cleaner->title1}}</li>
+								<li>{{$becom_cleaner->title2}}</li>
+								<li>{{$becom_cleaner->title3}}</li>
+								<li>{{$becom_cleaner->title4}}</li>
         			</ul>
         			<p class="button text-center"><a href="#" class="btn btn-primary px-4 py-3">Get Offer</a></p>
         		</div>
         	</div>
-        	<div class="col-md-3 ftco-animate">
-        		<div class="pricing-entry pb-5 text-center">
-        			<div>
-	        			<h3 class="mb-4">Manicure Pedicure</h3>
-	        			<p><span class="price">$34.50</span> <span class="per">/ session</span></p>
-	        		</div>
-        			<ul>
-        				<li>Manicure</li>
-								<li>Pedicure</li>
-								<li>Coloring</li>
-								<li>Nails</li>
-								<li>Nail Cut</li>
-        			</ul>
-        			<p class="button text-center"><a href="#" class="btn btn-primary px-4 py-3">Get Offer</a></p>
-        		</div>
-        	</div>
-        	<div class="col-md-3 ftco-animate">
-        		<div class="pricing-entry active pb-5 text-center">
-        			<div>
-	        			<h3 class="mb-4">Makeup</h3>
-	        			<p><span class="price">$54.50</span> <span class="per">/ session</span></p>
-	        		</div>
-        			<ul>
-        				<li>Makeup</li>
-								<li>Professional Makeup</li>
-								<li>Blush On</li>
-								<li>Facial Massage</li>
-								<li>Facial Spa</li>
-        			</ul>
-        			<p class="button text-center"><a href="#" class="btn btn-primary px-4 py-3">Get Offer</a></p>
-        		</div>
-        	</div>
-        	<div class="col-md-3 ftco-animate">
-        		<div class="pricing-entry pb-5 text-center">
-        			<div>
-	        			<h3 class="mb-4">Body Treatment</h3>
-	        			<p><span class="price">$89.50</span> <span class="per">/ session</span></p>
-	        		</div>
-        			<ul>
-        				<li>Massage</li>
-								<li>Spa</li>
-								<li>Foot Spa</li>
-								<li>Body Spa</li>
-								<li>Relaxing</li>
-        			</ul>
-        			<p class="button text-center"><a href="#" class="btn btn-primary px-4 py-3">Get Offer</a></p>
-        		</div>
-        	</div>
+            @endforeach
         </div>
 			</div>
 		</section>

@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\BookingMail;
 use App\Models\Booking;
+use App\Models\ImageHeads;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class BookingController extends Controller
 {
@@ -21,10 +24,11 @@ class BookingController extends Controller
 
     public function index()
     {
+        $bookingimage  = ImageHeads::where('name','=', 'Booking Screen')->get();
         $bookingCount = Booking::where('user_id','=',Auth::id())->where('status_type','=','Pending')->count();
         $booking_1 = Booking::where('status_type','=','Pending')->get();
         $booking_2 = Booking::where('status_type','=','Approved')->orWhere('status_type','Done')->orWhere('status_type','Rejected')->get();
-        return view('booking.booking_index',compact('booking_1','bookingCount','booking_2'));
+        return view('booking.booking_index',compact('booking_1','bookingCount','booking_2','bookingimage'));
 
     }
 //    public function create(){
@@ -42,8 +46,15 @@ class BookingController extends Controller
         $booking -> telegram = $request -> telegram;
         $booking -> date = $request -> date;
         $booking -> time = $request -> time;
-//        dd($booking);
         $booking->save();
+        //send email
+        $mailData = [
+            'title' => $booking->title,
+            'user' => $booking->user,
+        ];
+
+        Mail::to('admin@gamil.com')->queue(new BookingMail($mailData));
+        Mail::to($booking->user->email)->queue(new BookingMail($mailData));
         return redirect()->back()
             ->with('success','Cleaner created successfully.');
     }
@@ -54,23 +65,7 @@ class BookingController extends Controller
     }
 
     public function update(Request $request, Booking $booking){
-//        $this->validate(request(), [
-//            'cleaner_id' => 'required',
-//        ]);
-
         $input = $request->all();
-//        dd($input);
-//        $booking->update($request->all());
-//        dd($booking);
-//        $booking ['cleaner_id'] =Auth::id();
-//        $booking->location = $request['location'];
-//        $booking->service_id = $request['service_id'];
-//        $booking->user_id = $request['user_id'];
-//        $booking->telegram = $request['telegram'];
-//        $booking->status_type = $request['status_type'];
-//        $booking->date = $request['date'];
-//        $booking->time = $request['time'];
-        dd($booking);
         $booking->save($input);
 //        dd($booking);
         return redirect()->route('pending')

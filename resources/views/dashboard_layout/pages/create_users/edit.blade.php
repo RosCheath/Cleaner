@@ -50,7 +50,6 @@
                                 </div>
 
                                 <input type="file" class="image" name="image" value="{{$user->image}}">
-                                <input  class="form-control"  value="{{$user->image}}" >
                                 <div class="form-group">
                                     <label for="exampleInputCity1">Phone</label>
                                     <input type="text" class="form-control" name="phone" value="{{$user->phone}}" id="phone" placeholder="Phone Number">

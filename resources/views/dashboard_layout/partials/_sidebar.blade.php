@@ -1,6 +1,6 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
   <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-    <a class="sidebar-brand brand-logo" href="{{route('home')}}"><img src="{{asset('assets/dashboard/images/logo.svg')}}" alt="logo" /></a>
+    <a class="sidebar-brand brand-logo" href="{{route('home')}}"><img src="{{asset('assets/dashboard/images/CLEANER_logo.svg')}}" alt="logo" /></a>
     <a class="sidebar-brand brand-logo-mini" href="#"><img src="{{asset('assets/dashboard/images/logo-mini.svg')}}" alt="logo" /></a>
   </div>
   <ul class="nav">
@@ -71,6 +71,9 @@
         </ul>
       </div>
     </li>
+
+
+
 @can('admin_auth')
       <li class="nav-item menu-items">
           <a class="nav-link" href="{{route('users.index')}}">
@@ -96,7 +99,35 @@
         <span class="menu-title">Cleaner</span>
       </a>
     </li>
+
+          <li class="nav-item menu-items">
+              <a class="nav-link" href="{{route('image-head.index')}}">
+        <span class="menu-icon">
+          <i class="mdi mdi-account"></i>
+        </span>
+                  <span class="menu-title">Home Head Image</span>
+              </a>
+          </li>
+
+          <li class="nav-item menu-items">
+              <a class="nav-link" href="{{route('becom-cleaner.index')}}">
+        <span class="menu-icon">
+          <i class="mdi mdi-account"></i>
+        </span>
+                  <span class="menu-title">Be Come Cleaner</span>
+              </a>
+          </li>
+
+          <li class="nav-item menu-items">
+              <a class="nav-link" href="{{route('blog.index')}}">
+        <span class="menu-icon">
+          <i class="mdi mdi-account"></i>
+        </span>
+                  <span class="menu-title">Post Blog</span>
+              </a>
+          </li>
       @endcan
+
     <li class="nav-item menu-items">
       <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
         <span class="menu-icon">

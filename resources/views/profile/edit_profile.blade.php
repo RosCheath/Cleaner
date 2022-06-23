@@ -12,11 +12,10 @@
         @endif
     <div class="row">
         <div class="col-md-3 border-right">
-            @if(Auth::user()->image === 'https://ps.w.org/metronet-profile-picture/assets/icon-128x128.png?rev=2464419')
-                <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="{{Auth::User()->image}}"><span class="font-weight-bold">{{Auth::User()->name}}</span><span class="text-black-50">{{Auth::User()->email}}</span><span> </span></div>
-            @else
-                <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="{{ url('storage/ProfileImage/'. Auth::User()->image) }}"><span class="font-weight-bold">{{Auth::User()->name}}</span><span class="text-black-50">{{Auth::User()->email}}</span><span> </span></div>
-            @endif
+                <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                    <img class="rounded-circle mt-5" width="150px" src="{{ Auth::User()->image }}">
+                    <span class="font-weight-bold">{{Auth::User()->name}}</span>
+                    <span class="text-black-50">{{Auth::User()->email}}</span><span> </span></div>
         </div>
         <div class="col-md-5 border-right">
             <form>

@@ -42,9 +42,9 @@
 	        	<li class="nav-item {{ (request()->is('services')) ? 'active' : '' }}">
                     <a href="services" class="nav-link">Services</a>
                 </li>
-	        	<li class="nav-item {{ (request()->is('gallery')) ? 'active' : '' }}">
-                    <a href="gallery" class="nav-link">Gallery</a>
-                </li>
+{{--	        	<li class="nav-item {{ (request()->is('gallery')) ? 'active' : '' }}">--}}
+{{--                    <a href="gallery" class="nav-link">Gallery</a>--}}
+{{--                </li>--}}
 	        	<li class="nav-item {{ (request()->is('about')) ? 'active' : '' }}">
                     <a href="about" class="nav-link">About</a>
                 </li>
@@ -56,7 +56,7 @@
                     </a>
                 </li>
 	          <li class="nav-item {{ (request()->is('contact')) ? 'active' : '' }}">
-                  <a href="contact" class="nav-link">Contact</a>
+                  <a href="contact" class="nav-link">Contact & Blog</a>
               </li>
                 @if(Auth::user())
                     @can('user-feature')

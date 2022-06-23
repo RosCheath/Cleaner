@@ -7,7 +7,8 @@
                 <h3 class="page-title"> Create Service </h3>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><form method="POST" action="{{ route('service.update',$service->id) }}">
+                        <li class="breadcrumb-item">
+                            <form method="POST" action="{{ route('service.update',$service->id) }}" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                         </li>
@@ -36,17 +37,8 @@
                                 </div>
 
 
-                                <input type="hidden" class="image" name="image" value="value="{{$service->image}}"">
-                                <div class="form-group">
-                                    <label>File upload</label>
-                                    <input type="file"  class="file-upload-default">
-                                    <div class="input-group col-xs-12">
-                                        <input type="file" class="form-control file-upload-info" placeholder="Upload Image">
-                                        <span class="input-group-append">
-                      <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
-                    </span>
-                                    </div>
-                                </div>
+                                <input type="file" class="image" name="image" value="value="{{$service->image}}"">
+
                                 <div class="form-group">
                                     <label for="exampleInputCity1">Price</label>
                                     <input type="text" class="form-control" value="{{$service->price}}" name="price" id="price" placeholder="Price">

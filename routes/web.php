@@ -1,12 +1,15 @@
 <?php
 
+use App\Http\Controllers\BecomeCleanerController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BookingController;
-use App\Http\Controllers\ChangePasswordController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CreateUserController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ImageHeadsController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\CleanerController;
+use App\Http\Controllers\userContactController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -22,10 +25,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/', function () {
-//    return view('home_layouts.home');
-//});
-
 Auth::routes();
 Route::group(['web'],function(){
     Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -36,6 +35,7 @@ Route::group(['web'],function(){
     Route::get('view/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('v_profile');
     Route::resource('booking', BookingController::class);
     Route::get('invoice/{booking}', [App\Http\Controllers\BookingController::class, 'invoice'])->name('invoice');
+    Route::post('/contacts', [userContactController::class, 'contacts'])->name('user.contacts');
 
 
 
@@ -52,14 +52,16 @@ Route::group(['web','middleware' => 'can:admin_auth'],function(){
     Route::resource('service', ServiceController::class);
     Route::resource('users', CreateUserController::class);
     Route::resource('cleaner', CleanerController::class);
+    Route::resource('image-head', ImageHeadsController::class);
+    Route::resource('becom-cleaner', BecomeCleanerController::class);
+    Route::resource('blog', BlogController::class);
+    Route::resource('Contact', ContactController::class);
 });
 
 Route::group(['web','middleware' => 'can:admin-feature'],function(){
     Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'dashboard'])->name('dashboard');
     Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'home_d'])->name('dashboard');
     Route::resource('pending', DashboardController::class);
-//      Route::resource('booking', \App\Http\Controllers\BookingController::class);
-//    Route::match(['put', 'patch'], '/approved/update/{pending}',[App\Http\Controllers\DashboardController::class, 'update'])->name('approved_pending');
     Route::get('/pending', [App\Http\Controllers\DashboardController::class, 'pending'])->name('pending');
     Route::get('/approved', [App\Http\Controllers\DashboardController::class, 'approved'])->name('approved');
     Route::get('/Booking/Service', [App\Http\Controllers\DashboardController::class, 'Booking_Service'])->name('booking_service');

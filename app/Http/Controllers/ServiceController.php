@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Booking;
 use App\Models\service;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ServiceController extends Controller
 {
@@ -41,8 +42,13 @@ class ServiceController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
+        if($request->hasFile('image')){
+            $path = Storage::disk('s3')->put('Service/image', $request->image);
+            $path = Storage::disk('s3')->url($path);
+            $input['image'] = $path;
+        }
         service::create($input);
-        return redirect()->back()
+        return redirect()->route('service.index')
             ->with('success','Service created successfully.');
     }
 
@@ -79,6 +85,11 @@ class ServiceController extends Controller
     public function update(Request $request, service $service)
     {
         $input = $request->all();
+        if($request->hasFile('image')){
+            $path = Storage::disk('s3')->put('Service/image', $request->image);
+            $path = Storage::disk('s3')->url($path);
+            $input['image'] = $path;
+        }
         $service->update($input);
         return redirect()->back()
             ->with('success','Service update successfully.');
