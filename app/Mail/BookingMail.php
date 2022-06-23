@@ -27,6 +27,11 @@ class BookingMail extends Mailable implements ShouldQueue
     {
         return $this->view('mail.booking_mail',[
             'user' => $this->bookin_mail['user'],
+            'location' => $this->bookin_mail['location'],
+            'telegram' => $this->bookin_mail['telegram'],
+            'date' => $this->bookin_mail['date'],
+            'time' => $this->bookin_mail['time'],
+            'status_type' => $this->bookin_mail['status_type'],
         ]);
     }
 }

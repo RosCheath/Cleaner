@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ApprovedMail;
 use App\Models\Booking;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class DashboardController extends Controller
 {
@@ -57,26 +59,21 @@ class DashboardController extends Controller
     }
 
     public function update(Request $request, Booking $pending){
-//        $this->validate(request(), [
-//            'cleaner_id' => 'required',
-//        ]);
 
         $input = $request->all();
         $input ['cleaner_id'] =Auth::id();
-//        dd($input);
-//        $booking->update($request->all());
-//        dd($booking);
-//        $booking ['cleaner_id'] =Auth::id();
-//        $booking->location = $request['location'];
-//        $booking->service_id = $request['service_id'];
-//        $booking->user_id = $request['user_id'];
-//        $booking->telegram = $request['telegram'];
-//        $booking->status_type = $request['status_type'];
-//        $booking->date = $request['date'];
-//        $booking->time = $request['time'];
-//        dd($pending);
         $pending->update($input);
-//        dd($booking);
+
+        $mailData = [
+            'user' => $pending->user,
+            'location' => $pending->location,
+            'telegram' => $pending->telegram,
+            'date' => $pending->date,
+            'time' => $pending->time,
+            'status_type' => $pending->status_type,
+        ];
+        Mail::to('admin@gamil.com')->queue(new ApprovedMail($mailData));
+        Mail::to($pending->user->email)->queue(new ApprovedMail($mailData));
         return redirect()->route('pending')
             ->with('success','Cleaner updated successfully');
     }

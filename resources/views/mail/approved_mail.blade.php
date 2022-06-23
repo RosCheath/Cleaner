@@ -4,6 +4,7 @@
             <div class="card">
                 <div class="card-header">Hello</div>
                 <div class="card-body">
+
                     {!! $user->name !!}
                     <br>
                     {!! $location !!}

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ApprovedMail;
 use App\Mail\BookingMail;
 use App\Models\Booking;
 use App\Models\ImageHeads;
@@ -31,9 +32,7 @@ class BookingController extends Controller
         return view('booking.booking_index',compact('booking_1','bookingCount','booking_2','bookingimage'));
 
     }
-//    public function create(){
-//        return view('booking.booking_create');
-//    }
+
     public function store(Request $request){
         $this->validate(request(), [
             'location' => ['required', 'string', 'max:1000'],
@@ -49,8 +48,12 @@ class BookingController extends Controller
         $booking->save();
         //send email
         $mailData = [
-            'title' => $booking->title,
             'user' => $booking->user,
+            'location' => $booking->location,
+            'telegram' => $booking->telegram,
+            'date' => $booking->date,
+            'time' => $booking->time,
+            'status_type' => $booking->status_type,
         ];
 
         Mail::to('admin@gamil.com')->queue(new BookingMail($mailData));
@@ -67,14 +70,9 @@ class BookingController extends Controller
     public function update(Request $request, Booking $booking){
         $input = $request->all();
         $booking->save($input);
-//        dd($booking);
         return redirect()->route('pending')
             ->with('success','Cleaner updated successfully');
     }
-
-
-
-
 
 
 
