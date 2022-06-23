@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BecomeCleanerController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\CreateUserController;
 use App\Http\Controllers\DashboardController;
@@ -48,6 +49,7 @@ Route::group(['web','middleware' => 'can:admin_auth'],function(){
     Route::resource('users', CreateUserController::class);
     Route::resource('cleaner', CleanerController::class);
     Route::resource('image-head', ImageHeadsController::class);
+    Route::resource('becom-cleaner', BecomeCleanerController::class);
 });
 
 Route::group(['web','middleware' => 'can:admin-feature'],function(){

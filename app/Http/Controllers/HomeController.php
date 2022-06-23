@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BecomCleaners;
 use App\Models\Booking;
 use App\Models\ImageHeads;
 use App\Models\Service;
@@ -35,12 +36,14 @@ class HomeController extends Controller
 
     public function services()
     {
+        $becom_cleaner = BecomCleaners::get();
         $serviceimage  = ImageHeads::where('name','=', 'Service Screen')->get();
         $bookingCount = Booking::where('user_id','=',Auth::id())->where('status_type','=','Pending')->count();
         $service = Service::get();
         $service_booling = Service::get();
         return view('home_layouts.services',compact('service','bookingCount','serviceimage'),[
             'service_booling' => $service_booling,
+            'becom_cleaner' => $becom_cleaner,
         ]);
     }
 

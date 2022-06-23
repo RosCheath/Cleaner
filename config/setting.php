@@ -97,5 +97,39 @@ return [
             'image' => 'https://w6ig3zr1jm-flywheel.netdna-ssl.com/wp-content/uploads/2020/04/bigstock-Cleaning-Lady-Vacuuming-The-Ca-321786826-scaled.jpg'
         ]
     ],
+    'Becom_Cleaner' => [
+        [
+          'name' => 'Per Time',
+          'price' => '10',
+          'title1' => 'clean',
+          'title2'=> 'clean1',
+          'title3' => 'clean',
+          'title4'=> 'clean1'
+        ],
+        [
+            'name' => 'Per Day',
+            'price' => '20',
+            'title1' => 'clean',
+            'title2'=> 'clean1',
+            'title3' => 'clean',
+            'title4'=> 'clean1'
+        ],
+        [
+            'name' => 'Per Mouth',
+            'price' => '30',
+            'title1' => 'clean',
+            'title2'=> 'clean1',
+            'title3' => 'clean',
+            'title4'=> 'clean1'
+        ],
+        [
+            'name' => 'Per Year',
+            'price' => '40',
+            'title1' => 'clean',
+            'title2'=> 'clean1',
+            'title3' => 'clean',
+            'title4'=> 'clean1'
+        ],
+    ]
 
 ];

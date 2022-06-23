@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             ServiceSeeder::class,
             StatusSeeder::class,
             ImageHeadSeeder::class,
+            BecomCleanerSeeder::class,
         ]);
     }
 }

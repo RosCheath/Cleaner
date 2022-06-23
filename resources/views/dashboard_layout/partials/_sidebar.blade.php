@@ -108,8 +108,16 @@
                   <span class="menu-title">Home Head Image</span>
               </a>
           </li>
-      @endcan
 
+          <li class="nav-item menu-items">
+              <a class="nav-link" href="{{route('becom-cleaner.index')}}">
+        <span class="menu-icon">
+          <i class="mdi mdi-account"></i>
+        </span>
+                  <span class="menu-title">Be Come Cleaner</span>
+              </a>
+          </li>
+      @endcan
 
     <li class="nav-item menu-items">
       <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
