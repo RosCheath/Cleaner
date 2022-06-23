@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Mail\ContactMail;
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class userContactController extends Controller
 {
@@ -16,6 +17,17 @@ class userContactController extends Controller
         $contacts->telegram = $request->get('telegram');
         $contacts->message = $request->get('message');
         $contacts->save();
+        $mailData = [
+            'name' => $contacts->name,
+            'email' => $contacts->email,
+            'telegram' => $contacts->telegram,
+            'message' => $contacts->message,
+        ];
+        $send2user = [
+          'mail' => $contacts->email,
+        ];
+        Mail::to('admin@gamil.com')->queue(new ContactMail($mailData));
+        Mail::to($send2user)->queue(new ContactMail($mailData));
 
         return redirect()->back();
 
