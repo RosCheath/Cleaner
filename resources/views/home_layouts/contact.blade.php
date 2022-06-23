@@ -36,98 +36,33 @@
                         </div>
                         @endforeach
                     </div>
-                    <div class="row mt-5">
-                        <div class="col">
-                            <div class="block-27">
-                                <ul>
-                                    <li><a href="#">&lt;</a></li>
-                                    <li class="active"><span>1</span></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">4</a></li>
-                                    <li><a href="#">5</a></li>
-                                    <li><a href="#">&gt;</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+
                 </div> <!-- .col-md-8 -->
                 <div class="col-lg-4 sidebar ftco-animate">
                     <div class="sidebar-box bg-light">
-                        <form action="#" class="search-form bg-light">
+                        <h4>Contact Us</h4>
+                        <form action="{{route('user.contacts')}}" method="POST" class="search-form bg-light">
+                            @csrf
                             <div class="form-group">
-                                <span class="icon ion-ios-search"></span>
-                                <input type="text" class="form-control" placeholder="Search...">
+                                <span class="icon ion-ios-contacts"></span>
+                                <input type="text" name="name" class="form-control" placeholder="Your Name">
                             </div>
+                            <div class="form-group">
+                                <span class="icon ion-ios-mail"></span>
+                                <input type="email" name="email" class="form-control" placeholder="Your Email">
+                            </div>
+                            <div class="form-group">
+                                <span class="icon ion-ios-send"></span>
+                                <input type="text" name="telegram" class="form-control" placeholder="Telegram">
+                            </div>
+                            <div class="form-group">
+                                <span class="icon ion-ios-text"></span>
+                                <textarea type="text" name="message" class="form-control" placeholder="Title"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send</button>
                         </form>
                     </div>
-                    <div class="sidebar-box bg-light ftco-animate">
-                        <h3 class="heading-2">Categories</h3>
-                        <ul class="categories">
-                            <li><a href="#">Bags <span>(12)</span></a></li>
-                            <li><a href="#">Shoes <span>(22)</span></a></li>
-                            <li><a href="#">Dress <span>(37)</span></a></li>
-                            <li><a href="#">Accessories <span>(42)</span></a></li>
-                            <li><a href="#">Makeup <span>(14)</span></a></li>
-                            <li><a href="#">Beauty <span>(140)</span></a></li>
-                        </ul>
-                    </div>
 
-                    <div class="sidebar-box bg-light ftco-animate">
-                        <h3 class="heading-2">Recent Blog</h3>
-                        <div class="block-21 mb-4 d-flex">
-                            <a class="blog-img mr-4" style="background-image: url(assets/home/images/image_1.jpg);"></a>
-                            <div class="text">
-                                <h3 class="heading-1"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                                <div class="meta">
-                                    <div><a href="#"><span class="icon-calendar"></span> Sept. 12, 2019</a></div>
-                                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="block-21 mb-4 d-flex">
-                            <a class="blog-img mr-4" style="background-image: url(assets/home/images/image_2.jpg);"></a>
-                            <div class="text">
-                                <h3 class="heading-1"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                                <div class="meta">
-                                    <div><a href="#"><span class="icon-calendar"></span> Sept. 12, 2019</a></div>
-                                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="block-21 mb-4 d-flex">
-                            <a class="blog-img mr-4" style="background-image: url(assets/home/images/image_3.jpg);"></a>
-                            <div class="text">
-                                <h3 class="heading-1"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                                <div class="meta">
-                                    <div><a href="#"><span class="icon-calendar"></span> Sept. 12, 2019</a></div>
-                                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="sidebar-box bg-light ftco-animate">
-                        <h3 class="heading-2">Tag Cloud</h3>
-                        <div class="tagcloud">
-                            <a href="#" class="tag-cloud-link">donate</a>
-                            <a href="#" class="tag-cloud-link">charity</a>
-                            <a href="#" class="tag-cloud-link">non-profit</a>
-                            <a href="#" class="tag-cloud-link">organization</a>
-                            <a href="#" class="tag-cloud-link">child</a>
-                            <a href="#" class="tag-cloud-link">abuse</a>
-                            <a href="#" class="tag-cloud-link">help</a>
-                            <a href="#" class="tag-cloud-link">volunteer</a>
-                        </div>
-                    </div>
-
-                    <div class="sidebar-box bg-light ftco-animate">
-                        <h3 class="heading-2">Paragraph</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!</p>
-                    </div>
                 </div>
 
             </div>

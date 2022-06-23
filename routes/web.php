@@ -3,11 +3,13 @@
 use App\Http\Controllers\BecomeCleanerController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CreateUserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ImageHeadsController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\CleanerController;
+use App\Http\Controllers\userContactController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -33,6 +35,7 @@ Route::group(['web'],function(){
     Route::get('view/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('v_profile');
     Route::resource('booking', BookingController::class);
     Route::get('invoice/{booking}', [App\Http\Controllers\BookingController::class, 'invoice'])->name('invoice');
+    Route::post('/contacts', [userContactController::class, 'contacts'])->name('user.contacts');
 
 
 
@@ -52,6 +55,7 @@ Route::group(['web','middleware' => 'can:admin_auth'],function(){
     Route::resource('image-head', ImageHeadsController::class);
     Route::resource('becom-cleaner', BecomeCleanerController::class);
     Route::resource('blog', BlogController::class);
+    Route::resource('Contact', ContactController::class);
 });
 
 Route::group(['web','middleware' => 'can:admin-feature'],function(){
