@@ -56,7 +56,7 @@
                     </a>
                 </li>
 	          <li class="nav-item {{ (request()->is('contact')) ? 'active' : '' }}">
-                  <a href="contact" class="nav-link">Contact</a>
+                  <a href="contact" class="nav-link">Contact & Blog</a>
               </li>
                 @if(Auth::user())
                     @can('user-feature')

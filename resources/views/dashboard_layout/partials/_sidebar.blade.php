@@ -117,6 +117,15 @@
                   <span class="menu-title">Be Come Cleaner</span>
               </a>
           </li>
+
+          <li class="nav-item menu-items">
+              <a class="nav-link" href="{{route('blog.index')}}">
+        <span class="menu-icon">
+          <i class="mdi mdi-account"></i>
+        </span>
+                  <span class="menu-title">Post Blog</span>
+              </a>
+          </li>
       @endcan
 
     <li class="nav-item menu-items">

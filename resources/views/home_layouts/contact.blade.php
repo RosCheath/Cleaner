@@ -18,102 +18,23 @@
             <div class="row">
                 <div class="col-lg-8 ftco-animate">
                     <div class="row">
+                        @foreach($blog as $blog)
                         <div class="col-md-12 d-flex ftco-animate">
                             <div class="blog-entry align-self-stretch d-md-flex">
-                                <a href="blog-single.html" class="block-20" style="background-image: url('assets/home/images/work-1.jpg');">
-                                </a>
+                                <img href="#" class="block-20" src="{{$blog->image}}" style="width: 700px;height: 300px">
+                                </img>
                                 <div class="text d-block pl-md-4">
                                     <div class="meta mb-3">
-                                        <div><a href="#">Sept. 12, 2019</a></div>
-                                        <div><a href="#">Admin</a></div>
-                                        <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+                                        <div><a href="#">{{$blog->created_at}}</a></div>
                                     </div>
-                                    <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                    <p><a href="blog-single.html" class="btn btn-primary py-2 px-3">Read more</a></p>
+                                    <h3 class="heading"><a href="#">{{$blog->name}}</a></h3>
+{{--                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>--}}
+                                    <p>{{$blog->title}}</p>
+                                    <p><a href="#" class="btn btn-primary py-2 px-3">Read more</a></p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-12 d-flex ftco-animate">
-                            <div class="blog-entry align-self-stretch d-md-flex">
-                                <a href="blog-single.html" class="block-20" style="background-image: url('assets/home/images/work-2.jpg');">
-                                </a>
-                                <div class="text d-block pl-md-4">
-                                    <div class="meta mb-3">
-                                        <div><a href="#">Sept. 12, 2019</a></div>
-                                        <div><a href="#">Admin</a></div>
-                                        <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                                    </div>
-                                    <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                    <p><a href="blog-single.html" class="btn btn-primary py-2 px-3">Read more</a></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12 d-flex ftco-animate">
-                            <div class="blog-entry align-self-stretch d-md-flex">
-                                <a href="blog-single.html" class="block-20" style="background-image: url('assets/home/images/work-3.jpg');">
-                                </a>
-                                <div class="text d-block pl-md-4">
-                                    <div class="meta mb-3">
-                                        <div><a href="#">Sept. 12, 2019</a></div>
-                                        <div><a href="#">Admin</a></div>
-                                        <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                                    </div>
-                                    <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                    <p><a href="blog-single.html" class="btn btn-primary py-2 px-3">Read more</a></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12 d-flex ftco-animate">
-                            <div class="blog-entry align-self-stretch d-md-flex">
-                                <a href="blog-single.html" class="block-20" style="background-image: url('assets/home/images/work-4.jpg');">
-                                </a>
-                                <div class="text d-block pl-md-4">
-                                    <div class="meta mb-3">
-                                        <div><a href="#">Sept. 12, 2019</a></div>
-                                        <div><a href="#">Admin</a></div>
-                                        <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                                    </div>
-                                    <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                    <p><a href="blog-single.html" class="btn btn-primary py-2 px-3">Read more</a></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12 d-flex ftco-animate">
-                            <div class="blog-entry align-self-stretch d-md-flex">
-                                <a href="blog-single.html" class="block-20" style="background-image: url('assets/home/images/work-5.jpg');">
-                                </a>
-                                <div class="text d-block pl-md-4">
-                                    <div class="meta mb-3">
-                                        <div><a href="#">Sept. 12, 2019</a></div>
-                                        <div><a href="#">Admin</a></div>
-                                        <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                                    </div>
-                                    <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                    <p><a href="blog-single.html" class="btn btn-primary py-2 px-3">Read more</a></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12 d-flex ftco-animate">
-                            <div class="blog-entry align-self-stretch d-md-flex">
-                                <a href="blog-single.html" class="block-20" style="background-image: url('assets/home/images/work-6.jpg');">
-                                </a>
-                                <div class="text d-block pl-md-4">
-                                    <div class="meta mb-3">
-                                        <div><a href="#">Sept. 12, 2019</a></div>
-                                        <div><a href="#">Admin</a></div>
-                                        <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                                    </div>
-                                    <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                    <p><a href="blog-single.html" class="btn btn-primary py-2 px-3">Read more</a></p>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                     <div class="row mt-5">
                         <div class="col">

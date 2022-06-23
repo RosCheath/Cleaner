@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\BecomCleaners;
+use App\Models\Blog;
 use App\Models\Booking;
 use App\Models\ImageHeads;
 use App\Models\Service;
@@ -49,9 +50,10 @@ class HomeController extends Controller
 
     public function contact()
     {
+        $blog = Blog::latest()->paginate(10);
         $contactimage  = ImageHeads::where('name','=', 'Contact Screen')->get();
         $bookingCount = Booking::where('user_id','=',Auth::id())->where('status_type','=','Pending')->count();
-        return view('home_layouts.contact',compact('bookingCount','contactimage'));
+        return view('home_layouts.contact',compact('bookingCount','contactimage','blog'));
     }
     public function about()
     {
