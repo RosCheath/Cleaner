@@ -72,8 +72,12 @@ class DashboardController extends Controller
             'time' => $pending->time,
             'status_type' => $pending->status_type,
         ];
+        $to = [
+             'cleaner' => Auth::user()->email,
+        ];
         Mail::to('admin@gamil.com')->queue(new ApprovedMail($mailData));
         Mail::to($pending->user->email)->queue(new ApprovedMail($mailData));
+        Mail::to($to)->queue(new ApprovedMail($mailData));
         return redirect()->route('pending')
             ->with('success','Cleaner updated successfully');
     }

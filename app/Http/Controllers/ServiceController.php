@@ -56,11 +56,12 @@ class ServiceController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\service  $service
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function show(service $service)
     {
-        //
+        $noti = Booking::where('status_type','=','Pending')->latest()->paginate(3);
+        return view('dashboard_layout.pages.service.show',compact('service','noti'));
     }
 
     /**

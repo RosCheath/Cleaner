@@ -83,10 +83,10 @@ class CleanerController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function edit(User $cleaner)
+    public function edit(User $admin_cleaner)
     {
         $noti = Booking::where('status_type','=','Pending')->latest()->paginate(3);
-        return view('dashboard_layout.pages.cleaner.edit',compact('cleaner','noti'));
+        return view('dashboard_layout.pages.cleaner.edit',compact('admin_cleaner','noti'));
     }
 
     /**

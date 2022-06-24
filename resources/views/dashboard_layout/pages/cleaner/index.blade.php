@@ -4,7 +4,7 @@
     <div class="main-panel">
         <div class="content-wrapper">
             <div class="page-header">
-                <h3 class="page-title"><a class="btn btn-primary" href="{{route('cleaner.create')}}"> Create Cleaner </a></h3>
+                <h3 class="page-title"><a class="btn btn-primary" href="{{route('admin-cleaner.create')}}"> Create Cleaner </a></h3>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#">Tables</a></li>
@@ -55,9 +55,9 @@
                                                     <i class="mdi mdi-security"></i>
                                                 </button>
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuIconButton6">
-                                                    <a class="dropdown-item" href="{{route('cleaner.edit',$cleaners->id)}}">Edit</a>
+                                                    <a class="dropdown-item" href="{{route('admin-cleaner.edit',$cleaners->id)}}">Edit</a>
                                                     <a class="dropdown-item" href="#">See Profile</a>
-                                                    <form action="{{ route('cleaner.destroy',$cleaners->id) }}" method="POST">
+                                                    <form action="{{ route('admin-cleaner.destroy',$cleaners->id) }}" method="POST">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit" class="dropdown-item">Delete User</button>

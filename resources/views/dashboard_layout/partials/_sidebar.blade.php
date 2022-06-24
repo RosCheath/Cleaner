@@ -72,18 +72,16 @@
       </div>
     </li>
 
-
-
 @can('admin_auth')
       <li class="nav-item menu-items">
-          <a class="nav-link" href="{{route('users.index')}}">
+          <a class="nav-link"  href="{{route('users.index')}}">
         <span class="menu-icon">
           <i class="mdi mdi-account"></i>
         </span>
               <span class="menu-title">User List</span>
           </a>
       </li>
-    <li class="nav-item menu-items">
+    <li class="nav-item menu-items {{ (request()->is('service*')) ? 'active' : '' }}">
       <a class="nav-link" href="{{route('service.index')}}">
         <span class="menu-icon">
           <i class="mdi mdi-chart-bar"></i>
@@ -91,8 +89,8 @@
         <span class="menu-title">Service</span>
       </a>
     </li>
-    <li class="nav-item menu-items">
-      <a class="nav-link" href="{{route('cleaner.index')}}">
+    <li class="nav-item menu-items {{ (request()->is('admin-cleaner*')) ? 'active' : '' }}">
+      <a class="nav-link" id="cleaner" href="{{route('admin-cleaner.index')}}">
         <span class="menu-icon">
           <i class="mdi mdi-contacts"></i>
         </span>
@@ -100,7 +98,7 @@
       </a>
     </li>
 
-          <li class="nav-item menu-items">
+          <li class="nav-item menu-items {{ (request()->is('image-head*')) ? 'active' : '' }}">
               <a class="nav-link" href="{{route('image-head.index')}}">
         <span class="menu-icon">
           <i class="mdi mdi-account"></i>
@@ -109,21 +107,32 @@
               </a>
           </li>
 
-          <li class="nav-item menu-items">
+          <li class="nav-item menu-items {{ (request()->is('becom-cleaner*')) ? 'active' : '' }}">
               <a class="nav-link" href="{{route('becom-cleaner.index')}}">
         <span class="menu-icon">
           <i class="mdi mdi-account"></i>
         </span>
-                  <span class="menu-title">Be Come Cleaner</span>
+                  <span class="menu-title">BeCome Cleaner </span>
               </a>
           </li>
 
-          <li class="nav-item menu-items">
+
+
+          <li class="nav-item menu-items {{ (request()->is('blog*')) ? 'active' : '' }}">
               <a class="nav-link" href="{{route('blog.index')}}">
         <span class="menu-icon">
           <i class="mdi mdi-account"></i>
         </span>
                   <span class="menu-title">Post Blog</span>
+              </a>
+          </li>
+
+          <li class="nav-item menu-items {{ (request()->is('contact-admin*')) ? 'active' : '' }}">
+              <a class="nav-link" href="{{route('contact-admin.index')}}">
+        <span class="menu-icon">
+          <i class="mdi mdi-account"></i>
+        </span>
+                  <span class="menu-title">User Contact</span>
               </a>
           </li>
       @endcan

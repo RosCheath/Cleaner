@@ -25,7 +25,7 @@
                         </div>
                         <div class="card-footer">
                             <a href="{{route('service.edit',$service->id)}}" class="btn btn-primary">Edit</a>
-                            <button type="button" class="btn btn-success">Show</button>
+                            <a href="{{route('service.show',$service->id)}}" class="btn btn-success">Show</a>
                             <form action="{{ route('service.destroy',$service->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')

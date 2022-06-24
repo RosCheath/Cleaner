@@ -51,11 +51,11 @@ Route::group(['web','middleware' => 'can:user-feature'],function(){
 Route::group(['web','middleware' => 'can:admin_auth'],function(){
     Route::resource('service', ServiceController::class);
     Route::resource('users', CreateUserController::class);
-    Route::resource('cleaner', CleanerController::class);
+    Route::resource('admin-cleaner', App\Http\Controllers\CleanerController::class);
     Route::resource('image-head', ImageHeadsController::class);
-    Route::resource('becom-cleaner', BecomeCleanerController::class);
+    Route::resource('becom-cleaner', App\Http\Controllers\BecomeCleanerController::class);
     Route::resource('blog', BlogController::class);
-    Route::resource('Contact', ContactController::class);
+    Route::resource('contact-admin', ContactController::class);
 });
 
 Route::group(['web','middleware' => 'can:admin-feature'],function(){

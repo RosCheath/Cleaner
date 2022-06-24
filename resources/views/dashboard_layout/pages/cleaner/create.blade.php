@@ -7,7 +7,7 @@
         <h3 class="page-title"> Add Users </h3>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><form method="POST" action="{{ route('cleaner.store') }}" enctype="multipart/form-data">
+            <li class="breadcrumb-item"><form method="POST" action="{{ route('admin-cleaner.store') }}" enctype="multipart/form-data">
                 @csrf</li>
             <li class="breadcrumb-item active" aria-current="page">Form Add</li>
           </ol>
