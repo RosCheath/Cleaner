@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Booking;
+use App\Models\Contact;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -18,11 +19,12 @@ class CreateUserController extends Controller
      */
     public function index()
     {
+        $message = Contact::latest()->paginate(3);
 //        $user = User::latest()->paginate(10);
         $user = User::with('roles')->where('role', 'User')->latest()->paginate(10);
         $Cleaner = User::with('roles')->where('role', 'Cleaner')->latest()->paginate(10);
         $noti = Booking::where('status_type','=','Pending')->latest()->paginate(3);
-        return view('dashboard_layout.pages.create_users.index',compact('user','noti'),[
+        return view('dashboard_layout.pages.create_users.index',compact('user','noti','message'),[
             'Cleaner' => $Cleaner,
         ]);
     }
@@ -34,8 +36,9 @@ class CreateUserController extends Controller
      */
     public function create()
     {
+        $message = Contact::latest()->paginate(3);
         $noti = Booking::where('status_type','=','Pending')->latest()->paginate(3);
-        return view('dashboard_layout.pages.create_users.create',compact('noti'));
+        return view('dashboard_layout.pages.create_users.create',compact('noti','message'));
     }
 
     /**
@@ -87,8 +90,9 @@ class CreateUserController extends Controller
      */
     public function edit(User $user )
     {
+        $message = Contact::latest()->paginate(3);
         $noti = Booking::where('status_type','=','Pending')->latest()->paginate(3);
-        return view('dashboard_layout.pages.create_users.edit',compact('user','noti'));
+        return view('dashboard_layout.pages.create_users.edit',compact('user','noti','message'));
     }
 
     /**

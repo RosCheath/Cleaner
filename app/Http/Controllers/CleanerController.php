@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Booking;
+use App\Models\Contact;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -17,9 +18,10 @@ class CleanerController extends Controller
      */
     public function index()
     {
+        $message = Contact::latest()->paginate(3);
         $cleaner = User::with('roles')->where('role', 'Cleaner')->get();
         $noti = Booking::where('status_type','=','Pending')->latest()->paginate(3);
-            return view('dashboard_layout.pages.cleaner.index',compact('cleaner','noti'));
+            return view('dashboard_layout.pages.cleaner.index',compact('cleaner','noti','message'));
 
     }
     /**
@@ -29,8 +31,9 @@ class CleanerController extends Controller
      */
     public function create()
     {
+        $message = Contact::latest()->paginate(3);
         $noti = Booking::where('status_type','=','Pending')->latest()->paginate(3);
-        return view('dashboard_layout.pages.cleaner.create',compact('noti'));
+        return view('dashboard_layout.pages.cleaner.create',compact('noti','message'));
     }
 
     /**
@@ -85,8 +88,9 @@ class CleanerController extends Controller
      */
     public function edit(User $admin_cleaner)
     {
+        $message = Contact::latest()->paginate(3);
         $noti = Booking::where('status_type','=','Pending')->latest()->paginate(3);
-        return view('dashboard_layout.pages.cleaner.edit',compact('admin_cleaner','noti'));
+        return view('dashboard_layout.pages.cleaner.edit',compact('admin_cleaner','noti','message'));
     }
 
     /**

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Booking;
+use App\Models\Contact;
 use App\Models\service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -16,9 +17,10 @@ class ServiceController extends Controller
      */
     public function index()
     {
+        $message = Contact::latest()->paginate(3);
         $service = Service::get();
         $noti = Booking::where('status_type','=','Pending')->latest()->paginate(3);
-        return view('dashboard_layout.pages.service.index',compact('service','noti'));
+        return view('dashboard_layout.pages.service.index',compact('service','noti','message'));
     }
 
     /**
@@ -28,9 +30,10 @@ class ServiceController extends Controller
      */
     public function create()
     {
+        $message = Contact::latest()->paginate(3);
         $service = Service::get();
         $noti = Booking::where('status_type','=','Pending')->latest()->paginate(3);
-        return view('dashboard_layout.pages.service.create',compact('service','noti'));
+        return view('dashboard_layout.pages.service.create',compact('service','noti',$message));
     }
 
     /**
@@ -60,8 +63,9 @@ class ServiceController extends Controller
      */
     public function show(service $service)
     {
+        $message = Contact::latest()->paginate(3);
         $noti = Booking::where('status_type','=','Pending')->latest()->paginate(3);
-        return view('dashboard_layout.pages.service.show',compact('service','noti'));
+        return view('dashboard_layout.pages.service.show',compact('service','noti','message'));
     }
 
     /**
@@ -72,8 +76,9 @@ class ServiceController extends Controller
      */
     public function edit(service $service)
     {
+        $message = Contact::latest()->paginate(3);
         $noti = Booking::where('status_type','=','Pending')->latest()->paginate(3);
-        return view('dashboard_layout.pages.service.edit',compact('service','noti'));
+        return view('dashboard_layout.pages.service.edit',compact('service','noti','message'));
     }
 
     /**

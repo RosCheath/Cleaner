@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Booking;
+use App\Models\Contact;
 use App\Models\ImageHeads;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -16,9 +17,10 @@ class ImageHeadsController extends Controller
      */
     public function index()
     {
+        $message = Contact::latest()->paginate(3);
         $noti = Booking::where('status_type','=','Pending')->latest()->paginate(3);
         $image_head = ImageHeads::get();
-        return view('image_head.index',compact('image_head','noti'));
+        return view('image_head.index',compact('image_head','noti','message'));
     }
 
     /**
@@ -28,8 +30,9 @@ class ImageHeadsController extends Controller
      */
     public function edit(ImageHeads $image_head)
     {
+        $message = Contact::latest()->paginate(3);
         $noti = Booking::where('status_type','=','Pending')->latest()->paginate(3);
-        return view('image_head.edit',compact('image_head','noti'));
+        return view('image_head.edit',compact('image_head','noti','message'));
     }
 
     /**

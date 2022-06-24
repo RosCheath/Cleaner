@@ -20,6 +20,7 @@
           <i class="mdi mdi-view-grid"></i>
         </a>
       </li>
+        @can('admin_auth')
       <li class="nav-item dropdown border-left">
         <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
           <i class="mdi mdi-email"></i>
@@ -28,39 +29,26 @@
         <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
           <h6 class="p-3 mb-0">Messages</h6>
           <div class="dropdown-divider"></div>
+
+            @foreach($message as $message)
+
           <a class="dropdown-item preview-item">
             <div class="preview-thumbnail">
-              <img src="{{asset('assets/dashboard/images/faces/face4.jpg')}}" alt="image" class="rounded-circle profile-pic">
+              <img src="https://play-lh.googleusercontent.com/xa2Jz8JUvubis7d92oPMu6vuBRKbphARTYwgNeJ3DEAwJbfKEze0xt7WlOL691AFWf8" alt="image" class="rounded-circle profile-pic">
             </div>
             <div class="preview-item-content">
-              <p class="preview-subject ellipsis mb-1">Mark send you a message</p>
-              <p class="text-muted mb-0"> 1 Minutes ago </p>
+              <p class="preview-subject ellipsis mb-1">{{$message->name}}</p>
+              <p class="text-muted mb-0">{{$message->created_at->diffForHumans()}}</p>
             </div>
           </a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item preview-item">
-            <div class="preview-thumbnail">
-              <img src="{{asset('assets/dashboard/images/faces/face2.jpg')}}" alt="image" class="rounded-circle profile-pic">
-            </div>
-            <div class="preview-item-content">
-              <p class="preview-subject ellipsis mb-1">Cregh send you a message</p>
-              <p class="text-muted mb-0"> 15 Minutes ago </p>
-            </div>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item preview-item">
-            <div class="preview-thumbnail">
-              <img src="{{asset('assets/dashboard/images/faces/face3.jpg')}}" alt="image" class="rounded-circle profile-pic">
-            </div>
-            <div class="preview-item-content">
-              <p class="preview-subject ellipsis mb-1">Profile picture updated</p>
-              <p class="text-muted mb-0"> 18 Minutes ago </p>
-            </div>
-          </a>
+
+            @endforeach
+
           <div class="dropdown-divider"></div>
           <p class="p-3 mb-0 text-center">4 new messages</p>
         </div>
       </li>
+        @endcan
       <li class="nav-item dropdown border-left">
         <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
           <i class="mdi mdi-bell"></i>

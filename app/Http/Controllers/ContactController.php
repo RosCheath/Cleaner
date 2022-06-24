@@ -15,9 +15,10 @@ class ContactController extends Controller
      */
     public function index()
     {
+        $message = Contact::latest()->paginate(3);
         $contact_admin = Contact::latest()->paginate(20);
         $noti = Booking::where('status_type', '=', 'Pending')->latest()->paginate(3);
-        return view('dashboard_layout.pages.contacts.index', compact('contact_admin', 'noti'));
+        return view('dashboard_layout.pages.contacts.index', compact('contact_admin', 'noti','message'));
     }
 
     /**
@@ -28,8 +29,9 @@ class ContactController extends Controller
      */
     public function show(Contact $contact_admin)
     {
+        $message = Contact::latest()->paginate(3);
         $noti = Booking::where('status_type', '=', 'Pending')->latest()->paginate(3);
-        return view('dashboard_layout.pages.contacts.contact_show', compact('contact_admin','noti'));
+        return view('dashboard_layout.pages.contacts.contact_show', compact('contact_admin','noti','message'));
     }
 
 }

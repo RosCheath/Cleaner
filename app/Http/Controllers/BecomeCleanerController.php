@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\BecomCleaners;
 use App\Models\Booking;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 
 class BecomeCleanerController extends Controller
@@ -16,8 +17,9 @@ class BecomeCleanerController extends Controller
     public function index()
     {
         $noti = Booking::where('status_type','=','Pending')->latest()->paginate(3);
+        $message = Contact::latest()->paginate(3);
         $becom_cleaner = BecomCleaners::get();
-        return view('become_cleaner.index',compact('becom_cleaner','noti'));
+        return view('become_cleaner.index',compact('becom_cleaner','noti','message'));
     }
 
     /**
@@ -27,8 +29,9 @@ class BecomeCleanerController extends Controller
      */
     public function create()
     {
+        $message = Contact::latest()->paginate(3);
         $noti = Booking::where('status_type','=','Pending')->latest()->paginate(3);
-        return view('become_cleaner.create',compact('noti'));
+        return view('become_cleaner.create',compact('noti','message'));
     }
 
     /**
@@ -64,8 +67,9 @@ class BecomeCleanerController extends Controller
      */
     public function edit(BecomCleaners $becom_cleaner)
     {
+        $message = Contact::latest()->paginate(3);
         $noti = Booking::where('status_type','=','Pending')->latest()->paginate(3);
-        return view('become_cleaner.edit',compact('becom_cleaner','noti'));
+        return view('become_cleaner.edit',compact('becom_cleaner','noti','message'));
     }
 
     /**

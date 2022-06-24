@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use App\Models\Booking;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -17,8 +18,9 @@ class BlogController extends Controller
     public function index()
     {
         $blog = Blog::get();
+        $message = Contact::latest()->paginate(3);
         $noti = Booking::where('status_type','=','Pending')->latest()->paginate(3);
-        return view('dashboard_layout.pages.blog.index',compact('blog','noti'));
+        return view('dashboard_layout.pages.blog.index',compact('blog','noti','message'));
     }
 
     /**
@@ -28,8 +30,9 @@ class BlogController extends Controller
      */
     public function create()
     {
+        $message = Contact::latest()->paginate(3);
         $noti = Booking::where('status_type','=','Pending')->latest()->paginate(3);
-        return view('dashboard_layout.pages.blog.create',compact('noti'));
+        return view('dashboard_layout.pages.blog.create',compact('noti','message'));
     }
 
     /**
@@ -70,8 +73,9 @@ class BlogController extends Controller
      */
     public function edit(Blog $blog)
     {
+        $message = Contact::latest()->paginate(3);
         $noti = Booking::where('status_type','=','Pending')->latest()->paginate(3);
-        return view('dashboard_layout.pages.blog.edit',compact('blog','noti'));
+        return view('dashboard_layout.pages.blog.edit',compact('blog','noti','message'));
     }
 
     /**
