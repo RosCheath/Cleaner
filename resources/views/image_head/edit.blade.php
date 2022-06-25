@@ -15,7 +15,10 @@
         <form method="POST" action="{{route('image-head.update',$image_head->id)}}" enctype="multipart/form-data">
             @csrf
             @method('PUT')
-
+            <div class="form-group">
+                <label for="exampleInputName1">Name</label>
+                <input type="text" class="form-control " name="name" id="name" required placeholder="Name">
+            </div>
         <input type="file" name="image" onchange="loadFile(event)">
         <img id="output"  width="800px" height="600px"/>
 

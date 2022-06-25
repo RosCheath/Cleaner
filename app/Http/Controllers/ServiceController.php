@@ -33,7 +33,7 @@ class ServiceController extends Controller
         $message = Contact::latest()->paginate(3);
         $service = Service::get();
         $noti = Booking::where('status_type','=','Pending')->latest()->paginate(3);
-        return view('dashboard_layout.pages.service.create',compact('service','noti',$message));
+        return view('dashboard_layout.pages.service.create',compact('service','noti','message'));
     }
 
     /**

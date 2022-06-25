@@ -13,11 +13,7 @@
                     </ol>
                 </nav>
             </div>
-            @if ($message = Session::get('success'))
-                <div class="alert alert-success">
-                    <p>{{ $message }}</p>
-                </div>
-            @endif
+
             <div class="row">
                 <div class="col-12 grid-margin stretch-card">
                     <div class="card">
@@ -26,21 +22,13 @@
                             <form class="forms-sample">
                                 <div class="form-group">
                                     <label for="exampleInputName1">Name</label>
-                                    <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name" placeholder="Name">
-                                    @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
+                                    <input type="text" class="form-control " name="name" id="name" placeholder="Name">
+
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail3">Title</label>
-                                    <textarea type="text" class="form-control @error('title') is-invalid @enderror" name="title" id="title" placeholder="Title"></textarea>
-                                    @error('title')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
+                                    <textarea type="text" class="form-control " name="title" id="title" placeholder="Title"></textarea>
+
                                 </div>
 
 
@@ -48,21 +36,13 @@
 
                                 <div class="form-group">
                                     <label for="exampleInputCity1">Price</label>
-                                    <input type="text" class="form-control" @error('price') is-invalid @enderror name="price" id="price" placeholder="Price">
-                                    @error('price')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
+                                    <input type="text" class="form-control"  name="price" id="price" placeholder="Price">
+
                                 </div>
                                 <div class="form-group">
                                     <label for="text">Time Line</label>
-                                    <input type="text" class="form-control" class="form-control @error('time_line') is-invalid @enderror" name="time_line" id="time_line" required placeholder="time_line">
-                                    @error('time_line')
-                                    <span class="invalid-feedback" role="alert">
-                          <strong>{{ $message }}</strong>
-                      </span>
-                                    @enderror
+                                    <input type="text"  class="form-control" name="time_line" id="time_line" required placeholder="time_line">
+
                                 </div>
                                 <button type="submit" class="btn btn-primary mr-2">Submit</button>
                                 <button class="btn btn-dark">Cancel</button>
