@@ -50,24 +50,24 @@ return [
     'services' => [
         [
             'name' => 'Day',
-            'title' => 'A small river named Duden flows by their place and supplies.',
+            'title' => 'For Cleaner in one day ',
             'image' => 'https://content.tinytap.it/9C451F0A-7A2F-46A4-9374-256170F99113/unzipped%2Fphoto1%2Fphoto1phone.jpg',
-            'price' => '10',
+            'price' => '9.99',
             'time_line' => '1 day'
         ],
         [
-            'name' => 'Month',
-            'title' => 'A small river named Duden flows by their place and supplies.',
+            'name' => 'Week',
+            'title' => 'For Cleaner in one week',
             'image' => 'https://planomoms.com/wp-content/uploads/2021/03/House-Cleaning-service.jpg',
-            'price' => '100',
-            'time_line' => '1 Month'
+            'price' => '67.99',
+            'time_line' => '1 Week'
         ],
         [
-            'name' => 'Year',
-            'title' => 'A small river named Duden flows by their place and supplies.',
+            'name' => 'Month',
+            'title' => 'For Cleaner in one month',
             'image' => 'https://s.marketwatch.com/public/resources/images/MW-BM466_pfhous_MG_20131003164731.jpg',
-            'price' => '1000',
-            'time_line' => '1 Year'
+            'price' => '269.99',
+            'time_line' => '1 Month'
         ]
     ],
     'status' => [
@@ -100,35 +100,35 @@ return [
     'Becom_Cleaner' => [
         [
           'name' => 'Per Time',
-          'price' => '10',
-          'title1' => 'clean',
-          'title2'=> 'clean1',
-          'title3' => 'clean',
-          'title4'=> 'clean1'
+          'price' => '3.00',
+          'title1' => 'Freedom',
+          'title2'=> 'Policy',
+          'title3' => 'Easy',
+          'title4'=> 'Cleaning'
         ],
         [
             'name' => 'Per Day',
-            'price' => '20',
-            'title1' => 'clean',
-            'title2'=> 'clean1',
-            'title3' => 'clean',
-            'title4'=> 'clean1'
+            'price' => '12.00',
+            'title1' => 'Freedom',
+            'title2'=> 'Policy',
+            'title3' => 'Easy',
+            'title4'=> 'Cleaning'
         ],
         [
-            'name' => 'Per Mouth',
-            'price' => '30',
-            'title1' => 'clean',
-            'title2'=> 'clean1',
-            'title3' => 'clean',
-            'title4'=> 'clean1'
+            'name' => 'Per Week',
+            'price' => '84.00',
+            'title1' => 'Freedom',
+            'title2'=> 'Policy',
+            'title3' => 'Easy',
+            'title4'=> 'Cleaning'
         ],
         [
-            'name' => 'Per Year',
-            'price' => '40',
-            'title1' => 'clean',
-            'title2'=> 'clean1',
-            'title3' => 'clean',
-            'title4'=> 'clean1'
+            'name' => 'Per Month',
+            'price' => '336.00',
+            'title1' => 'Freedom',
+            'title2'=> 'Policy',
+            'title3' => 'Easy',
+            'title4'=> 'Cleaning'
         ],
     ]
 

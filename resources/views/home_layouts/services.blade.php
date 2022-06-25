@@ -7,7 +7,7 @@
         <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
           <div class="col-md-9 ftco-animate pb-5 text-center">
             <h2 class="mb-0 bread">Services</h2>
-            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-round-forward"></i></a></span> <span>Services <i class="ion-ios-arrow-round-forward"></i></span></p>
+            <p class="breadcrumbs"><span class="mr-2"><a href="{{route('home')}}">Home <i class="ion-ios-arrow-round-forward"></i></a></span> <span>Services <i class="ion-ios-arrow-round-forward"></i></span></p>
           </div>
         </div>
       </div>
@@ -33,9 +33,7 @@
                               <h5 class="card-title">${{$service->price}}</h5>
                               <p class="card-text">{{$service->title}}</p>
                           </div>
-                          <div class="card-footer text-center">
-                              <a href="service_id" class="btn btn-primary">Booking Now</a>
-                          </div>
+
                       </div>
                   </div>
               @endforeach
@@ -123,7 +121,7 @@
 								<li>{{$becom_cleaner->title3}}</li>
 								<li>{{$becom_cleaner->title4}}</li>
         			</ul>
-        			<p class="button text-center"><a href="#" class="btn btn-primary px-4 py-3">Get Offer</a></p>
+{{--        			<p class="button text-center"><a href="#" class="btn btn-primary px-4 py-3">Get Offer</a></p>--}}
         		</div>
         	</div>
             @endforeach

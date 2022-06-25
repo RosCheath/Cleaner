@@ -45,7 +45,11 @@
             @endforeach
 
           <div class="dropdown-divider"></div>
-          <p class="p-3 mb-0 text-center">4 new messages</p>
+            <div class="p-3 mb-0 text-center">
+                <a href="{{route('contact-admin.index')}}">
+                    See all message
+                </a>
+            </div>
         </div>
       </li>
         @endcan

@@ -153,127 +153,33 @@
               <table class="table">
                 <thead>
                   <tr>
-                    <th>
-                      <div class="form-check form-check-muted m-0">
-                        <label class="form-check-label">
-                          <input type="checkbox" class="form-check-input">
-                        </label>
-                      </div>
-                    </th>
                     <th> Client Name </th>
-                    <th> Order No </th>
-                    <th> Product Cost </th>
-                    <th> Project </th>
-                    <th> Payment Mode </th>
+                    <th> Price </th>
+                    <th> Email </th>
+                    <th> Telegram </th>
+                    <th> Service Name </th>
                     <th> Start Date </th>
-                    <th> Payment Status </th>
+                      <th> Location </th>
+                    <th> Status </th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
+                      @foreach($status_pending as $status_pendings)
                     <td>
-                      <div class="form-check form-check-muted m-0">
-                        <label class="form-check-label">
-                          <input type="checkbox" class="form-check-input">
-                        </label>
-                      </div>
+                      <img src="{{$status_pendings->user->image}}" alt="image" />
+                      <span class="pl-2">{{$status_pendings->user->name}}</span>
                     </td>
+                    <td> ${{$status_pendings->service->price}} </td>
+                    <td> {{$status_pendings->user->email}} </td>
+                    <td> {{$status_pendings->telegram}} </td>
+                    <td> {{$status_pendings->service->name}} </td>
+                    <td> {{$status_pendings->date}} </td>
+                    <td> {{$status_pendings->location}} </td>
                     <td>
-                      <img src="assets/images/faces/face1.jpg" alt="image" />
-                      <span class="pl-2">Henry Klein</span>
+                    <div class="badge badge-outline-success">{{$status_pendings->status_type}}</div>
                     </td>
-                    <td> 02312 </td>
-                    <td> $14,500 </td>
-                    <td> Dashboard </td>
-                    <td> Credit card </td>
-                    <td> 04 Dec 2019 </td>
-                    <td>
-                      <div class="badge badge-outline-success">Approved</div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="form-check form-check-muted m-0">
-                        <label class="form-check-label">
-                          <input type="checkbox" class="form-check-input">
-                        </label>
-                      </div>
-                    </td>
-                    <td>
-                      <img src="assets/images/faces/face2.jpg" alt="image" />
-                      <span class="pl-2">Estella Bryan</span>
-                    </td>
-                    <td> 02312 </td>
-                    <td> $14,500 </td>
-                    <td> Website </td>
-                    <td> Cash on delivered </td>
-                    <td> 04 Dec 2019 </td>
-                    <td>
-                      <div class="badge badge-outline-warning">Pending</div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="form-check form-check-muted m-0">
-                        <label class="form-check-label">
-                          <input type="checkbox" class="form-check-input">
-                        </label>
-                      </div>
-                    </td>
-                    <td>
-                      <img src="assets/images/faces/face5.jpg" alt="image" />
-                      <span class="pl-2">Lucy Abbott</span>
-                    </td>
-                    <td> 02312 </td>
-                    <td> $14,500 </td>
-                    <td> App design </td>
-                    <td> Credit card </td>
-                    <td> 04 Dec 2019 </td>
-                    <td>
-                      <div class="badge badge-outline-danger">Rejected</div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="form-check form-check-muted m-0">
-                        <label class="form-check-label">
-                          <input type="checkbox" class="form-check-input">
-                        </label>
-                      </div>
-                    </td>
-                    <td>
-                      <img src="assets/images/faces/face3.jpg" alt="image" />
-                      <span class="pl-2">Peter Gill</span>
-                    </td>
-                    <td> 02312 </td>
-                    <td> $14,500 </td>
-                    <td> Development </td>
-                    <td> Online Payment </td>
-                    <td> 04 Dec 2019 </td>
-                    <td>
-                      <div class="badge badge-outline-success">Approved</div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="form-check form-check-muted m-0">
-                        <label class="form-check-label">
-                          <input type="checkbox" class="form-check-input">
-                        </label>
-                      </div>
-                    </td>
-                    <td>
-                      <img src="assets/images/faces/face4.jpg" alt="image" />
-                      <span class="pl-2">Sallie Reyes</span>
-                    </td>
-                    <td> 02312 </td>
-                    <td> $14,500 </td>
-                    <td> Website </td>
-                    <td> Credit card </td>
-                    <td> 04 Dec 2019 </td>
-                    <td>
-                      <div class="badge badge-outline-success">Approved</div>
-                    </td>
+                      @endforeach
                   </tr>
                 </tbody>
               </table>
@@ -282,76 +188,7 @@
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-12">
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title">Visitors by Countries</h4>
-            <div class="row">
-              <div class="col-md-5">
-                <div class="table-responsive">
-                  <table class="table">
-                    <tbody>
-                      <tr>
-                        <td>
-                          <i class="flag-icon flag-icon-us"></i>
-                        </td>
-                        <td>USA</td>
-                        <td class="text-right"> 1500 </td>
-                        <td class="text-right font-weight-medium"> 56.35% </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <i class="flag-icon flag-icon-de"></i>
-                        </td>
-                        <td>Germany</td>
-                        <td class="text-right"> 800 </td>
-                        <td class="text-right font-weight-medium"> 33.25% </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <i class="flag-icon flag-icon-au"></i>
-                        </td>
-                        <td>Australia</td>
-                        <td class="text-right"> 760 </td>
-                        <td class="text-right font-weight-medium"> 15.45% </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <i class="flag-icon flag-icon-gb"></i>
-                        </td>
-                        <td>United Kingdom</td>
-                        <td class="text-right"> 450 </td>
-                        <td class="text-right font-weight-medium"> 25.00% </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <i class="flag-icon flag-icon-ro"></i>
-                        </td>
-                        <td>Romania</td>
-                        <td class="text-right"> 620 </td>
-                        <td class="text-right font-weight-medium"> 10.25% </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <i class="flag-icon flag-icon-br"></i>
-                        </td>
-                        <td>Brasil</td>
-                        <td class="text-right"> 230 </td>
-                        <td class="text-right font-weight-medium"> 75.00% </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              <div class="col-md-7">
-                <div id="audience-map" class="vector-map"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+
   </div>
   <!-- content-wrapper ends -->
   <!-- partial:partials/_footer -->

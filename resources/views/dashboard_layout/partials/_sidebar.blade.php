@@ -137,32 +137,32 @@
           </li>
       @endcan
 
-    <li class="nav-item menu-items">
-      <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-        <span class="menu-icon">
-          <i class="mdi mdi-security"></i>
-        </span>
-        <span class="menu-title">User Pages</span>
-        <i class="menu-arrow"></i>
-      </a>
-      <div class="collapse" id="auth">
-        <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="blank"> Blank Page </a></li>
-          <li class="nav-item"> <a class="nav-link" href="404"> 404 </a></li>
-          <li class="nav-item"> <a class="nav-link" href="500"> 500 </a></li>
-          <li class="nav-item"> <a class="nav-link" href="d-login"> Login </a></li>
-          <li class="nav-item"> <a class="nav-link" href="d-register"> Register </a></li>
-        </ul>
-      </div>
-    </li>
+{{--    <li class="nav-item menu-items">--}}
+{{--      <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">--}}
+{{--        <span class="menu-icon">--}}
+{{--          <i class="mdi mdi-security"></i>--}}
+{{--        </span>--}}
+{{--        <span class="menu-title">User Pages</span>--}}
+{{--        <i class="menu-arrow"></i>--}}
+{{--      </a>--}}
+{{--      <div class="collapse" id="auth">--}}
+{{--        <ul class="nav flex-column sub-menu">--}}
+{{--          <li class="nav-item"> <a class="nav-link" href="blank"> Blank Page </a></li>--}}
+{{--          <li class="nav-item"> <a class="nav-link" href="404"> 404 </a></li>--}}
+{{--          <li class="nav-item"> <a class="nav-link" href="500"> 500 </a></li>--}}
+{{--          <li class="nav-item"> <a class="nav-link" href="d-login"> Login </a></li>--}}
+{{--          <li class="nav-item"> <a class="nav-link" href="d-register"> Register </a></li>--}}
+{{--        </ul>--}}
+{{--      </div>--}}
+{{--    </li>--}}
 
-    <li class="nav-item menu-items">
-      <a class="nav-link" href="http://www.bootstrapdash.com/demo/corona-free/jquery/documentation/documentation.html">
-        <span class="menu-icon">
-          <i class="mdi mdi-file-document-box"></i>
-        </span>
-        <span class="menu-title">Calender</span>
-      </a>
-    </li>
+{{--    <li class="nav-item menu-items">--}}
+{{--      <a class="nav-link" href="http://www.bootstrapdash.com/demo/corona-free/jquery/documentation/documentation.html">--}}
+{{--        <span class="menu-icon">--}}
+{{--          <i class="mdi mdi-file-document-box"></i>--}}
+{{--        </span>--}}
+{{--        <span class="menu-title">Calender</span>--}}
+{{--      </a>--}}
+{{--    </li>--}}
   </ul>
 </nav>

@@ -21,6 +21,7 @@ class DashboardController extends Controller
 
     public function home_d()
     {
+        $status_pending = Booking::where('status_type', 'Pending')->latest()->paginate(10);
         $message = Contact::latest()->paginate(3);
         $userCount = User::with('role')->where('role', 'User')->count();
         $CleanerCount = User::with('role')->where('role', 'Cleaner')->count();
@@ -39,6 +40,7 @@ class DashboardController extends Controller
         'rejected',
         'noti',
         'message',
+        'status_pending',
         ));
     }
 

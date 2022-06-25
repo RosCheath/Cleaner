@@ -49,7 +49,7 @@
                     <a href="about" class="nav-link">About</a>
                 </li>
 	        	<li class="nav-item {{ (request()->is('booking*')) ? 'active' : '' }}">
-                    <a href="{{route('booking.index')}}" class="nav-link notification">Booking
+                    <a href="{{route('booking.index')}}" class="nav-link notification">My Cart
                         @if($bookingCount>0)
                         <span class="badge">{{$bookingCount}}</span>
                         @endif

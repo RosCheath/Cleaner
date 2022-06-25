@@ -16,6 +16,7 @@
             <div class="row row-cols-1 row-cols-md-3">
                 @foreach($service as $service)
                 <div class="col mb-4">
+
                     <div class="card h-100">
                         <img src="{{ $service->image}}" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -36,6 +37,7 @@
                             </form>
                         </div>
                     </div>
+
                 </div>
                 @endforeach
             </div>

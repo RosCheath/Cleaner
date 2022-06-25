@@ -7,7 +7,7 @@
             <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
                 <div class="col-md-9 ftco-animate pb-5 text-center">
                     <h2 class="mb-0 bread">Booking</h2>
-                    <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-round-forward"></i></a></span> <span>Services <i class="ion-ios-arrow-round-forward"></i></span></p>
+                    <p class="breadcrumbs"><span class="mr-2"><a href="{{route('home')}}">Home <i class="ion-ios-arrow-round-forward"></i></a></span> <span>Services <i class="ion-ios-arrow-round-forward"></i></span></p>
                 </div>
             </div>
         </div>
@@ -15,10 +15,10 @@
     @endforeach
 <link rel="stylesheet" href="booking.css">
 <div class="wrap cf">
-    <h1 class="projTitle">Responsive Table<span>-Less</span> Shopping Cart</h1>
+{{--    <h1 class="projTitle">Responsive Table<span>-Less</span> Shopping Cart</h1>--}}
     <div class="heading cf">
         <h1>My Cart</h1>
-        <a href="#" class="continue">Continue Shopping</a>
+        <a href="services" class="continue">Continue Booking</a>
     </div>
     <div class="cart">
         <ul class="cartWrap">
