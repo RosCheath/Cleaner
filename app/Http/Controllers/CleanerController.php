@@ -19,7 +19,7 @@ class CleanerController extends Controller
     public function index()
     {
         $message = Contact::latest()->paginate(3);
-        $cleaner = User::with('roles')->where('role', 'Cleaner')->get();
+        $cleaner = User::with('roles')->where('role', 'Cleaner')->latest()->paginate(15);
         $noti = Booking::where('status_type','=','Pending')->latest()->paginate(3);
             return view('dashboard_layout.pages.cleaner.index',compact('cleaner','noti','message'));
 

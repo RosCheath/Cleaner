@@ -18,7 +18,7 @@ class BecomeCleanerController extends Controller
     {
         $noti = Booking::where('status_type','=','Pending')->latest()->paginate(3);
         $message = Contact::latest()->paginate(3);
-        $becom_cleaner = BecomCleaners::get();
+        $becom_cleaner = BecomCleaners::latest()->paginate(20);
         return view('become_cleaner.index',compact('becom_cleaner','noti','message'));
     }
 

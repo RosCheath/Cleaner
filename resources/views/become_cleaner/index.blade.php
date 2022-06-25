@@ -37,16 +37,16 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($becom_cleaner as $becom_cleaner)
+                                    @foreach($becom_cleaner as $com_cleaner)
                                         <tr>
                                             <td>
-                                                <span class="pl-2">{{$becom_cleaner->name}}</span>
+                                                <span class="pl-2">{{$com_cleaner->name}}</span>
                                             </td>
-                                            <td> {{$becom_cleaner->price}} </td>
-                                            <td> {{$becom_cleaner->title1}} </td>
-                                            <td> {{$becom_cleaner->title2}} </td>
-                                            <td> {{$becom_cleaner->title3}} </td>
-                                            <td> {{$becom_cleaner->title4}} </td>
+                                            <td> {{$com_cleaner->price}} </td>
+                                            <td> {{$com_cleaner->title1}} </td>
+                                            <td> {{$com_cleaner->title2}} </td>
+                                            <td> {{$com_cleaner->title3}} </td>
+                                            <td> {{$com_cleaner->title4}} </td>
 
                                             <td>
                                                 <div class="dropdown">
@@ -54,9 +54,9 @@
                                                         <i class="mdi mdi-security"></i>
                                                     </button>
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuIconButton6">
-                                                        <a class="dropdown-item" href="{{route('becom-cleaner.edit',$becom_cleaner->id)}}">Edit</a>
+                                                        <a class="dropdown-item" href="{{route('becom-cleaner.edit',$com_cleaner->id)}}">Edit</a>
                                                         <a class="dropdown-item" href="#">See Profile</a>
-                                                        <form action="{{ route('becom-cleaner.destroy',$becom_cleaner->id) }}" method="POST">
+                                                        <form action="{{ route('becom-cleaner.destroy',$com_cleaner->id) }}" method="POST">
                                                             @csrf
                                                             @method('DELETE')
                                                             <button type="submit" class="dropdown-item">Delete User</button>
@@ -73,6 +73,7 @@
                     </div>
                 </div>
             </div>
+            {{ $becom_cleaner->links() }}
         </div>
         <!-- content-wrapper ends -->
         <!-- partial:../../partials/_footer -->

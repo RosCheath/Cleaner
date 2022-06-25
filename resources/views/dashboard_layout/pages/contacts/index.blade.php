@@ -36,20 +36,21 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($contact_admin as $contact_admin)
+                                    @foreach($contact_admin as $contact)
                                     <tr>
                                         <td>
                                                 <img src="https://play-lh.googleusercontent.com/xa2Jz8JUvubis7d92oPMu6vuBRKbphARTYwgNeJ3DEAwJbfKEze0xt7WlOL691AFWf8" />
-                                            <span class="pl-2">{{$contact_admin->name}}</span>
+                                            <span class="pl-2">{{$contact->name}}</span>
                                         </td>
-                                        <td> {{$contact_admin->email}} </td>
-                                        <td> {{$contact_admin->telegram}} </td>
-                                        <td> {{$contact_admin->created_at->format('Y-m-d')}} </td>
+                                        <td> {{$contact->email}} </td>
+                                        <td> {{$contact->telegram}} </td>
+                                        <td> {{$contact->created_at->format('Y-m-d')}} </td>
                                         <td>
-                                            <a href="{{route('contact-admin.show',$contact_admin->id)}}" class="btn btn-primary">Show</a>
+                                            <a href="{{route('contact-admin.show',$contact->id)}}" class="btn btn-primary">Show</a>
                                         </td>
-                                        <td> {{$contact_admin->created_at->diffForHumans()}} </td>
+                                        <td> {{$contact->created_at->diffForHumans()}} </td>
                                     </tr>
+
                                     @endforeach
                                     </tbody>
                                 </table>
@@ -58,7 +59,8 @@
                     </div>
                 </div>
             </div>
-{{--            {{ $users->links() }}--}}
+            {{ $contact_admin->links() }}
+
         </div>
         <!-- content-wrapper ends -->
         <!-- partial:../../partials/_footer -->

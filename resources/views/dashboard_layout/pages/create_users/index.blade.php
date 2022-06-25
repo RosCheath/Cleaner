@@ -79,6 +79,7 @@
                     </div>
                 </div>
             </div>
+            {{ $user->links() }}
             <div class="row ">
                 <div class="col-12 grid-margin">
                     <div class="card">
@@ -146,7 +147,7 @@
                     </div>
                 </div>
             </div>
-{{--            {{ $users->links() }}--}}
+            {{ $Cleaner->links() }}
             <div class="row">
                 <div class="col-lg-12 grid-margin stretch-card">
                     <div class="card">
