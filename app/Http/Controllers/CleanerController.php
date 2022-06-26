@@ -56,7 +56,6 @@ class CleanerController extends Controller
         ]);
 
         $input = $request->all();
-//        'password' => Hash::make($request['password']),
         $input['password'] = Hash::make($request['password']);
         if($request->hasFile('image')){
             $path = Storage::disk('s3')->put('Cleaner/image', $request->image);
@@ -100,16 +99,16 @@ class CleanerController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, User $cleaner)
+    public function update(Request $request, User $admin_cleaner)
     {
-        $this->validate(request(), [
-            'name' => 'required',
-            'phone' => 'required',
-            'date_of_birth' => 'required',
-            'email' => 'required',
-            'role' => 'required',
-            'sex' => 'required',
-        ]);
+//        $this->validate(request(), [
+//            'name' => 'required',
+//            'phone' => 'required',
+//            'date_of_birth' => 'required',
+//            'email' => 'required',
+//            'role' => 'required',
+//            'sex' => 'required',
+//        ]);
 
         $input = $request->all();
         if($request->hasFile('image')){
@@ -117,7 +116,8 @@ class CleanerController extends Controller
             $path = Storage::disk('s3')->url($path);
             $input['image'] = $path;
         }
-        $cleaner->update($input);
+//        dd($input);
+        $admin_cleaner->update($input);
         return redirect()->back()
             ->with('success','Cleaner updated successfully');
     }

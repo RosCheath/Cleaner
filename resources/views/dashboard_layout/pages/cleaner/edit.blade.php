@@ -4,7 +4,7 @@
     <div class="main-panel">
         <div class="content-wrapper">
             <div class="page-header">
-                <h3 class="page-title"> Add Cleaner </h3>
+                <h3 class="page-title"> Update Cleaner </h3>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
@@ -12,7 +12,7 @@
                             @csrf
                             @method('PUT')
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">Form Add</li>
+                        <li class="breadcrumb-item active" aria-current="page">update Cleaner</li>
                     </ol>
                 </nav>
             </div>
@@ -21,8 +21,8 @@
                 <div class="col-12 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Create Users</h4>
-                            <p class="card-description"> Create Users </p>
+                            <h4 class="card-title">Update Cleaner</h4>
+                            <p class="card-description"> Update Cleaner </p>
                             <form class="forms-sample">
                                 <div class="form-group">
                                     <label for="exampleInputName1">Name</label>
@@ -69,7 +69,7 @@
 
                                 <div class="form-group">
                                     <label for="exampleSelectGender">Status</label>
-                                    <select class="form-control" name="status" id="role" value="{{$admin_cleaner->status}}">
+                                    <select class="form-control" name="status" id="status" value="{{$admin_cleaner->status}}">
                                         <option value="low" @if($admin_cleaner->status == "low") selected @endif>Low</option>
                                         <option value="hight" @if($admin_cleaner->status == "hight") selected @endif>Hight</option>
                                     </select>
