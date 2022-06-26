@@ -49,26 +49,26 @@ return [
     ],
     'services' => [
         [
-            'name' => 'Day',
+            'name' => 'HouseKeeping',
             'title' => 'For Cleaner in one day ',
             'image' => 'https://content.tinytap.it/9C451F0A-7A2F-46A4-9374-256170F99113/unzipped%2Fphoto1%2Fphoto1phone.jpg',
             'price' => '9.99',
             'time_line' => '1 day'
         ],
         [
-            'name' => 'Week',
-            'title' => 'For Cleaner in one week',
+            'name' => 'TeamCleaning',
+            'title' => 'For Cleaner in a Day And Work as Group',
             'image' => 'https://planomoms.com/wp-content/uploads/2021/03/House-Cleaning-service.jpg',
             'price' => '67.99',
             'time_line' => '1 Week'
         ],
-        [
-            'name' => 'Month',
-            'title' => 'For Cleaner in one month',
-            'image' => 'https://s.marketwatch.com/public/resources/images/MW-BM466_pfhous_MG_20131003164731.jpg',
-            'price' => '269.99',
-            'time_line' => '1 Month'
-        ]
+//        [
+//            'name' => 'Month',
+//            'title' => 'For Cleaner in one month',
+//            'image' => 'https://s.marketwatch.com/public/resources/images/MW-BM466_pfhous_MG_20131003164731.jpg',
+//            'price' => '269.99',
+//            'time_line' => '1 Month'
+//        ]
     ],
     'status' => [
       'Pending','Approved','Done','Rejected'

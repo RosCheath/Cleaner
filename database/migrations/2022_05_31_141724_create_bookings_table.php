@@ -20,8 +20,6 @@ return new class extends Migration
             $table->unsignedBigInteger('cleaner_id')->nullable();
             $table->string('location');
             $table->string('telegram');
-            $table->string('date');
-            $table->string('time');
             $table->string('status_type')->default('Pending');
             $table->foreign('user_id')->references('id')
                 ->on('users')->onDelete('cascade');
