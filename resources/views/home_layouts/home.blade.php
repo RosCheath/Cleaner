@@ -42,62 +42,51 @@
                                 <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
                                     <div class="modal-content">
                                         <div class="col-12">
-
-
-                                            <div class="row justify-content-center pb-3">
+                                            <div class="container ftco-relative ">
+                                                <div class="row justify-content-center pb-3">
                                                 <div class="col-md-10 heading-section text-center ftco-animate">
-                                                    <span class="subheading">Booking</span>
-                                                    <h2 class="mb-4">Make an Appointment</h2>
+                                                    
+                                                    <h2 class="mb-4">Booking Service</h2>
                                                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
                                                 </div>
-                                            </div>
-
-
-                                            <div class="row">
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" id="appointment_name" placeholder="Name">
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" id="appointment_email" placeholder="Email">
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control appointment_date" placeholder="Date">
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control appointment_time" placeholder="Time">
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <div class="select-wrap">
-                                                            <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                                                            <select name="" id="" class="form-control">
-                                                                <option value="">Professional Makeup</option>
-                                                                <option value="">Manicure Pedicure</option>
-                                                                <option value="">Body Treatment</option>
-                                                                <option value="">Haircut &amp; Coloring</option>
-                                                            </select>
+										    </div>
+										
+											<div class="row justify-content-center">
+												<div class="col-md-10 ftco-animate">
+													<form class="appointment-form" method="post" action="#">
+													
+												    <div class="row justify-content-center">
+												        <div class="col-sm-12 ">
+                                                            <div class="form-group">
+                                                                <input type="text" class="form-control" name="location" id="location" placeholder="Location">
+                                                            </div>
+												        </div>
+                                                        <div class="col-sm-12">
+                                                            <div class="form-group">
+                                                                <input type="text" class="form-control" name="telegram" id="telegram" placeholder="Telegram Phone">
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
+												
+                                                        <div class="col-sm-12">
+                                                            <div class="form-group">
+                                                                <div class="select-wrap">
+                                                                <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                                                                <select name="service_id" id="service_id" class="form-control">
+                                                                
+                                                                    <option value=""></option>
+                                                                
+                                                                </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+												    </div>
                                                     <div class="form-group">
-                                                        <input type="text" class="form-control" id="phone" placeholder="Phone">
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="submit" value="Make an Appointment" class="btn btn-primary">
-                                            </div>
-
+                                                        <input type="submit" value="Booking Now" class="btn btn-primary">
+                                                        </div>
+											        </form>
+												</div>
+											</div>
+										</div>
                                         </div>
                                     </div>
                                 </div>
