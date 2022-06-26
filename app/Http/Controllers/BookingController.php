@@ -53,7 +53,6 @@ class BookingController extends Controller
             'time' => $booking->time,
             'status_type' => $booking->status_type,
         ];
-
         Mail::to('admin@gamil.com')->queue(new BookingMail($mailData));
         Mail::to($booking->user->email)->queue(new BookingMail($mailData));
         return redirect()->back()

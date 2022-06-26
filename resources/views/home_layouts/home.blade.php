@@ -30,7 +30,7 @@
             </div>
             <div class="container mt-5 mb-5">
                 <div class="row g-2">
-                    @foreach($home_service as $home_service1)
+                    @foreach($home_service1 as $home_service1)
                     <div class="col-md-6">
                         <div class="card bg-white p-3 px-4 d-flex justify-content-center">
 
@@ -41,11 +41,10 @@
                                 <div class="d-flex justify-content-between align-items-center"> <span>15 bots</span> <span>Priority support</span> </div>
                             </div>
 
-                            <div class="mt-4"> <button class="btn btn-danger" type="button" data-toggle="modal" data-target="#exampleModal">Buy Service</button> </div>
+                            <div class="mt-4"> <button class="btn btn-danger"  type="button" data-toggle="modal" data-target="#exampleModal1">Buy Service</button> </div>
                         </div>
                     </div>
-
-                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
                                 <div class="modal-content ">
                                     <div class="container ftco-relative ">
@@ -68,18 +67,12 @@
                                                                 <input type="text" class="form-control" name="location" id="location" placeholder="Location">
                                                             </div>
                                                         </div>
-                                                        <div class="col-sm-12">
+                                                        <div class="col-sm-6">
                                                             <div class="form-group">
                                                                 <input type="text" class="form-control" name="telegram" id="telegram" placeholder="Telegram Phone">
                                                             </div>
                                                         </div>
-
-                                                        <div class="col-sm-12">
-                                                            <div class="form-group">
-                                                                <input type="hidden" class="form-control" name="service_id" id="service_id" value="{{$home_service1->id}}">
-                                                            </div>
-                                                        </div>
-
+                                                        <input type="hidden" class="form-control" name="service_id" id="service_id" value="{{$home_service1->id = '1'}}">
                                                     </div>
                                                     <div class="form-group">
                                                         <input type="submit" value="Booking Now" class="btn btn-primary">
@@ -92,6 +85,62 @@
                             </div>
                         </div>
                     @endforeach
+
+                        @foreach($home_service2 as $home_service2)
+                            <div class="col-md-6">
+                                <div class="card bg-white p-3 px-4 d-flex justify-content-center">
+
+                                    <h5 class="mb-0">{{$home_service2->name}}</h5> <span class="price">${{$home_service2->price}}</span>
+                                    <div class="mt-4">
+                                        <div class="d-flex justify-content-between align-items-center"> <span>All features</span> <span>1 Minute trigger</span> </div>
+                                        <div class="d-flex justify-content-between align-items-center"> <span>5000 interactions</span> <span>Remove branding</span> </div>
+                                        <div class="d-flex justify-content-between align-items-center"> <span>15 bots</span> <span>Priority support</span> </div>
+                                    </div>
+
+                                    <div class="mt-4"> <button class="btn btn-danger"  type="button" data-toggle="modal" data-target="#exampleModal2">Buy Service</button> </div>
+                                </div>
+                            </div>
+                            <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                                    <div class="modal-content ">
+                                        <div class="container ftco-relative ">
+                                            <div class="row justify-content-center pb-3">
+                                                <div class="col-md-10 heading-section text-center ftco-animate">
+
+                                                    <h2 class="mb-4">Booking Service</h2>
+                                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+                                                </div>
+                                            </div>
+                                            <h3 class="vr">Call Us: 012-3456-7890</h3>
+                                            <div class="row justify-content-center">
+                                                <div class="col-md-10 ftco-animate">
+                                                    <form class="appointment-form" method="post" action="{{ route('booking.store')}}">
+                                                        @csrf
+
+                                                        <div class="row">
+                                                            <div class="col-sm-12">
+                                                                <div class="form-group">
+                                                                    <input type="text" class="form-control" name="location" id="location" placeholder="Location">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <div class="form-group">
+                                                                    <input type="text" class="form-control" name="telegram" id="telegram" placeholder="Telegram Phone">
+                                                                </div>
+                                                            </div>
+                                                                <input type="hidden" class="form-control" name="service_id" id="service_id" value="2">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="submit" value="Booking Now" class="btn btn-primary">
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
                 </div>
             </div>
 
