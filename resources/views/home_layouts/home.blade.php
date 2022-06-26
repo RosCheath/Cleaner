@@ -8,7 +8,7 @@
                 <div class="col-lg-12 ftco-animate d-flex align-items-center">
                     <div class="text text-center">
                         <span class="subheading">Welcome to Claner</span>
-                        <h1 class="mb-4">{{$homeimage->name}}</h1>
+                        <h1 class="mb-4">We are professional care for your Place</h1>
                         <p><a href="#" class="btn btn-primary btn-outline-primary px-4 py-2">Book now</a></p>
                     </div>
                 </div>
@@ -16,6 +16,7 @@
         </div>
     </section>
 @endforeach
+
 
     <section class="services-section ftco-section">
         <div class="container">
@@ -31,16 +32,19 @@
                 <div class="row g-2">
                     <div class="col-md-6">
                         <div class="card bg-white p-3 px-4 d-flex justify-content-center">
-                            <h5 class="mb-0">House Keeping</h5> <span class="price">$4/Hour</span>
+                            @foreach($home_service as $home_service1)
+                            <h5 class="mb-0">{{$home_service1->name}}</h5> <span class="price">${{$home_service1->price}}</span>
                             <div class="mt-4">
                                 <div class="d-flex justify-content-between align-items-center"> <span>All features</span> <span>1 Minute trigger</span> </div>
                                 <div class="d-flex justify-content-between align-items-center"> <span>5000 interactions</span> <span>Remove branding</span> </div>
                                 <div class="d-flex justify-content-between align-items-center"> <span>15 bots</span> <span>Priority support</span> </div>
                             </div>
+                            @endforeach
                             <div class="mt-4"> <button class="btn btn-danger" type="button" data-toggle="modal" data-target="#exampleModal">Buy Service</button> </div>
                             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
                                     <div class="modal-content">
+
                                         <div class="col-12">
                                             <div class="container ftco-relative ">
                                                 <div class="row justify-content-center pb-3">
@@ -96,79 +100,17 @@
                     </div>
 
                     <div class="col-md-6">
+                        @foreach($home_service2 as $home_service)
                         <div class="card bg-white p-3 px-4 d-flex justify-content-center">
-                            <h5 class="mb-0">Team Cleaning</h5> <span class="price">$8+</span>
+                            <h5 class="mb-0">{{$home_service->name}}</h5> <span class="price">${{$home_service->price}}</span>
                             <div class="mt-4">
                                 <div class="d-flex justify-content-between align-items-center"> <span>All features</span> <span>1 Minute trigger</span> </div>
                                 <div class="d-flex justify-content-between align-items-center"> <span>5000 interactions</span> <span>Remove branding</span> </div>
                                 <div class="d-flex justify-content-between align-items-center"> <span>15 bots</span> <span>Priority support</span> </div>
                             </div>
-                            <div class="mt-4"> <button class="btn btn-danger" type="button" data-toggle="modal" data-target="#exampleModal">Buy Service</button> </div>
-                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                                    <div class="modal-content">
-                                        <div class="col-12">
-
-
-                                            <div class="row justify-content-center pb-3">
-                                                <div class="col-md-10 heading-section text-center ftco-animate">
-                                                    <span class="subheading">Booking</span>
-                                                    <h2 class="mb-4">Make an Appointment</h2>
-                                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-                                                </div>
-                                            </div>
-
-
-                                            <div class="row">
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" id="appointment_name" placeholder="Name">
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" id="appointment_email" placeholder="Email">
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control appointment_date" placeholder="Date">
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control appointment_time" placeholder="Time">
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <div class="select-wrap">
-                                                            <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                                                            <select name="" id="" class="form-control">
-                                                                <option value="">Professional Makeup</option>
-                                                                <option value="">Manicure Pedicure</option>
-                                                                <option value="">Body Treatment</option>
-                                                                <option value="">Haircut &amp; Coloring</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" id="phone" placeholder="Phone">
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="submit" value="Make an Appointment" class="btn btn-primary">
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <div class="mt-4"> <button class="btn btn-danger">Buy Services</button> </div>
                         </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -504,4 +446,77 @@
         </div>
     </section>
 <!--js not workimg in this page, corect it in home asset at js in file main.js   -->
+
+<script type="text/javascript" src="script.js">
+$(document).ready(function(){
+
+var current_fs, next_fs, previous_fs;
+
+// No BACK button on first screen
+if($(".show").hasClass("first-screen")) {
+$(".prev").css({ 'display' : 'none' });
+}
+
+// Next button
+$(".next-button").click(function(){
+
+current_fs = $(this).parent().parent();
+next_fs = $(this).parent().parent().next();
+
+$(".prev").css({ 'display' : 'block' });
+
+$(current_fs).removeClass("show");
+$(next_fs).addClass("show");
+
+$("#progressbar li").eq($(".card2").index(next_fs)).addClass("active");
+
+current_fs.animate({}, {
+step: function() {
+
+current_fs.css({
+'display': 'none',
+'position': 'relative'
+});
+
+next_fs.css({
+'display': 'block'
+});
+}
+});
+});
+
+// Previous button
+$(".prev").click(function(){
+
+current_fs = $(".show");
+previous_fs = $(".show").prev();
+
+$(current_fs).removeClass("show");
+$(previous_fs).addClass("show");
+
+$(".prev").css({ 'display' : 'block' });
+
+if($(".show").hasClass("first-screen")) {
+$(".prev").css({ 'display' : 'none' });
+}
+
+$("#progressbar li").eq($(".card2").index(current_fs)).removeClass("active");
+
+current_fs.animate({}, {
+step: function() {
+
+current_fs.css({
+'display': 'none',
+'position': 'relative'
+});
+
+previous_fs.css({
+'display': 'block'
+});
+}
+});
+});
+
+});
+</script>
 @endsection
