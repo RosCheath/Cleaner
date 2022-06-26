@@ -313,8 +313,8 @@
                     <div class="project">
                         <img src="assets/home/images/work-1.jpg" class="img-fluid" alt="Colorlib Template">
                         <div class="text">
-                            <span>Stylist</span>
-                            <h3><a href="project.html">Beard</a></h3>
+                            <span>TeamCleaning</span>
+                            <h3><a href="project.html">Housekeeper</a></h3>
                         </div>
                         <a href="assets/home/images/work-1.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
                             <span class="icon-expand"></span>
@@ -325,8 +325,8 @@
                     <div class="project">
                         <img src="assets/home/images/work-2.jpg" class="img-fluid" alt="Colorlib Template">
                         <div class="text">
-                            <span>Beauty</span>
-                            <h3><a href="project.html">Haircut</a></h3>
+                            <span>TeamCleaning</span>
+                            <h3><a href="project.html">Housekeeper</a></h3>
                         </div>
                         <a href="assets/home/images/work-2.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
                             <span class="icon-expand"></span>
@@ -337,8 +337,8 @@
                     <div class="project">
                         <img src="assets/home/images/work-3.jpg" class="img-fluid" alt="Colorlib Template">
                         <div class="text">
-                            <span>Beauty</span>
-                            <h3><a href="project.html">Hairstylist</a></h3>
+                            <span>TeamCleaning</span>
+                            <h3><a href="project.html">Housekeeper</a></h3>
                         </div>
                         <a href="assets/home/images/work-3.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
                             <span class="icon-expand"></span>
@@ -349,8 +349,8 @@
                     <div class="project">
                         <img src="assets/home/images/work-4.jpg" class="img-fluid" alt="Colorlib Template">
                         <div class="text">
-                            <span>Beauty</span>
-                            <h3><a href="project.html">Haircut</a></h3>
+                            <span>TeamCleaning</span>
+                            <h3><a href="project.html">Housekeeper</a></h3>
                         </div>
                         <a href="assets/home/images/work-4.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
                             <span class="icon-expand"></span>
@@ -361,8 +361,8 @@
                     <div class="project">
                         <img src="assets/home/images/work-5.jpg" class="img-fluid" alt="Colorlib Template">
                         <div class="text">
-                            <span>Beauty</span>
-                            <h3><a href="project.html">Makeup</a></h3>
+                            <span>TeamCleaning</span>
+                            <h3><a href="project.html">Housekeeper</a></h3>
                         </div>
                         <a href="assets/home/images/work-5.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
                             <span class="icon-expand"></span>
@@ -373,7 +373,7 @@
                     <div class="project">
                         <img src="assets/home/images/work-6.jpg" class="img-fluid" alt="Colorlib Template">
                         <div class="text">
-                            <span>Fashion</span>
+                            <span>Housekeeper</span>
                             <h3><a href="project.html">Model</a></h3>
                         </div>
                         <a href="assets/home/images/work-6.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
@@ -385,8 +385,8 @@
                     <div class="project">
                         <img src="assets/home/images/work-7.jpg" class="img-fluid" alt="Colorlib Template">
                         <div class="text">
-                            <span>Beauty</span>
-                            <h3><a href="project.html">Makeup</a></h3>
+                            <span>Housekeeper</span>
+                            <h3><a href="project.html">Housekeeper</a></h3>
                         </div>
                         <a href="assets/home/images/work-7.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
                             <span class="icon-expand"></span>
@@ -397,8 +397,8 @@
                     <div class="project">
                         <img src="assets/home/images/work-8.jpg" class="img-fluid" alt="Colorlib Template">
                         <div class="text">
-                            <span>Beauty</span>
-                            <h3><a href="project.html">Makeup</a></h3>
+                            <span>Housekeeper</span>
+                            <h3><a href="project.html">Housekeeper</a></h3>
                         </div>
                         <a href="assets/home/images/work-8.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
                             <span class="icon-expand"></span>
@@ -432,7 +432,7 @@
                                         </div>
                                         <div class="pos ml-3">
                                             <p class="name">Jeff Nucci</p>
-                                            <span class="position">Businessman</span>
+                                            <span class="position">Housekeeper</span>
                                         </div>
                                     </div>
                                 </div>
@@ -447,7 +447,7 @@
                                         </div>
                                         <div class="pos ml-3">
                                             <p class="name">Jeff Nucci</p>
-                                            <span class="position">Businessman</span>
+                                            <span class="position">Housekeeper</span>
                                         </div>
                                     </div>
                                 </div>
@@ -462,7 +462,7 @@
                                         </div>
                                         <div class="pos ml-3">
                                             <p class="name">Jeff Nucci</p>
-                                            <span class="position">Businessman</span>
+                                            <span class="position">Housekeeper</span>
                                         </div>
                                     </div>
                                 </div>
@@ -477,7 +477,7 @@
                                         </div>
                                         <div class="pos ml-3">
                                             <p class="name">Jeff Nucci</p>
-                                            <span class="position">Businessman</span>
+                                            <span class="position">Housekeeper</span>
                                         </div>
                                     </div>
                                 </div>
@@ -492,7 +492,7 @@
                                         </div>
                                         <div class="pos ml-3">
                                             <p class="name">Jeff Nucci</p>
-                                            <span class="position">Businessman</span>
+                                            <span class="position">Housekeeper</span>
                                         </div>
                                     </div>
                                 </div>

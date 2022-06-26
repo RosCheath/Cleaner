@@ -253,7 +253,7 @@
           <div class="col-md-10 heading-section text-center ftco-animate">
           	<span class="subheading">Become</span>
             <h2 class="mb-4">Become Cleaner</h2>
-            <p>is easy way to gey money</p>
+            <p>Be Comea our Cleaner you will get a lot of Benefits from us like </p>
           </div>
         </div>
         <div class="row">
