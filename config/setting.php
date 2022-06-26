@@ -62,13 +62,13 @@ return [
             'price' => '67.99',
             'time_line' => '1 Week'
         ],
-        [
-            'name' => 'Month',
-            'title' => 'For Cleaner in one month',
-            'image' => 'https://s.marketwatch.com/public/resources/images/MW-BM466_pfhous_MG_20131003164731.jpg',
-            'price' => '269.99',
-            'time_line' => '1 Month'
-        ]
+//        [
+//            'name' => 'Month',
+//            'title' => 'For Cleaner in one month',
+//            'image' => 'https://s.marketwatch.com/public/resources/images/MW-BM466_pfhous_MG_20131003164731.jpg',
+//            'price' => '269.99',
+//            'time_line' => '1 Month'
+//        ]
     ],
     'status' => [
       'Pending','Approved','Done','Rejected'

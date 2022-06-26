@@ -7,6 +7,7 @@ use App\Models\Blog;
 use App\Models\Booking;
 use App\Models\ImageHeads;
 use App\Models\Service;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -30,11 +31,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $home_service = Service::where('id','=', '1')->get();
-        $home_service2 = Service::where('id','=', '2')->get();
+        $cleaner_company = User::where('status', 'hight')->latest()->paginate();
+        $home_service = Service::get();
         $bookingCount = Booking::where('user_id','=',Auth::id())->where('status_type','=','Pending')->count();
         $homeimage  = ImageHeads::where('name','=', 'Home Screen')->get();
-        return view('home_layouts.home',compact('bookingCount','homeimage','home_service','home_service2'));
+        return view('home_layouts.home',compact('bookingCount','homeimage','home_service','cleaner_company'));
     }
 
     public function services()

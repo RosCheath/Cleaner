@@ -164,8 +164,9 @@
                   </tr>
                 </thead>
                 <tbody>
+                @foreach($status_pending as $status_pendings)
                   <tr>
-                      @foreach($status_pending as $status_pendings)
+
                     <td>
                       <img src="{{$status_pendings->user->image}}" alt="image" />
                       <span class="pl-2">{{$status_pendings->user->name}}</span>
@@ -179,8 +180,9 @@
                     <td>
                     <div class="badge badge-outline-success">{{$status_pendings->status_type}}</div>
                     </td>
-                      @endforeach
+
                   </tr>
+                @endforeach
                 </tbody>
               </table>
             </div>

@@ -43,8 +43,6 @@ class BookingController extends Controller
         $booking -> service_id = $request->service_id;
         $booking -> location = $request -> location;
         $booking -> telegram = $request -> telegram;
-        $booking -> date = $request -> date;
-        $booking -> time = $request -> time;
         $booking->save();
         //send email
         $mailData = [

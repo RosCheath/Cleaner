@@ -55,11 +55,24 @@
 
                   </div>
 
+                  <div class="form-group">
+                      <label for="exampleInputCity1">Position</label>
+                      <input type="text" class="form-control"  name="position" id="position" required placeholder="Position">
+                  </div>
+
                   <input type="hidden" name="role" value="Cleaner">
 
                   <div class="form-group">
+                      <label for="exampleSelectGender">Status</label>
+                      <select class="form-control" name="status" id="status">
+                          <option value="low" >Low</option>
+                          <option value="hight" >Hight</option>
+                      </select>
+                  </div>
+
+                  <div class="form-group">
                       <label for="password">Password</label>
-                      <input type="password" class="form-control" class="form-control " name="password" id="password" required autocomplete="new-password" placeholder="password">
+                      <input type="password" class="form-control " name="password" id="password" required autocomplete="new-password" placeholder="password">
 
                   </div>
                   <div class="form-group">

@@ -23,6 +23,8 @@ return new class extends Migration
             $table->string('role')->default('User');
             $table->string('email')->unique();
             $table->string('id_card')->nullable();
+            $table->string('position')->nullable();
+            $table->string('status')->default('low');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

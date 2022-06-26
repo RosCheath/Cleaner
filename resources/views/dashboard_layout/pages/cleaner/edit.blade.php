@@ -56,11 +56,25 @@
                                 </div>
 
                                 <div class="form-group">
+                                    <label for="exampleInputCity1">Position</label>
+                                    <input type="text" class="form-control" name="position" value="{{$admin_cleaner->position}}" id="position" placeholder="Position">
+                                </div>
+
+                                <div class="form-group">
                                     <label for="exampleSelectGender">Role</label>
                                     <select class="form-control" name="role" id="role" value="{{$admin_cleaner->role}}">
                                         <option value="Cleaner" @if($admin_cleaner->role == "Cleaner") selected @endif>Cleaner</option>
                                     </select>
                                 </div>
+
+                                <div class="form-group">
+                                    <label for="exampleSelectGender">Status</label>
+                                    <select class="form-control" name="status" id="role" value="{{$admin_cleaner->status}}">
+                                        <option value="low" @if($admin_cleaner->status == "low") selected @endif>Low</option>
+                                        <option value="hight" @if($admin_cleaner->status == "hight") selected @endif>Hight</option>
+                                    </select>
+                                </div>
+
                                 <button type="submit" class="btn btn-primary mr-2">Update</button>
                                 <button class="btn btn-dark">Cancel</button>
                             </form>

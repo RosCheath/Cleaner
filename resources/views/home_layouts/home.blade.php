@@ -30,41 +30,44 @@
             </div>
             <div class="container mt-5 mb-5">
                 <div class="row g-2">
+                    @foreach($home_service as $home_service1)
                     <div class="col-md-6">
                         <div class="card bg-white p-3 px-4 d-flex justify-content-center">
-                            @foreach($home_service as $home_service1)
+
                             <h5 class="mb-0">{{$home_service1->name}}</h5> <span class="price">${{$home_service1->price}}</span>
                             <div class="mt-4">
                                 <div class="d-flex justify-content-between align-items-center"> <span>All features</span> <span>1 Minute trigger</span> </div>
                                 <div class="d-flex justify-content-between align-items-center"> <span>5000 interactions</span> <span>Remove branding</span> </div>
                                 <div class="d-flex justify-content-between align-items-center"> <span>15 bots</span> <span>Priority support</span> </div>
                             </div>
-                            @endforeach
+
                             <div class="mt-4"> <button class="btn btn-danger" type="button" data-toggle="modal" data-target="#exampleModal">Buy Service</button> </div>
-                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                                    <div class="modal-content">
+                        </div>
+                    </div>
 
-                                        <div class="col-12">
-                                            <div class="container ftco-relative ">
-                                                <div class="row justify-content-center pb-3">
-                                                <div class="col-md-10 heading-section text-center ftco-animate">
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                                <div class="modal-content ">
+                                    <div class="container ftco-relative ">
+                                        <div class="row justify-content-center pb-3">
+                                            <div class="col-md-10 heading-section text-center ftco-animate">
 
-                                                    <h2 class="mb-4">Booking Service</h2>
-                                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-                                                </div>
-										    </div>
+                                                <h2 class="mb-4">Booking Service</h2>
+                                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+                                            </div>
+                                        </div>
+                                        <h3 class="vr">Call Us: 012-3456-7890</h3>
+                                        <div class="row justify-content-center">
+                                            <div class="col-md-10 ftco-animate">
+                                                <form class="appointment-form" method="post" action="{{ route('booking.store')}}">
+                                                    @csrf
 
-											<div class="row justify-content-center">
-												<div class="col-md-10 ftco-animate">
-													<form class="appointment-form" method="post" action="#">
-
-												    <div class="row justify-content-center">
-												        <div class="col-sm-12 ">
+                                                    <div class="row">
+                                                        <div class="col-sm-12">
                                                             <div class="form-group">
                                                                 <input type="text" class="form-control" name="location" id="location" placeholder="Location">
                                                             </div>
-												        </div>
+                                                        </div>
                                                         <div class="col-sm-12">
                                                             <div class="form-group">
                                                                 <input type="text" class="form-control" name="telegram" id="telegram" placeholder="Telegram Phone">
@@ -73,45 +76,22 @@
 
                                                         <div class="col-sm-12">
                                                             <div class="form-group">
-                                                                <div class="select-wrap">
-                                                                <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                                                                <select name="service_id" id="service_id" class="form-control">
-
-                                                                    <option value=""></option>
-
-                                                                </select>
-                                                                </div>
+                                                                <input type="hidden" class="form-control" name="service_id" id="service_id" value="{{$home_service1->id}}">
                                                             </div>
                                                         </div>
-												    </div>
+
+                                                    </div>
                                                     <div class="form-group">
                                                         <input type="submit" value="Booking Now" class="btn btn-primary">
-                                                        </div>
-											        </form>
-												</div>
-											</div>
-										</div>
+                                                    </div>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        @foreach($home_service2 as $home_service)
-                        <div class="card bg-white p-3 px-4 d-flex justify-content-center">
-                            <h5 class="mb-0">{{$home_service->name}}</h5> <span class="price">${{$home_service->price}}</span>
-                            <div class="mt-4">
-                                <div class="d-flex justify-content-between align-items-center"> <span>All features</span> <span>1 Minute trigger</span> </div>
-                                <div class="d-flex justify-content-between align-items-center"> <span>5000 interactions</span> <span>Remove branding</span> </div>
-                                <div class="d-flex justify-content-between align-items-center"> <span>15 bots</span> <span>Priority support</span> </div>
-                            </div>
-                            <div class="mt-4"> <button class="btn btn-danger">Buy Services</button> </div>
-                        </div>
-                        @endforeach
-                    </div>
+                    @endforeach
                 </div>
             </div>
 
@@ -198,41 +178,15 @@
             <div class="row">
                 <div class="col-md-12 ftco-animate">
                     <div class="carousel-team owl-carousel">
+                        @foreach($cleaner_company as $cleaner_company)
                         <div class="item">
                             <a href="#" class="team text-center">
-                                <div class="img" style="background-image: url(assets/home/images/stylist-1.jpg);"></div>
-                                <h2>Danica Lewis</h2>
-                                <span class="position">Housekeeper</span>
+                                <div class="img" style="background-image: url({{$cleaner_company->image}});"></div>
+                                <h2>{{$cleaner_company->name}}</h2>
+                                <span class="position">{{$cleaner_company->position}}</span>
                             </a>
                         </div>
-                        <div class="item">
-                            <a href="#" class="team text-center">
-                                <div class="img" style="background-image: url(assets/home/images/stylist-2.jpg);"></div>
-                                <h2>Nicole Simon</h2>
-                                <span class="position">Housekeeper</span>
-                            </a>
-                        </div>
-                        <div class="item">
-                            <a href="#" class="team text-center">
-                                <div class="img" style="background-image: url(assets/home/images/stylist-3.jpg);"></div>
-                                <h2>Cloe Meyer</h2>
-                                <span class="position">Director</span>
-                            </a>
-                        </div>
-                        <div class="item">
-                            <a href="#" class="team text-center">
-                                <div class="img" style="background-image: url(assets/home/images/stylist-4.jpg);"></div>
-                                <h2>Rachel Clinton</h2>
-                                <span class="position">Director</span>
-                            </a>
-                        </div>
-                        <div class="item">
-                            <a href="#" class="team text-center">
-                                <div class="img" style="background-image: url(assets/home/images/stylist-5.jpg);"></div>
-                                <h2>Dave Buff</h2>
-                                <span class="position">WindowCleaner</span>
-                            </a>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
