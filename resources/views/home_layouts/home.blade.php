@@ -8,7 +8,7 @@
                 <div class="col-lg-12 ftco-animate d-flex align-items-center">
                     <div class="text text-center">
                         <span class="subheading">Welcome to Claner</span>
-                        <h1 class="mb-4">{{$homeimage->name}}</h1>
+                        <h1 class="mb-4">We are professional care for your Place</h1>
                         <p><a href="#" class="btn btn-primary btn-outline-primary px-4 py-2">Book now</a></p>
                     </div>
                 </div>
@@ -16,6 +16,7 @@
         </div>
     </section>
 @endforeach
+
 
     <section class="services-section ftco-section">
         <div class="container">
@@ -31,73 +32,101 @@
                 <div class="row g-2">
                     <div class="col-md-6">
                         <div class="card bg-white p-3 px-4 d-flex justify-content-center">
-                            <h5 class="mb-0">House Keeping</h5> <span class="price">$4/Hour</span>
+                            @foreach($home_service as $home_service1)
+                            <h5 class="mb-0">{{$home_service1->name}}</h5> <span class="price">${{$home_service1->price}}</span>
                             <div class="mt-4">
                                 <div class="d-flex justify-content-between align-items-center"> <span>All features</span> <span>1 Minute trigger</span> </div>
                                 <div class="d-flex justify-content-between align-items-center"> <span>5000 interactions</span> <span>Remove branding</span> </div>
                                 <div class="d-flex justify-content-between align-items-center"> <span>15 bots</span> <span>Priority support</span> </div>
                             </div>
+                            @endforeach
                             <div class="mt-4"> <button class="btn btn-danger" type="button" data-toggle="modal" data-target="#exampleModal">Buy Service</button> </div>
                             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
                                     <div class="modal-content">
+
                                         <div class="col-12">
-
-
-                                            <div class="row justify-content-center pb-3">
-                                                <div class="col-md-10 heading-section text-center ftco-animate">
-                                                    <span class="subheading">Booking</span>
-                                                    <h2 class="mb-4">Make an Appointment</h2>
-                                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+                                            <div class="card card00 m-2 border-0">
+                                                <div class="row text-center justify-content-center px-3">
+                                                    <p class="prev text-danger"><span class="fa fa-long-arrow-left"> Go Back</span></p id="back">
+                                                    <h3 class="mt-4">Buy Servce</h3>
                                                 </div>
-                                            </div>
-
-
-                                            <div class="row">
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" id="appointment_name" placeholder="Name">
+                                                <div class="d-flex flex-md-row px-3 mt-4 flex-column-reverse">
+                                                    <div class="col-md-6">
+                                                        <div class="card1">
+                                                            <ul id="progressbar" class="text-center">
+                                                                <li class="active step0"></li>
+                                                                <li class="step0"></li>
+                                                                <li class="step0"></li>
+                                                                <li class="step0"></li>
+                                                            </ul>
+                                                            <h6 class="mb-5">Enter your Phone Number</h6>
+                                                            <h6 class="mb-5">Set time</h6>
+                                                            <h6 class="mb-5">Select your location</h6>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" id="appointment_email" placeholder="Email">
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control appointment_date" placeholder="Date">
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control appointment_time" placeholder="Time">
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <div class="select-wrap">
-                                                            <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                                                            <select name="" id="" class="form-control">
-                                                                <option value="">Professional Makeup</option>
-                                                                <option value="">Manicure Pedicure</option>
-                                                                <option value="">Body Treatment</option>
-                                                                <option value="">Haircut &amp; Coloring</option>
-                                                            </select>
+                                                    <div class="col-md-6">
+                                                        <div class="card2 first-screen show ml-2">
+                                                            <div class="row text-center px-3 mr-2">
+                                                                <div class="mb-2 col-2"> <span class="fa fa-reddit social"></span> </div>
+                                                                <div class="mb-2 col-2"> <span class="fa fa-facebook social"></span> </div>
+                                                                <div class="mb-2 col-2"> <span class="fa fa-linkedin social"></span> </div>
+                                                                <div class="mb-2 col-2"> <span class="fa fa-google-plus social"></span> </div>
+                                                                <div class="mb-2 col-2"> <span class="fa fa-twitter social"></span> </div>
+                                                                <div class="mb-2 col-2"> <span class="fa fa-dropbox social"></span> </div>
+                                                            </div>
+                                                            <div class="row px-3 mt-4">
+                                                                <div class="form-group mt-1 mb-1"> <input type="text" id="email" class="form-control" required>
+                                                                <label class="ml-3 form-control-placeholder" for="email">Telegram</label> </div>
+                                                                <div class="next-button text-center mt-1 ml-2"> <span class="fa fa-arrow-right"></span> </div>
+                                                            </div>
+                                                            <div class="row px-3 mt-1 mb-5">
+                                                                <div class="custom-control custom-checkbox"> <input checked id="customCheck1" type="checkbox" class="custom-control-input">
+                                                                <label for="customCheck1" class="custom-control-label">I want to receive promo Telegram</label> </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card2 ml-2">
+                                                            <div class="row px-3 mt-3">
+                                                                <div class="form-group mt-1 mb-1"> <input type="time" id="pwd" class="form-control" required>
+                                                                <label class="ml-3 form-control-placeholder" for="pwd">Set time for clean</label> </div>
+                                                                <div class="next-button text-center mt-1 ml-2"> <span class="fa fa-arrow-right"></span> </div>
+                                                            </div>
+                                                            <div class="row mt-3 mb-5">
+                                                                <div class="col-12">
+                                                                    <p class="mb-1">Lacation must contain</p>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card2 ml-2">
+                                                            <div class="row px-3 mt-3">
+                                                                <p class="mb-0">Select your Location</p>
+                                                                <div class="form-group mt-3 mb-4">
+                                                                    <div class="select mb-3"> <select name="account" class="form-control">
+                                                                            <option>India</option>
+                                                                            <option>USA</option>
+                                                                            <option>Germany</option>
+                                                                            <option>Mexico</option>
+                                                                        </select> </div>
+                                                                </div>
+                                                                <div class="next-button text-center mt-3 ml-2"> <span class="fa fa-arrow-right"></span> </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card2 ml-2">
+                                                            <div class="row px-3 mt-2 mb-4 text-center">
+                                                                <h2 class="col-12 text-danger"><strong>Success !</strong></h2>
+                                                                <div class="col-12 text-center"><img class="tick" src='assets/home/images/wine-glass.png'></div>
+                                                                <h6 class="col-12 mt-2"><i>...Enjoy The servces...</i></h6>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" id="phone" placeholder="Phone">
-                                                    </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="row px-6">
+                                                    <h2 class="text-muted get-bonus mt-4 mb-5">Now You  <span class="text-danger">Get</span> Our Servce</h2> <img class="pic ml-auto mr-6" src="assets/home/images/delivery-bike.png">
                                                 </div>
-
                                             </div>
-                                            <div class="form-group">
-                                                <input type="submit" value="Make an Appointment" class="btn btn-primary">
-                                            </div>
-
                                         </div>
                                     </div>
                                 </div>
@@ -107,79 +136,17 @@
                     </div>
 
                     <div class="col-md-6">
+                        @foreach($home_service2 as $home_service)
                         <div class="card bg-white p-3 px-4 d-flex justify-content-center">
-                            <h5 class="mb-0">Team Cleaning</h5> <span class="price">$8+</span>
+                            <h5 class="mb-0">{{$home_service->name}}</h5> <span class="price">${{$home_service->price}}</span>
                             <div class="mt-4">
                                 <div class="d-flex justify-content-between align-items-center"> <span>All features</span> <span>1 Minute trigger</span> </div>
                                 <div class="d-flex justify-content-between align-items-center"> <span>5000 interactions</span> <span>Remove branding</span> </div>
                                 <div class="d-flex justify-content-between align-items-center"> <span>15 bots</span> <span>Priority support</span> </div>
                             </div>
-                            <div class="mt-4"> <button class="btn btn-danger" type="button" data-toggle="modal" data-target="#exampleModal">Buy Service</button> </div>
-                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                                    <div class="modal-content">
-                                        <div class="col-12">
-
-
-                                            <div class="row justify-content-center pb-3">
-                                                <div class="col-md-10 heading-section text-center ftco-animate">
-                                                    <span class="subheading">Booking</span>
-                                                    <h2 class="mb-4">Make an Appointment</h2>
-                                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-                                                </div>
-                                            </div>
-
-
-                                            <div class="row">
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" id="appointment_name" placeholder="Name">
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" id="appointment_email" placeholder="Email">
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control appointment_date" placeholder="Date">
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control appointment_time" placeholder="Time">
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <div class="select-wrap">
-                                                            <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                                                            <select name="" id="" class="form-control">
-                                                                <option value="">Professional Makeup</option>
-                                                                <option value="">Manicure Pedicure</option>
-                                                                <option value="">Body Treatment</option>
-                                                                <option value="">Haircut &amp; Coloring</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" id="phone" placeholder="Phone">
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="submit" value="Make an Appointment" class="btn btn-primary">
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <div class="mt-4"> <button class="btn btn-danger">Buy Services</button> </div>
                         </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -515,4 +482,77 @@
         </div>
     </section>
 <!--js not workimg in this page, corect it in home asset at js in file main.js   -->
+
+<script type="text/javascript" src="script.js">
+$(document).ready(function(){
+
+var current_fs, next_fs, previous_fs;
+
+// No BACK button on first screen
+if($(".show").hasClass("first-screen")) {
+$(".prev").css({ 'display' : 'none' });
+}
+
+// Next button
+$(".next-button").click(function(){
+
+current_fs = $(this).parent().parent();
+next_fs = $(this).parent().parent().next();
+
+$(".prev").css({ 'display' : 'block' });
+
+$(current_fs).removeClass("show");
+$(next_fs).addClass("show");
+
+$("#progressbar li").eq($(".card2").index(next_fs)).addClass("active");
+
+current_fs.animate({}, {
+step: function() {
+
+current_fs.css({
+'display': 'none',
+'position': 'relative'
+});
+
+next_fs.css({
+'display': 'block'
+});
+}
+});
+});
+
+// Previous button
+$(".prev").click(function(){
+
+current_fs = $(".show");
+previous_fs = $(".show").prev();
+
+$(current_fs).removeClass("show");
+$(previous_fs).addClass("show");
+
+$(".prev").css({ 'display' : 'block' });
+
+if($(".show").hasClass("first-screen")) {
+$(".prev").css({ 'display' : 'none' });
+}
+
+$("#progressbar li").eq($(".card2").index(current_fs)).removeClass("active");
+
+current_fs.animate({}, {
+step: function() {
+
+current_fs.css({
+'display': 'none',
+'position': 'relative'
+});
+
+previous_fs.css({
+'display': 'block'
+});
+}
+});
+});
+
+});
+</script>
 @endsection
