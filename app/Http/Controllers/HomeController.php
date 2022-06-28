@@ -35,14 +35,14 @@ class HomeController extends Controller
         $home_service1 = Service::where('id', '1')->get();
         $home_service2 = Service::where('id', '2')->get();
         $bookingCount = Booking::where('user_id','=',Auth::id())->where('status_type','=','Pending')->count();
-        $homeimage  = ImageHeads::where('name','=', 'Home Screen')->get();
+        $homeimage  = ImageHeads::where('id','=', '1')->get();
         return view('home_layouts.home',compact('bookingCount','homeimage','home_service1','home_service2','cleaner_company'));
     }
 
     public function services()
     {
         $becom_cleaner = BecomCleaners::get();
-        $serviceimage  = ImageHeads::where('name','=', 'Service Screen')->get();
+        $serviceimage  = ImageHeads::where('id','=', '2')->get();
         $bookingCount = Booking::where('user_id','=',Auth::id())->where('status_type','=','Pending')->count();
         $service = Service::get();
         $service_booking1 = Service::where('id', '1')->get();
@@ -57,13 +57,13 @@ class HomeController extends Controller
     public function contact()
     {
         $blog = Blog::latest()->paginate(10);
-        $contactimage  = ImageHeads::where('name','=', 'Contact Screen')->get();
+        $contactimage  = ImageHeads::where('id','=', '5')->get();
         $bookingCount = Booking::where('user_id','=',Auth::id())->where('status_type','=','Pending')->count();
         return view('home_layouts.contact',compact('bookingCount','contactimage','blog'));
     }
     public function about()
     {
-        $aboutimage  = ImageHeads::where('name','=', 'About Screen')->get();
+        $aboutimage  = ImageHeads::where('id','=', '3')->get();
         $bookingCount = Booking::where('user_id','=',Auth::id())->where('status_type','=','Pending')->count();
         return view('home_layouts.about',compact('bookingCount','aboutimage'));
     }

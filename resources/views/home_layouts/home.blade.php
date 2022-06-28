@@ -8,7 +8,7 @@
                 <div class="col-lg-12 ftco-animate d-flex align-items-center">
                     <div class="text text-center">
                         <span class="subheading">Welcome to Claner</span>
-                        <h1 class="mb-4">We are professional care for your Place</h1>
+                        <h1 class="mb-4">{{$homeimage->name}}</h1>
                         <p><a href="#" class="btn btn-primary btn-outline-primary px-4 py-2">Book now</a></p>
                     </div>
                 </div>

@@ -25,7 +25,7 @@ class BookingController extends Controller
 
     public function index()
     {
-        $bookingimage  = ImageHeads::where('name','=', 'Booking Screen')->get();
+        $bookingimage  = ImageHeads::where('id','=', '4')->get();
         $bookingCount = Booking::where('user_id','=',Auth::id())->where('status_type','=','Pending')->count();
         $booking_1 = Booking::where('status_type','=','Pending')->get();
         $booking_2 = Booking::where('status_type','=','Approved')->orWhere('status_type','Done')->orWhere('status_type','Rejected')->get();
