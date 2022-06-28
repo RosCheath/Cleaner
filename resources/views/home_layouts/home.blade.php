@@ -17,7 +17,6 @@
     </section>
 @endforeach
 
-
     <section class="services-section ftco-section">
         <div class="container">
             <div class="row justify-content-center pb-3">
@@ -258,8 +257,8 @@
                     <div class="project">
                         <img src="assets/home/images/work-1.jpg" class="img-fluid" alt="Colorlib Template">
                         <div class="text">
-                            <span>Stylist</span>
-                            <h3><a href="project.html">Beard</a></h3>
+                            <span>TeamCleaning</span>
+                            <h3><a href="project.html">Housekeeper</a></h3>
                         </div>
                         <a href="assets/home/images/work-1.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
                             <span class="icon-expand"></span>
@@ -270,8 +269,8 @@
                     <div class="project">
                         <img src="assets/home/images/work-2.jpg" class="img-fluid" alt="Colorlib Template">
                         <div class="text">
-                            <span>Beauty</span>
-                            <h3><a href="project.html">Haircut</a></h3>
+                            <span>TeamCleaning</span>
+                            <h3><a href="project.html">Housekeeper</a></h3>
                         </div>
                         <a href="assets/home/images/work-2.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
                             <span class="icon-expand"></span>
@@ -282,8 +281,8 @@
                     <div class="project">
                         <img src="assets/home/images/work-3.jpg" class="img-fluid" alt="Colorlib Template">
                         <div class="text">
-                            <span>Beauty</span>
-                            <h3><a href="project.html">Hairstylist</a></h3>
+                            <span>TeamCleaning</span>
+                            <h3><a href="project.html">Housekeeper</a></h3>
                         </div>
                         <a href="assets/home/images/work-3.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
                             <span class="icon-expand"></span>
@@ -294,8 +293,8 @@
                     <div class="project">
                         <img src="assets/home/images/work-4.jpg" class="img-fluid" alt="Colorlib Template">
                         <div class="text">
-                            <span>Beauty</span>
-                            <h3><a href="project.html">Haircut</a></h3>
+                            <span>TeamCleaning</span>
+                            <h3><a href="project.html">Housekeeper</a></h3>
                         </div>
                         <a href="assets/home/images/work-4.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
                             <span class="icon-expand"></span>
@@ -306,8 +305,8 @@
                     <div class="project">
                         <img src="assets/home/images/work-5.jpg" class="img-fluid" alt="Colorlib Template">
                         <div class="text">
-                            <span>Beauty</span>
-                            <h3><a href="project.html">Makeup</a></h3>
+                            <span>TeamCleaning</span>
+                            <h3><a href="project.html">Housekeeper</a></h3>
                         </div>
                         <a href="assets/home/images/work-5.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
                             <span class="icon-expand"></span>
@@ -318,7 +317,7 @@
                     <div class="project">
                         <img src="assets/home/images/work-6.jpg" class="img-fluid" alt="Colorlib Template">
                         <div class="text">
-                            <span>Fashion</span>
+                            <span>Housekeeper</span>
                             <h3><a href="project.html">Model</a></h3>
                         </div>
                         <a href="assets/home/images/work-6.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
@@ -330,8 +329,8 @@
                     <div class="project">
                         <img src="assets/home/images/work-7.jpg" class="img-fluid" alt="Colorlib Template">
                         <div class="text">
-                            <span>Beauty</span>
-                            <h3><a href="project.html">Makeup</a></h3>
+                            <span>Housekeeper</span>
+                            <h3><a href="project.html">Housekeeper</a></h3>
                         </div>
                         <a href="assets/home/images/work-7.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
                             <span class="icon-expand"></span>
@@ -342,8 +341,8 @@
                     <div class="project">
                         <img src="assets/home/images/work-8.jpg" class="img-fluid" alt="Colorlib Template">
                         <div class="text">
-                            <span>Beauty</span>
-                            <h3><a href="project.html">Makeup</a></h3>
+                            <span>Housekeeper</span>
+                            <h3><a href="project.html">Housekeeper</a></h3>
                         </div>
                         <a href="assets/home/images/work-8.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
                             <span class="icon-expand"></span>
@@ -377,7 +376,7 @@
                                         </div>
                                         <div class="pos ml-3">
                                             <p class="name">Jeff Nucci</p>
-                                            <span class="position">Businessman</span>
+                                            <span class="position">Housekeeper</span>
                                         </div>
                                     </div>
                                 </div>
@@ -392,7 +391,7 @@
                                         </div>
                                         <div class="pos ml-3">
                                             <p class="name">Jeff Nucci</p>
-                                            <span class="position">Businessman</span>
+                                            <span class="position">Housekeeper</span>
                                         </div>
                                     </div>
                                 </div>
@@ -407,7 +406,7 @@
                                         </div>
                                         <div class="pos ml-3">
                                             <p class="name">Jeff Nucci</p>
-                                            <span class="position">Businessman</span>
+                                            <span class="position">Housekeeper</span>
                                         </div>
                                     </div>
                                 </div>
@@ -422,7 +421,7 @@
                                         </div>
                                         <div class="pos ml-3">
                                             <p class="name">Jeff Nucci</p>
-                                            <span class="position">Businessman</span>
+                                            <span class="position">Housekeeper</span>
                                         </div>
                                     </div>
                                 </div>
@@ -437,7 +436,7 @@
                                         </div>
                                         <div class="pos ml-3">
                                             <p class="name">Jeff Nucci</p>
-                                            <span class="position">Businessman</span>
+                                            <span class="position">Housekeeper</span>
                                         </div>
                                     </div>
                                 </div>
@@ -449,77 +448,4 @@
         </div>
     </section>
 <!--js not workimg in this page, corect it in home asset at js in file main.js   -->
-
-<script type="text/javascript" src="script.js">
-$(document).ready(function(){
-
-var current_fs, next_fs, previous_fs;
-
-// No BACK button on first screen
-if($(".show").hasClass("first-screen")) {
-$(".prev").css({ 'display' : 'none' });
-}
-
-// Next button
-$(".next-button").click(function(){
-
-current_fs = $(this).parent().parent();
-next_fs = $(this).parent().parent().next();
-
-$(".prev").css({ 'display' : 'block' });
-
-$(current_fs).removeClass("show");
-$(next_fs).addClass("show");
-
-$("#progressbar li").eq($(".card2").index(next_fs)).addClass("active");
-
-current_fs.animate({}, {
-step: function() {
-
-current_fs.css({
-'display': 'none',
-'position': 'relative'
-});
-
-next_fs.css({
-'display': 'block'
-});
-}
-});
-});
-
-// Previous button
-$(".prev").click(function(){
-
-current_fs = $(".show");
-previous_fs = $(".show").prev();
-
-$(current_fs).removeClass("show");
-$(previous_fs).addClass("show");
-
-$(".prev").css({ 'display' : 'block' });
-
-if($(".show").hasClass("first-screen")) {
-$(".prev").css({ 'display' : 'none' });
-}
-
-$("#progressbar li").eq($(".card2").index(current_fs)).removeClass("active");
-
-current_fs.animate({}, {
-step: function() {
-
-current_fs.css({
-'display': 'none',
-'position': 'relative'
-});
-
-previous_fs.css({
-'display': 'block'
-});
-}
-});
-});
-
-});
-</script>
 @endsection
