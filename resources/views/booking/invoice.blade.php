@@ -18,7 +18,7 @@
                                         <table class="invoice">
 
                                             <tbody><tr>
-                                                <td>{{$booking->user->name}}<br>Invoice #12345<br>{{$booking->created_at}}</td>
+                                                <td>{{$booking->user->name}}<br>{{$booking->location}}<br>{{$booking->created_at}}</td>
                                             </tr>
                                             <tr>
                                                 <td>

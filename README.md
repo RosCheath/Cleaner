@@ -47,3 +47,8 @@ edit-> input this code
 alway run 
 
     php artisan queue:work
+
+8, use
+GitHub - yoeunes/toastr: toastr.js notifications for Laravel and Lumen
+
+    https://github.com/yoeunes/toastr

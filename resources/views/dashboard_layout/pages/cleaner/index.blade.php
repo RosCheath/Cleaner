@@ -3,7 +3,7 @@
     <!-- partial -->
     <div class="main-panel">
         <div class="content-wrapper">
-            <div class="page-header">
+            <div class="page-header">z
                 <h3 class="page-title"><a class="btn btn-primary" href="{{route('admin-cleaner.create')}}"> Create Cleaner </a></h3>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">

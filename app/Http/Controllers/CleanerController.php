@@ -116,7 +116,6 @@ class CleanerController extends Controller
             $path = Storage::disk('s3')->url($path);
             $input['image'] = $path;
         }
-//        dd($input);
         $admin_cleaner->update($input);
         return redirect()->back()
             ->with('success','Cleaner updated successfully');
@@ -132,6 +131,6 @@ class CleanerController extends Controller
     {
         $cleaner->delete();
         return redirect()->back()
-            ->with('success','Cleaner deleted successfully');
+            ->with('error','Cleaner deleted successfully');
     }
 }

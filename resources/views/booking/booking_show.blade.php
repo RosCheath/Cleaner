@@ -1,5 +1,7 @@
 @extends('welcome_home_layout')
 @section('content')
+{{--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">--}}
+{{--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">--}}
     @foreach($bookingimage as $bookingimage)
         <section class="hero-wrap hero-wrap-2" style="background-image: url({{$bookingimage->image}});" data-stellar-background-ratio="0.5">
             <div class="overlay"></div>
@@ -13,257 +15,99 @@
             </div>
         </section>
     @endforeach
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
-<div class="container">
-    <div class="table-wrap">
-        <table class="table table-responsive table-borderless">
-            <thead>
-            <th>&nbsp;</th>
-            <th>&nbsp;</th>
-            <th>Product</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>total</th>
-            <th>&nbsp;</th>
-            </thead>
-            <tbody>
-            <tr class="align-middle alert border-bottom" role="alert">
-                <td>
-                    <input type="checkbox" id="check">
-                </td>
-                <td class="text-center">
-                    <img class="pic"
-                         src="https://www.freepnglogos.com/uploads/shoes-png/dance-shoes-png-transparent-dance-shoes-images-5.png"
-                         alt="">
-                </td>
-                <td>
+    <div class="container mt-5 mb-5">
+        <div class="d-flex justify-content-center row">
+            <div class="col-md-8">
+                <div class="p-2">
+                    <h4>Booking cart</h4>
+{{--                    <div class="d-flex flex-row align-items-center pull-right"><span class="mr-1">Sort by:</span><span class="mr-1 font-weight-bold">Price</span><i class="fa fa-angle-down"></i></div>--}}
+                </div>
+                @foreach($booking_1 as $booking)
+                    @can('view', $booking)
+                <div class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded">
+                    <div class="mr-1">{{$booking->service->name}}</div>
+                    <div class="d-flex flex-column align-items-center product-details"><span class="font-weight-bold">{{$booking->location}}</span>
+                        <div class="d-flex flex-row product-desc">
+                            <div class="size mr-1"><span class="text-grey">Status:</span><span class="font-weight-bold">&nbsp;{{$booking->status_type}}</span></div>
+{{--                            <div class="color"><span class="text-grey">Color:</span><span class="font-weight-bold">&nbsp;Grey</span></div>--}}
+                        </div>
+                    </div>
+                    <a class="d-flex flex-row align-items-center qty" href="{{route('invoice',$booking->id)}}"><i class="fa fa-minus text-danger"></i>
+                        <h5 class="text-grey mt-1 mr-1 ml-1">invoice</h5><i class="fa fa-plus text-success"></i></a>
                     <div>
-                        <p class="m-0 fw-bold">Sneakers Shoes 2020 For Men</p>
-                        <p class="m-0 text-muted">Fugiat Voluptates quasi nemo,ipsa perferencis</p>
+                        <h5 class="text-grey">${{$booking->service->price}}</h5>
                     </div>
-                </td>
-                <td>
-                    <div class="fw-600">$44.99</div>
-                </td>
-                <td class="d-">
-                    <input class="input" type="text" placeholder="2">
-                </td>
-                <td>
-                    $89.98
-                </td>
-                <td>
-                    <div class="btn" data-bs-dismiss="alert">
-                        <span class="fas fa-times"></span>
-                    </div>
-                </td>
-            </tr>
-            <tr class="align-middle alert border-bottom" role="alert">
-                <td>
-                    <input type="checkbox" id="check">
-                </td>
-                <td class="text-center">
-                    <img class="pic"
-                         src="https://www.freepnglogos.com/uploads/shoes-png/download-vector-shoes-image-png-image-pngimg-2.png"
-                         alt="">
-                </td>
-                <td>
-                    <div>
-                        <p class="m-0 fw-bold">Sneakers Shoes 2020 For Men</p>
-                        <p class="m-0 text-muted">Fugiat Voluptates quasi nemo,ipsa perferencis</p>
-                    </div>
-                </td>
-                <td>
-                    <div class="fw-600">$54.99</div>
-                </td>
-                <td class="d-">
-                    <input class="input" type="text" placeholder="2">
-                </td>
-                <td>
-                    $108.98
-                </td>
-                <td>
-                    <div class="btn" data-bs-dismiss="alert">
-                        <span class="fas fa-times"></span>
-                    </div>
-                </td>
-            </tr>
-            <tr class="align-middle alert border-bottom" role="alert">
-                <td>
-                    <input type="checkbox" id="check">
-                </td>
-                <td class="text-center">
-                    <img class="pic"
-                         src="https://www.freepnglogos.com/uploads/shoes-png/running-shoes-png-transparent-running-shoes-images-6.png"
-                         alt="">
-                </td>
-                <td>
-                    <div>
-                        <p class="m-0 fw-bold">Sneakers Shoes 2020 For Men</p>
-                        <p class="m-0 text-muted">Fugiat Voluptates quasi nemo,ipsa perferencis</p>
-                    </div>
-                </td>
-                <td>
-                    <div class="fw-600">$50.99</div>
-                </td>
-                <td class="d-">
-                    <input class="input" type="text" placeholder="2">
-                </td>
-                <td>
-                    $100.98
-                </td>
-                <td>
-                    <div class="btn" data-bs-dismiss="alert">
-                        <span class="fas fa-times"></span>
-                    </div>
-                </td>
-            </tr>
-            <tr class="align-middle alert border-bottom" role="alert">
-                <td>
-                    <input type="checkbox" id="check">
-                </td>
-                <td class="text-center">
-                    <img class="pic"
-                         src="https://www.freepnglogos.com/uploads/shoes-png/find-your-perfect-running-shoes-26.png"
-                         alt="">
-                </td>
-                <td>
-                    <div>
-                        <p class="m-0 fw-bold">Sneakers Shoes 2020 For Men</p>
-                        <p class="m-0 text-muted">Fugiat Voluptates quasi nemo,ipsa perferencis</p>
-                    </div>
-                </td>
-                <td>
-                    <div class="fw-600">$74.99</div>
-                </td>
-                <td>
-                    <input class="input" type="text" placeholder="2">
-                </td>
-                <td>
-                    $148.98
-                </td>
-                <td>
-                    <div class="btn" data-bs-dismiss="alert">
-                        <span class="fas fa-times"></span>
-                    </div>
-                </td>
-            </tr>
-            </tbody>
-        </table>
+                    <div class="d-flex align-items-center"><i class="fa fa-trash mb-1 text-danger"></i></div>
+                </div>
+                    @endcan
+                @endforeach
+                @foreach($booking_2 as $booking)
+                    @can('view', $booking)
+                        <div class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded">
+                            <div class="mr-1">{{$booking->service->name}}</div>
+                            <div class="d-flex flex-column align-items-center product-details"><span class="font-weight-bold">{{$booking->location}}</span>
+                                <div class="d-flex flex-row product-desc">
+                                    <div class="size mr-1"><span class="text-grey">Status:</span><span class="font-weight-bold">&nbsp;{{$booking->status_type}}</span></div>
+                                    {{--                            <div class="color"><span class="text-grey">Color:</span><span class="font-weight-bold">&nbsp;Grey</span></div>--}}
+                                </div>
+                            </div>
+                            <a class="d-flex flex-row align-items-center qty" href="{{route('invoice',$booking->id)}}"><i class="fa fa-minus text-danger"></i>
+                                <h5 class="text-grey mt-1 mr-1 ml-1">invoice</h5><i class="fa fa-plus text-success"></i></a>
+                            <div>
+                                <h5 class="text-grey">${{$booking->service->price}}</h5>
+                            </div>
+                            <div class="d-flex align-items-center"><i class="fa fa-trash mb-1 text-danger"></i></div>
+                        </div>
+                    @endcan
+                @endforeach
+            </div>
+        </div>
     </div>
-</div>
+@endsection
 <style>
-    /*@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');*/
-    /*.pic {*/
-    /*    width: 50px;*/
-    /*    height: 50px;*/
-    /*    object-fit: contain;*/
-    /*}*/
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap');
 
-
-
-    .table thead th {
-        padding: 30px;
-        font-size: 14px;
-        color: white;
+    body {
+        font-family: 'Manrope', sans-serif;
+        background:#eee;
     }
 
-    .table tbody td input[type="checkbox"] {
-        appearance: none;
-        width: 20px;
-        height: 20px;
-        background-color: #eee;
-        position: relative;
-        border-radius: 3px;
-        cursor: pointer;
+    .size span {
+        font-size: 11px;
     }
 
-    .container .table-wrap {
-
-        margin: 20px auto;
-        overflow-x: auto
+    .color span {
+        font-size: 11px;
     }
 
-
-
-    .container .table-wrap::-webkit-scrollbar-thumb {
-        border-radius: 5px;
-        background-image: linear-gradient(to right, #5D7ECD, #0C91E6);
+    .product-deta {
+        margin-right: 70px;
     }
 
-    /*.table>:not(caption)>*>* {*/
-    /*    padding: 2rem 0.5rem;*/
-    /*}*/
-
-    .input {
-        width: 30px;
-        height: 30px;
-        /*color: black;*/
-        font-weight: 600;
-        outline: none;
-        padding: 8px;
+    .gift-card:focus {
+        box-shadow: none;
     }
 
-    ::placeholder {
-        /*color: black;*/
-        font-weight: 600;
-    }
-
-    .table tbody td input[type="checkbox"]:after {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        font-family: "Font Awesome 5 Free";
-        font-weight: 600;
-        content: "\f00c";
+    .pay-button {
         color: #fff;
-        font-size: 15px;
-        display: none
     }
 
-    .table tbody td input[type="checkbox"]:checked,
-    .table tbody td input[type="checkbox"]:checked:hover {
-        background-color: #21cf95;
+    .pay-button:hover {
+        color: #fff;
     }
 
-    .table tbody td input[type="checkbox"]:checked::after {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    .pay-button:focus {
+        color: #fff;
+        box-shadow: none;
     }
 
-    .table tbody td input[type="checkbox"]:hover {
-        background-color: #ddd;
+    .text-grey {
+        color: #a39f9f;
     }
 
-    .table tbody td {
-        padding: 30px;
-        margin: 0;
-        font-size: 14.5px;
-        font-weight: 600;
-    }
-
-    .table tbody td .fa-times {
-        color: #D32F2F;
-    }
-
-
-    .text-muted {
-        font-size: 12.5px;
-    }
-
-    .table tbody tr td:nth-of-type(3) {
-        min-width: 320px;
-    }
-
-    @media(min-width: 992px) {
-        .container .table-wrap {
-            overflow: hidden;
-        }
+    .qty i {
+        font-size: 11px;
     }
 </style>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-@endsection
